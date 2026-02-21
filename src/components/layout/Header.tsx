@@ -85,15 +85,14 @@ export function Header() {
       {/* Active line indicator */}
       {linePosition && (
         <div 
-          className="absolute h-0 top-[54px]" 
+          className="absolute top-[54px]" 
           style={{ 
             left: `${linePosition.left}px`,
-            width: `${linePosition.width}px`
+            width: `${linePosition.width}px`,
+            height: '2px'
           }}
         >
-          <div className="absolute inset-[-2px_0_0_0]">
-            <img alt="" className="block max-w-none w-full" src={imgActiveLine} />
-          </div>
+          <img alt="" className="block w-full h-full" src={imgActiveLine} />
         </div>
       )}
     </header>

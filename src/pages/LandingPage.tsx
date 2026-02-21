@@ -293,17 +293,156 @@ export function LandingPage() {
         </div>
       </div>
 
-      {/* Media & Blog Sections - Simplified for now */}
+      {/* Media Section */}
       <div className="flex flex-col gap-[48px] items-start max-w-[1200px] py-[120px] w-full">
         <div className="flex flex-col gap-[8px] items-start leading-[0] max-w-[600px] w-full">
           <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Display_ExtraBold',sans-serif] justify-center text-[48px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(251.328deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
             <p className="leading-none whitespace-pre-wrap">Frenkee v médiích</p>
           </div>
-          <p className="font-['Mona_Sans_VF:Regular',sans-serif] leading-[1.5] text-[#3f2578] text-[18px] text-justify w-full">
+          <p className="font-['Mona_Sans_VF:Regular',sans-serif] leading-[1.5] text-[#3f2578] text-[18px] w-full">
             Podívejte se, co píšou a říkají o Frenkeem média, a nahlédněte pod pokličku projektu s jeho CEO Jiřím Hluchým. Dozvíte se, jak vám Frenkee pomůže pohodlně a online zařídit pojistky, hypotéku nebo chytře investovat.
           </p>
         </div>
-        {/* Media grid and blog section would go here - keeping existing implementation for now */}
+        
+        {/* Media Bento Grid */}
+        <div className="flex flex-col gap-[18px] items-center w-full">
+          {/* Top Row */}
+          <div className="flex flex-wrap gap-[18px] items-start justify-center w-full">
+            <div className="flex flex-[1_0_0] flex-col gap-[6px] h-[375px] items-start justify-end min-w-0 p-[18px] rounded-[6px] shadow-[0px_3px_6px_0px_rgba(0,0,0,0.15),0px_0.75px_2.25px_0px_rgba(0,0,0,0.3)] relative">
+              <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[6px]">
+                <img alt="" className="absolute max-w-none object-cover rounded-[6px] size-full" src="/assets/media-1.png" />
+                <div className="absolute bg-gradient-to-b from-transparent from-50% inset-0 rounded-[6px] to-black" />
+              </div>
+              <img alt="Forbes" className="h-[40.5px] w-[150px] relative z-10" src="/assets/forbes-logo.svg" />
+              <p className="font-['Mona_Sans_VF:Bold',sans-serif] leading-[1.4] text-[13.5px] text-white relative z-10">
+                Frenkee goes to lepší byznys. Někdejší finanční poradce chce svým startupem změnit obor
+              </p>
+            </div>
+            <div className="flex flex-col gap-[6px] h-[375px] items-start justify-end p-[18px] rounded-[6px] shadow-[0px_3px_6px_0px_rgba(0,0,0,0.15),0px_0.75px_2.25px_0px_rgba(0,0,0,0.3)] w-[348.75px] relative">
+              <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[6px]">
+                <img alt="" className="absolute max-w-none object-cover rounded-[6px] size-full" src="/assets/media-2.png" />
+                <div className="absolute bg-gradient-to-b from-transparent from-50% inset-0 rounded-[6px] to-black" />
+              </div>
+              <p className="font-['Mona_Sans_VF:Bold',sans-serif] leading-[1.4] text-[13.5px] text-white relative z-10">
+                V otázce investic zapomeňte na emoce a soustřeďte se na delší horizont, radí finanční specialista Jiří Hluchý
+              </p>
+            </div>
+          </div>
+          {/* Bottom Row */}
+          <div className="flex flex-wrap gap-[18px] items-start justify-center w-full">
+            <div className="flex flex-col gap-[6px] h-[375px] items-start justify-end p-[18px] rounded-[6px] shadow-[0px_3px_6px_0px_rgba(0,0,0,0.15),0px_0.75px_2.25px_0px_rgba(0,0,0,0.3)] w-[348.75px] relative">
+              <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[6px]">
+                <img alt="" className="absolute max-w-none object-cover rounded-[6px] size-full" src="/assets/media-3.png" />
+                <div className="absolute bg-gradient-to-b from-transparent from-50% inset-0 rounded-[6px] to-black" />
+              </div>
+              <img alt="Prague Morning" className="h-[33.92px] w-[260.25px] relative z-10" src="/assets/prague-morning-logo.png" />
+              <p className="font-['Mona_Sans_VF:Bold',sans-serif] leading-[1.4] text-[13.5px] text-white relative z-10">
+                Foreign Employees Struggle with Czech Bureaucracy, Fintech Frenkee Survey Reveals
+              </p>
+            </div>
+            <div className="flex flex-[1_0_0] flex-col gap-[6px] h-[375px] items-start justify-end min-w-0 p-[18px] rounded-[6px] shadow-[0px_3px_6px_0px_rgba(0,0,0,0.15),0px_0.75px_2.25px_0px_rgba(0,0,0,0.3)] relative">
+              <div aria-hidden="true" className="absolute inset-0 pointer-events-none rounded-[6px]">
+                <img alt="" className="absolute max-w-none object-cover rounded-[6px] size-full" src="/assets/media-4.png" />
+                <div className="absolute bg-gradient-to-b from-transparent from-50% inset-0 rounded-[6px] to-black" />
+              </div>
+              <div className="h-[41.794px] overflow-clip w-[423px] relative z-10">
+                <img alt="HN" className="h-full w-full object-contain" src="/assets/hn-logo.svg" />
+              </div>
+              <p className="font-['Mona_Sans_VF:Bold',sans-serif] leading-[1.4] text-[13.5px] text-white relative z-10">
+                Umělá inteligence umí lepší a levnější nápady než lidé. Přesto v některých firmách čeká na obměnu manažerů
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Blog Section */}
+        <div className="flex flex-col gap-[48px] items-center max-w-[1200px] w-full">
+          <div className="flex flex-col gap-[12px] items-start leading-[0] w-full">
+            <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Display_ExtraBold',sans-serif] justify-center text-[48px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(235.947deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
+              <p className="leading-none whitespace-pre-wrap">Provedu vás úskalími pojistek, úvěrů a investic</p>
+            </div>
+            <p className="font-['Mona_Sans_VF:Regular',sans-serif] leading-[1.5] text-[#3f2578] text-[18px] w-full">
+              Podívejte se, co píšou a říkají o Frenkeem média, a nahlédněte pod pokličku projektu s jeho CEO Jiřím Hluchým. Dozvíte se, jak vám Frenkee pomůže pohodlně a online zařídit pojistky, hypotéku nebo chytře investovat.
+            </p>
+          </div>
+          
+          <div className="flex gap-[24px] items-start justify-center w-full">
+            {/* Large Blog Post */}
+            <div className="flex flex-[1_0_0] flex-col gap-[24px] items-center min-w-0">
+              <div className="border border-[#e2e9f0] flex-[1_0_0] min-h-px rounded-[12px] w-full relative">
+                <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src="/assets/blog-1.png" />
+              </div>
+              <div className="flex flex-col gap-[4px] items-center leading-[0] text-[#3f2578] w-full">
+                <p className="font-['Mona_Sans_VF:Bold',sans-serif] leading-[1.6] text-[16px] w-full">
+                  Cestovní pojištění do zahraničí online: Srovnání 2026
+                </p>
+                <p className="font-['Mona_Sans_VF:Medium',sans-serif] leading-[1.6] text-[14px] w-full">
+                  6/21/19
+                </p>
+              </div>
+            </div>
+
+            {/* Small Blog Posts Column */}
+            <div className="flex flex-[1_0_0] flex-col gap-[24px] items-center min-w-0">
+              {/* Blog Item 1 */}
+              <div className="flex gap-[24px] items-center w-full">
+                <div className="border border-[#e2e9f0] rounded-[12px] size-[120px] relative">
+                  <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src="/assets/blog-2.png" />
+                </div>
+                <div className="flex flex-[1_0_0] flex-col gap-[4px] items-center leading-[0] min-w-0 text-[#3f2578]">
+                  <p className="font-['Mona_Sans_VF:Bold',sans-serif] leading-[1.6] text-[16px] w-full">
+                    Co je pojištění odpovědnosti a co všechno nabízí
+                  </p>
+                  <p className="font-['Mona_Sans_VF:Medium',sans-serif] leading-[1.6] text-[14px] w-full">
+                    7/18/17
+                  </p>
+                </div>
+              </div>
+              {/* Blog Item 2 */}
+              <div className="flex gap-[24px] items-center w-full">
+                <div className="border border-[#e2e9f0] rounded-[12px] size-[120px] relative">
+                  <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src="/assets/blog-3.png" />
+                </div>
+                <div className="flex flex-[1_0_0] flex-col gap-[4px] items-center leading-[0] min-w-0 text-[#3f2578]">
+                  <p className="font-['Mona_Sans_VF:Bold',sans-serif] leading-[1.6] text-[16px] w-full">
+                    Jak danit hypotéku?
+                  </p>
+                  <p className="font-['Mona_Sans_VF:Medium',sans-serif] leading-[1.6] text-[14px] w-full">
+                    1/15/12
+                  </p>
+                </div>
+              </div>
+              {/* Blog Item 3 */}
+              <div className="flex gap-[24px] items-center w-full">
+                <div className="border border-[#e2e9f0] rounded-[12px] size-[120px] relative">
+                  <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src="/assets/blog-4.png" />
+                </div>
+                <div className="flex flex-[1_0_0] flex-col gap-[4px] items-center leading-[0] min-w-0 text-[#3f2578]">
+                  <p className="font-['Mona_Sans_VF:Bold',sans-serif] leading-[1.6] text-[16px] w-full">
+                    Srovnáni pojištění pro cizince v roce 2026
+                  </p>
+                  <p className="font-['Inter:Medium',sans-serif] font-medium leading-[1.6] text-[14px] w-full">
+                    10/28/12
+                  </p>
+                </div>
+              </div>
+              {/* Blog Item 4 */}
+              <div className="flex gap-[24px] items-center w-full">
+                <div className="border border-[#e2e9f0] rounded-[12px] size-[120px] relative">
+                  <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src="/assets/blog-5.png" />
+                </div>
+                <div className="flex flex-[1_0_0] flex-col gap-[4px] items-center leading-[0] min-w-0 text-[#3f2578]">
+                  <p className="font-['Mona_Sans_VF:Bold',sans-serif] leading-[1.6] text-[16px] w-full">
+                    Jak funguje pojistka na blbost?
+                  </p>
+                  <p className="font-['Mona_Sans_VF:Medium',sans-serif] leading-[1.6] text-[14px] w-full">
+                    5/7/16
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

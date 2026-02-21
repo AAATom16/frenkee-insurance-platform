@@ -31,7 +31,7 @@ export function LandingPage() {
               <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Display_ExtraBold',sans-serif] justify-center text-[72px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(265.802deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
                 <p className="leading-none whitespace-pre-wrap">Finance jednoduše</p>
               </div>
-              <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center text-[#3f2578] text-[20px] w-full">
+              <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] font-bold justify-center text-[#3f2578] text-[20px] w-full">
                 <p className="leading-[1.6] whitespace-pre-wrap">Bez chytáků a otravných schůzek</p>
               </div>
             </div>
@@ -47,7 +47,7 @@ export function LandingPage() {
                   <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] text-[36px]" style={{ backgroundImage: "linear-gradient(258.806deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
                     <p className="leading-[1.1] whitespace-pre-wrap">Pojištění aut</p>
                   </div>
-                  <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center leading-[1.5] text-[#3f2578] text-[16px] whitespace-pre-wrap">
+                  <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] font-bold justify-center leading-[1.5] text-[#3f2578] text-[16px] whitespace-pre-wrap">
                     <p className="mb-0">Jednoduché online sjednání.</p>
                     <p>Ušetřete čas a peníze!</p>
                   </div>
@@ -61,11 +61,11 @@ export function LandingPage() {
                       </div>
                     </div>
                     <div className="absolute flex flex-col items-center justify-center left-1/2 -translate-x-1/2 opacity-50 top-[15px]">
-                      <p className="font-['Open_Sans:Regular',sans-serif] leading-normal text-[#635c73] text-[15px]">Zadejte SPZ</p>
+                      <p className="font-['Mona_Sans_VF:Regular',sans-serif] leading-normal text-[#635c73] text-[15px]">Zadejte SPZ</p>
                     </div>
                   </div>
                   <Link to="/pojisteni/auto" className="flex gap-[8px] h-[48px] items-center justify-center px-[20px] py-[12px] rounded-[12px] w-[344px]" style={{ backgroundImage: "linear-gradient(252.181deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%)" }}>
-                    <p className="font-['Inter:Medium',sans-serif] font-medium leading-[1.6] text-[16px] text-white whitespace-nowrap">Chci povinné ručení + havarijní pojištění</p>
+                    <p className="font-['Mona_Sans_VF:Medium',sans-serif] font-medium leading-[1.6] text-[16px] text-white whitespace-nowrap">Chci povinné ručení + havarijní pojištění</p>
                   </Link>
                 </div>
               </div>
@@ -81,7 +81,7 @@ export function LandingPage() {
                   <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center text-[36px] w-full" style={{ backgroundImage: "linear-gradient(266.07deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
                     <p className="leading-[1.1] whitespace-pre-wrap">Cestovní pojištění</p>
                   </div>
-                  <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.5] text-[#3f2578] text-[16px]">Se slevou až 50%!</p>
+                  <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.5] text-[#3f2578] text-[16px]">Se slevou až 50%!</p>
                 </div>
                 <Link to="/pojisteni/cestovani" className="flex gap-[8px] items-center justify-center py-[2px] rounded-[6px] text-[#ef8600] text-center">
                   <p className="font-['Mona_Sans_VF:SemiBold',sans-serif] leading-[1.5] text-[16px]">Spočítat</p>
@@ -117,7 +117,7 @@ export function LandingPage() {
                     <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center text-[36px] w-full" style={{ backgroundImage: "linear-gradient(266.07deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
                       <p className="leading-[1.1] whitespace-pre-wrap">Pojištění majetku</p>
                     </div>
-                    <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.5] text-[#3f2578] text-[16px]">Stačí pár kliknutí a můžete v klidu spát!</p>
+                    <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.5] text-[#3f2578] text-[16px]">Stačí pár kliknutí a můžete v klidu spát!</p>
                     <Link to="/pojisteni/majetek" className="flex gap-[8px] items-center justify-center py-[2px] rounded-[6px] text-[#ef8600] text-center">
                       <p className="font-['Mona_Sans_VF:SemiBold',sans-serif] leading-[1.5] text-[16px]">Spočítat</p>
                       <p className="text-[18px]">→</p>
@@ -134,9 +134,9 @@ export function LandingPage() {
                     <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] text-[36px]" style={{ backgroundImage: "linear-gradient(266.187deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
                       <p className="leading-[1.1] whitespace-pre-wrap">Životní pojištění</p>
                     </div>
-                    <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.5] text-[#3f2578] text-[16px]">Životko, které dává smysl</p>
+                    <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.5] text-[#3f2578] text-[16px]">Životko, které dává smysl</p>
                     <Link to="/pojisteni/zivot" className="flex gap-[8px] h-[48px] items-center justify-center px-[20px] py-[12px] rounded-[12px]" style={{ backgroundImage: "linear-gradient(264.45deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%)" }}>
-                      <p className="font-['Inter:Medium',sans-serif] font-medium leading-[1.6] text-[16px] text-white">Spočítat</p>
+                      <p className="font-['Mona_Sans_VF:Medium',sans-serif] font-medium leading-[1.6] text-[16px] text-white">Spočítat</p>
                     </Link>
                   </div>
                   <div className="h-[282px] w-[172px] relative shrink-0">
@@ -212,7 +212,7 @@ export function LandingPage() {
               <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center text-[18px] w-full" style={{ backgroundImage: "linear-gradient(245.185deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
                 <p className="leading-[1.6] whitespace-pre-wrap">Bez otravných telefonátů a nabídek</p>
               </div>
-              <p className="font-['Inter:Regular',sans-serif] leading-[1.9] text-[16px] w-full">Nikdy vám nebudeme volat a otravovat Vás s nabídkami, které jste nechtěli.</p>
+              <p className="font-['Mona_Sans_VF:Regular',sans-serif] leading-[1.9] text-[16px] w-full">Nikdy vám nebudeme volat a otravovat Vás s nabídkami, které jste nechtěli.</p>
             </div>
           </div>
           {/* Feature 2 */}
@@ -221,10 +221,10 @@ export function LandingPage() {
               <img alt="" className="size-[36px]" src="/assets/icon-global-edit.svg" />
             </div>
             <div className="flex flex-col gap-[2px] items-start justify-center leading-[0] flex-1 text-[#3f2578]">
-              <div className="bg-clip-text flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center text-[18px] w-full" style={{ backgroundImage: "linear-gradient(245.185deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
+              <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] font-bold justify-center text-[18px] w-full" style={{ backgroundImage: "linear-gradient(245.185deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
                 <p className="leading-[1.6] whitespace-pre-wrap">100% Online a bez "papírování"</p>
               </div>
-              <p className="font-['Inter:Regular',sans-serif] leading-[1.9] text-[16px] w-full">Frenkee funguje online, téměř vše si vyřešiíte z pohodlí svého gauč</p>
+              <p className="font-['Mona_Sans_VF:Regular',sans-serif] leading-[1.9] text-[16px] w-full">Frenkee funguje online, téměř vše si vyřešiíte z pohodlí svého gauč</p>
             </div>
           </div>
           {/* Feature 3 */}
@@ -233,10 +233,10 @@ export function LandingPage() {
               <img alt="" className="size-[36px]" src="/assets/icon-lamp-on.svg" />
             </div>
             <div className="flex flex-col gap-[2px] items-start justify-center leading-[0] flex-1 text-[#3f2578]">
-              <div className="bg-clip-text flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center text-[18px] w-full" style={{ backgroundImage: "linear-gradient(245.185deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
+              <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] font-bold justify-center text-[18px] w-full" style={{ backgroundImage: "linear-gradient(245.185deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
                 <p className="leading-[1.6] whitespace-pre-wrap">Tým expertů 20 roky zkušeností a AI Asistentem</p>
               </div>
-              <p className="font-['Inter:Regular',sans-serif] leading-[1.9] text-[16px] w-full">Když si nebudete vědět rady, můžete se obrátit na Frenka, AI asistenta, který vám se vším pomůže nebo se spojit s jedním z našich specialstů.</p>
+              <p className="font-['Mona_Sans_VF:Regular',sans-serif] leading-[1.9] text-[16px] w-full">Když si nebudete vědět rady, můžete se obrátit na Frenka, AI asistenta, který vám se vším pomůže nebo se spojit s jedním z našich specialstů.</p>
             </div>
           </div>
         </div>
@@ -259,21 +259,21 @@ export function LandingPage() {
             <div className="flex gap-[24px] items-center w-full">
               <img alt="" className="rounded-full size-[48px]" src="/assets/avatar.png" />
               <div className="flex flex-col gap-[2px] items-start leading-[0] flex-1">
-                <p className="font-['Inter:Medium',sans-serif] font-medium leading-[1.6] text-[18px] text-[#020617]">Vojtěch Horálek</p>
-                <p className="font-['Inter:Regular',sans-serif] leading-[1.9] text-[16px] text-[#64748b]">Před 9 měsíci</p>
+                <p className="font-['Mona_Sans_VF:Medium',sans-serif] font-medium leading-[1.6] text-[18px] text-[#020617]">Vojtěch Horálek</p>
+                <p className="font-['Mona_Sans_VF:Regular',sans-serif] leading-[1.9] text-[16px] text-[#64748b]">Před 9 měsíci</p>
               </div>
             </div>
           </div>
           {/* Testimonial 2 */}
           <div className="bg-[rgba(246,238,247,0.5)] border border-[#d8b0d8] flex flex-col items-start justify-between p-[24px] rounded-[16px] shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] w-[389px]">
-            <p className="font-['Inter:Regular',sans-serif] leading-[1.9] text-[16px] text-[#1e293b] mb-[24px]">
+            <p className="font-['Mona_Sans_VF:Regular',sans-serif] leading-[1.9] text-[16px] text-[#1e293b] mb-[24px]">
               Bezkonkurenční spokojenost všemi směry. Doporučuji! Až budu zase něco potřebovat, vím na koho se mohu obrátit a kdo mi hlavně pomůže. Děkuji :)
             </p>
             <div className="flex gap-[24px] items-center w-full">
               <img alt="" className="rounded-full size-[48px]" src="/assets/avatar.png" />
               <div className="flex flex-col gap-[2px] items-start leading-[0] flex-1">
-                <p className="font-['Inter:Medium',sans-serif] font-medium leading-[1.6] text-[18px] text-[#020617]">Gabriela Činovcová</p>
-                <p className="font-['Inter:Regular',sans-serif] leading-[1.9] text-[16px] text-[#64748b]">Před 9 měsíci</p>
+                <p className="font-['Mona_Sans_VF:Medium',sans-serif] font-medium leading-[1.6] text-[18px] text-[#020617]">Gabriela Činovcová</p>
+                <p className="font-['Mona_Sans_VF:Regular',sans-serif] leading-[1.9] text-[16px] text-[#64748b]">Před 9 měsíci</p>
               </div>
             </div>
           </div>
@@ -285,8 +285,8 @@ export function LandingPage() {
             <div className="flex gap-[24px] items-center w-full">
               <img alt="" className="rounded-full size-[48px]" src="/assets/avatar.png" />
               <div className="flex flex-col gap-[2px] items-start leading-[0] flex-1">
-                <p className="font-['Inter:Medium',sans-serif] font-medium leading-[1.6] text-[18px] text-[#020617]">Dam ko</p>
-                <p className="font-['Inter:Regular',sans-serif] leading-[1.9] text-[16px] text-[#64748b]">Před 9 měsíci</p>
+                <p className="font-['Mona_Sans_VF:Medium',sans-serif] font-medium leading-[1.6] text-[18px] text-[#020617]">Dam ko</p>
+                <p className="font-['Mona_Sans_VF:Regular',sans-serif] leading-[1.9] text-[16px] text-[#64748b]">Před 9 měsíci</p>
               </div>
             </div>
           </div>
@@ -421,7 +421,7 @@ export function LandingPage() {
                   <p className="font-['Mona_Sans_VF:Bold',sans-serif] leading-[1.6] text-[16px] w-full">
                     Srovnáni pojištění pro cizince v roce 2026
                   </p>
-                  <p className="font-['Inter:Medium',sans-serif] font-medium leading-[1.6] text-[14px] w-full">
+                  <p className="font-['Mona_Sans_VF:Medium',sans-serif] font-medium leading-[1.6] text-[14px] w-full">
                     10/28/12
                   </p>
                 </div>

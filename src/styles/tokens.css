@@ -57,8 +57,8 @@
   --color-background-alt: var(--color-dark-50);
 
   /* Typography - from Figma node 24-676 */
-  --font-heading: 'Inter', system-ui, sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-heading: 'Mona Sans', system-ui, sans-serif;
+  --font-body: 'Mona Sans', system-ui, sans-serif;
 
   --text-h1: 64px;
   --text-h2: 48px;

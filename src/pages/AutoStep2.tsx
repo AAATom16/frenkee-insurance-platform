@@ -78,8 +78,8 @@ export function AutoStep2() {
                   <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                     <p className="leading-[1.6]">Jméno</p>
                   </div>
-                  <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                    <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                  <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                    <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
                   </div>
                 </div>
               </div>
@@ -102,8 +102,8 @@ export function AutoStep2() {
                   <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                     <p className="leading-[1.6]">Příjmení</p>
                   </div>
-                  <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                    <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                  <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                    <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
                   </div>
                 </div>
               </div>
@@ -129,8 +129,8 @@ export function AutoStep2() {
                   <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                     <p className="leading-[1.6]">Datum narození</p>
                   </div>
-                  <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                    <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                  <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                    <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
                   </div>
                 </div>
               </div>
@@ -155,8 +155,8 @@ export function AutoStep2() {
                   <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                     <p className="leading-[1.6]">E-mail</p>
                   </div>
-                  <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                    <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                  <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                    <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
                   </div>
                 </div>
               </div>
@@ -179,8 +179,8 @@ export function AutoStep2() {
                   <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                     <p className="leading-[1.6]">Telefon</p>
                   </div>
-                  <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                    <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                  <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                    <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
                   </div>
                 </div>
               </div>
@@ -206,8 +206,8 @@ export function AutoStep2() {
                   <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                     <p className="leading-[1.6]">Adresa trvalého bydliště</p>
                   </div>
-                  <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                    <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                  <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                    <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
                   </div>
                 </div>
               </div>

@@ -78,8 +78,8 @@ export function MajetekStep1() {
                       <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                         <p className="leading-[1.6]">Hodnota nemovitosti</p>
                       </div>
-                      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                        <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                      <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                        <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
                       </div>
                     </div>
                     <MingIconInformationLine className="overflow-clip relative size-[24px]" />
@@ -125,8 +125,8 @@ export function MajetekStep1() {
                       <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                         <p className="leading-[1.6]">Věci zvláštní hodnoty</p>
                       </div>
-                      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                        <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                      <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                        <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
                       </div>
                     </div>
                     <MingIconInformationLine className="overflow-clip relative size-[24px]" />
@@ -167,8 +167,8 @@ export function MajetekStep1() {
                       <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                         <p className="leading-[1.6]">Vybavení i věci připevněné</p>
                       </div>
-                      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                        <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                      <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                        <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
                       </div>
                     </div>
                     <MingIconInformationLine className="overflow-clip relative size-[24px]" />
@@ -209,8 +209,8 @@ export function MajetekStep1() {
                       <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                         <p className="leading-[1.6]">Věci v nebytových prostorech</p>
                       </div>
-                      <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                        <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                      <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                        <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
                       </div>
                     </div>
                     <MingIconInformationLine className="overflow-clip relative size-[24px]" />

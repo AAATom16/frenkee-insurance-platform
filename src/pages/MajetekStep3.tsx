@@ -43,8 +43,8 @@ export function MajetekStep3() {
               <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                 <p className="leading-[1.6]">Dispozice bytu</p>
               </div>
-              <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+              <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
               </div>
             </div>
             <select
@@ -67,8 +67,8 @@ export function MajetekStep3() {
               <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                 <p className="leading-[1.6]">Podlahová plocha</p>
               </div>
-              <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+              <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
               </div>
             </div>
             <div className="bg-white border border-[#e2e9f0] border-solid flex gap-[8px] h-[40px] items-center overflow-clip px-[12px] relative rounded-[8px] shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] w-full">
@@ -105,8 +105,8 @@ export function MajetekStep3() {
               <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                 <p className="leading-[1.6]">Umístění bytu</p>
               </div>
-              <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+              <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
               </div>
             </div>
             <div className="bg-white border border-[#e2e9f0] border-solid flex gap-[8px] h-[40px] items-center overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] w-full">
@@ -164,8 +164,8 @@ export function MajetekStep3() {
               <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                 <p className="leading-[1.6]">Konstrukce nemovitosti</p>
               </div>
-              <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+              <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
               </div>
             </div>
             <div className="bg-white border border-[#e2e9f0] border-solid flex gap-[8px] h-[40px] items-center overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] w-full">
@@ -211,8 +211,8 @@ export function MajetekStep3() {
               <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                 <p className="leading-[1.6]">Kvalita bytu</p>
               </div>
-              <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+              <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
               </div>
             </div>
             <div className="bg-white border border-[#e2e9f0] border-solid flex gap-[8px] h-[40px] items-center overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] w-full">
@@ -248,8 +248,8 @@ export function MajetekStep3() {
               <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                 <p className="leading-[1.6]">Stav bytu</p>
               </div>
-              <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+              <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
               </div>
             </div>
             <div className="bg-white border border-[#e2e9f0] border-solid flex gap-[8px] h-[40px] items-center overflow-clip pl-[4px] pr-[8px] py-[4px] relative rounded-[8px] shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] w-full">
@@ -340,8 +340,8 @@ export function MajetekStep3() {
             <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
               <p className="leading-[1.6]">Vybavení domu a bytu</p>
             </div>
-            <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-              <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+            <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+              <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
             </div>
           </div>
           <div className="flex gap-[12px] items-start relative w-full">
@@ -404,8 +404,8 @@ export function MajetekStep3() {
               <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                 <p className="leading-[1.6]">Hodnota nemovitosti</p>
               </div>
-              <div className="flex flex-col font-['Inter:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+              <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
+                <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
               </div>
             </div>
             <div className="bg-white border border-[#e2e9f0] border-solid flex gap-[8px] h-[40px] items-center overflow-clip px-[12px] relative rounded-[8px] shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] w-full">

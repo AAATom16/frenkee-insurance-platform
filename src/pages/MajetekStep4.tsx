@@ -50,7 +50,7 @@ export function MajetekStep4() {
               <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] justify-center relative text-[14px] text-[#64748b]">
                 <p className="leading-[1.6]">&nbsp;</p>
               </div>
-              <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center relative text-[14px] text-[#d60021]">
+              <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] font-bold justify-center relative text-[14px] text-[#d60021]">
                 <p className="leading-[1.6]">*</p>
               </div>
             </div>
@@ -109,7 +109,7 @@ export function MajetekStep4() {
                 <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] justify-center relative text-[14px] text-[#64748b]">
                   <p className="leading-[1.6]">&nbsp;</p>
                 </div>
-                <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center relative text-[14px] text-[#d60021]">
+                <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] font-bold justify-center relative text-[14px] text-[#d60021]">
                   <p className="leading-[1.6]">*</p>
                 </div>
               </div>
@@ -139,7 +139,7 @@ export function MajetekStep4() {
                 <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] justify-center relative text-[14px] text-[#64748b]">
                   <p className="leading-[1.6]">&nbsp;</p>
                 </div>
-                <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center relative text-[14px] text-[#d60021]">
+                <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] font-bold justify-center relative text-[14px] text-[#d60021]">
                   <p className="leading-[1.6]">*</p>
                 </div>
               </div>
@@ -158,7 +158,7 @@ export function MajetekStep4() {
               <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                 <p className="leading-[1.6]">Kontaktní adresa</p>
               </div>
-              <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center relative text-[14px] text-[#d60021]">
+              <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] font-bold justify-center relative text-[14px] text-[#d60021]">
                 <p className="leading-[1.6]">*</p>
               </div>
             </div>
@@ -235,7 +235,7 @@ export function MajetekStep4() {
               <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
                 <p className="leading-[1.6]">Kontaktní údaje</p>
               </div>
-              <div className="flex flex-col font-['Inter:Bold',sans-serif] font-bold justify-center relative text-[14px] text-[#d60021]">
+              <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] font-bold justify-center relative text-[14px] text-[#d60021]">
                 <p className="leading-[1.6]">*</p>
               </div>
             </div>

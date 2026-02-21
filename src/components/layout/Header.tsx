@@ -22,7 +22,7 @@ export function Header() {
         <img alt="Frenkee" className="h-[29.62px] w-[139.864px]" src={imgFrenkeeLogo} />
       </Link>
       <nav className="flex gap-[12px] items-center shrink-0 relative">
-        {NAV_ITEMS.map((item, index) => {
+        {NAV_ITEMS.map((item) => {
           const isActive = location.pathname.startsWith(item.path);
           return (
             <Link

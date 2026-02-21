@@ -29,11 +29,11 @@ export function AutoStep1() {
 
   return (
     <div className="bg-white flex flex-col gap-[24px] items-center p-[24px] w-full min-h-screen">
-      <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Display_ExtraBold',sans-serif] justify-center leading-[0] not-italic relative text-[48px] text-center tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(231.904deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
+      <div className="bg-clip-text flex flex-col font-mona font-extrabold justify-center leading-[0] not-italic relative text-[48px] text-center tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(231.904deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
         <p className="leading-none whitespace-pre-wrap">Online pojištění vozidla</p>
       </div>
 
-      <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] not-italic relative text-[16px] text-[#3f2578] text-center w-full">
+      <div className="flex flex-col font-mona font-bold justify-center leading-[0] not-italic relative text-[16px] text-[#3f2578] text-center w-full">
         <p className="leading-[1.6]">5 kroků k povinnému ručení</p>
       </div>
 
@@ -42,37 +42,37 @@ export function AutoStep1() {
         <div className="flex items-center justify-center gap-[12px] relative w-full">
           <div className="flex flex-col items-center gap-[8px]">
             <div className="bg-[#3f2578] flex items-center justify-center rounded-full size-[40px]">
-              <span className="text-white font-['Mona_Sans_VF:Bold',sans-serif] text-[16px]">1</span>
+              <span className="text-white font-mona font-bold text-[16px]">1</span>
             </div>
-            <span className="text-[#3f2578] font-['Mona_Sans_VF:Bold',sans-serif] text-[14px]">Vozidlo</span>
+            <span className="text-[#3f2578] font-mona font-bold text-[14px]">Vozidlo</span>
           </div>
           <div className="bg-[#e2e9f0] h-[2px] w-[80px]" />
           <div className="flex flex-col items-center gap-[8px]">
             <div className="bg-[#e2e9f0] flex items-center justify-center rounded-full size-[40px]">
-              <span className="text-[#94a3b8] font-['Mona_Sans_VF:Bold',sans-serif] text-[16px]">2</span>
+              <span className="text-[#94a3b8] font-mona font-bold text-[16px]">2</span>
             </div>
-            <span className="text-[#94a3b8] font-['Mona_Sans_VF:Bold',sans-serif] text-[14px]">Osobní údaje</span>
+            <span className="text-[#94a3b8] font-mona font-bold text-[14px]">Osobní údaje</span>
           </div>
           <div className="bg-[#e2e9f0] h-[2px] w-[80px]" />
           <div className="flex flex-col items-center gap-[8px]">
             <div className="bg-[#e2e9f0] flex items-center justify-center rounded-full size-[40px]">
-              <span className="text-[#94a3b8] font-['Mona_Sans_VF:Bold',sans-serif] text-[16px]">3</span>
+              <span className="text-[#94a3b8] font-mona font-bold text-[16px]">3</span>
             </div>
-            <span className="text-[#94a3b8] font-['Mona_Sans_VF:Bold',sans-serif] text-[14px]">Krytí</span>
+            <span className="text-[#94a3b8] font-mona font-bold text-[14px]">Krytí</span>
           </div>
           <div className="bg-[#e2e9f0] h-[2px] w-[80px]" />
           <div className="flex flex-col items-center gap-[8px]">
             <div className="bg-[#e2e9f0] flex items-center justify-center rounded-full size-[40px]">
-              <span className="text-[#94a3b8] font-['Mona_Sans_VF:Bold',sans-serif] text-[16px]">4</span>
+              <span className="text-[#94a3b8] font-mona font-bold text-[16px]">4</span>
             </div>
-            <span className="text-[#94a3b8] font-['Mona_Sans_VF:Bold',sans-serif] text-[14px]">Nabídky</span>
+            <span className="text-[#94a3b8] font-mona font-bold text-[14px]">Nabídky</span>
           </div>
           <div className="bg-[#e2e9f0] h-[2px] w-[80px]" />
           <div className="flex flex-col items-center gap-[8px]">
             <div className="bg-[#e2e9f0] flex items-center justify-center rounded-full size-[40px]">
-              <span className="text-[#94a3b8] font-['Mona_Sans_VF:Bold',sans-serif] text-[16px]">5</span>
+              <span className="text-[#94a3b8] font-mona font-bold text-[16px]">5</span>
             </div>
-            <span className="text-[#94a3b8] font-['Mona_Sans_VF:Bold',sans-serif] text-[14px]">Shrnutí</span>
+            <span className="text-[#94a3b8] font-mona font-bold text-[14px]">Shrnutí</span>
           </div>
         </div>
 
@@ -84,17 +84,17 @@ export function AutoStep1() {
                 <div className="flex flex-col items-start relative w-full">
                   <div className="flex items-center justify-between relative w-full">
                     <div className="flex gap-[4px] items-center leading-[0] not-italic relative whitespace-nowrap">
-                      <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
+                      <div className="flex flex-col font-mona font-bold justify-center relative text-[#3f2578] text-[18px]">
                         <p className="leading-[1.6]">SPZ vozidla</p>
                       </div>
-                      <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                        <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                      <div className="flex flex-col font-inter font-normal justify-center relative text-[0px] text-[#d60021]">
+                        <p className="font-inter font-bold leading-[1.6] text-[14px]">*</p>
                       </div>
                     </div>
                     <MingIconInformationLine className="overflow-clip relative size-[24px]" />
                   </div>
                   <div className="flex gap-[4px] items-center leading-[0] not-italic relative w-full whitespace-nowrap">
-                    <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[16px]">
+                    <div className="flex flex-col font-mona font-bold justify-center relative text-[#3f2578] text-[16px]">
                       <p className="leading-[1.6]">Zadejte státní poznávací značku vašeho vozidla</p>
                     </div>
                   </div>
@@ -105,7 +105,7 @@ export function AutoStep1() {
                     value={spz}
                     onChange={(e) => setSpz(e.target.value.toUpperCase())}
                     placeholder="např. 1A2 3456"
-                    className="flex flex-[1_0_0] flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#3f2578] placeholder:text-[#94a3b8] bg-transparent border-none outline-none"
+                    className="flex flex-[1_0_0] flex-col font-mona font-bold justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#3f2578] placeholder:text-[#94a3b8] bg-transparent border-none outline-none"
                   />
                 </div>
               </div>
@@ -119,11 +119,11 @@ export function AutoStep1() {
             <div className="flex flex-[1_0_0] flex-col gap-[8px] items-start min-h-px min-w-px relative">
               <div className="flex items-center justify-between relative w-full">
                 <div className="flex gap-[4px] items-center leading-[0] not-italic relative whitespace-nowrap">
-                  <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
+                  <div className="flex flex-col font-mona font-bold justify-center relative text-[#3f2578] text-[18px]">
                     <p className="leading-[1.6]">Značka</p>
                   </div>
-                  <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                    <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                  <div className="flex flex-col font-inter font-normal justify-center relative text-[0px] text-[#d60021]">
+                    <p className="font-inter font-bold leading-[1.6] text-[14px]">*</p>
                   </div>
                 </div>
               </div>
@@ -133,7 +133,7 @@ export function AutoStep1() {
                   value={znacka}
                   onChange={(e) => setZnacka(e.target.value)}
                   placeholder="např. Škoda"
-                  className="flex flex-[1_0_0] flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#3f2578] placeholder:text-[#94a3b8] bg-transparent border-none outline-none"
+                  className="flex flex-[1_0_0] flex-col font-mona font-bold justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#3f2578] placeholder:text-[#94a3b8] bg-transparent border-none outline-none"
                 />
               </div>
             </div>
@@ -143,11 +143,11 @@ export function AutoStep1() {
             <div className="flex flex-[1_0_0] flex-col gap-[8px] items-start min-h-px min-w-px relative">
               <div className="flex items-center justify-between relative w-full">
                 <div className="flex gap-[4px] items-center leading-[0] not-italic relative whitespace-nowrap">
-                  <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
+                  <div className="flex flex-col font-mona font-bold justify-center relative text-[#3f2578] text-[18px]">
                     <p className="leading-[1.6]">Model</p>
                   </div>
-                  <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                    <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                  <div className="flex flex-col font-inter font-normal justify-center relative text-[0px] text-[#d60021]">
+                    <p className="font-inter font-bold leading-[1.6] text-[14px]">*</p>
                   </div>
                 </div>
               </div>
@@ -157,7 +157,7 @@ export function AutoStep1() {
                   value={model}
                   onChange={(e) => setModel(e.target.value)}
                   placeholder="např. Octavia"
-                  className="flex flex-[1_0_0] flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#3f2578] placeholder:text-[#94a3b8] bg-transparent border-none outline-none"
+                  className="flex flex-[1_0_0] flex-col font-mona font-bold justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#3f2578] placeholder:text-[#94a3b8] bg-transparent border-none outline-none"
                 />
               </div>
             </div>
@@ -170,11 +170,11 @@ export function AutoStep1() {
             <div className="flex flex-[1_0_0] flex-col gap-[8px] items-start min-h-px min-w-px relative">
               <div className="flex items-center justify-between relative w-full">
                 <div className="flex gap-[4px] items-center leading-[0] not-italic relative whitespace-nowrap">
-                  <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
+                  <div className="flex flex-col font-mona font-bold justify-center relative text-[#3f2578] text-[18px]">
                     <p className="leading-[1.6]">Rok výroby</p>
                   </div>
-                  <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                    <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                  <div className="flex flex-col font-inter font-normal justify-center relative text-[0px] text-[#d60021]">
+                    <p className="font-inter font-bold leading-[1.6] text-[14px]">*</p>
                   </div>
                 </div>
               </div>
@@ -184,7 +184,7 @@ export function AutoStep1() {
                   value={rokVyroby}
                   onChange={(e) => setRokVyroby(e.target.value)}
                   placeholder="např. 2020"
-                  className="flex flex-[1_0_0] flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#3f2578] placeholder:text-[#94a3b8] bg-transparent border-none outline-none"
+                  className="flex flex-[1_0_0] flex-col font-mona font-bold justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#3f2578] placeholder:text-[#94a3b8] bg-transparent border-none outline-none"
                 />
               </div>
             </div>
@@ -195,7 +195,7 @@ export function AutoStep1() {
         <div className="flex items-start relative w-full">
           <div className="bg-[#f8fafc] flex flex-[1_0_0] flex-col gap-[12px] min-h-px min-w-px p-[12px] relative rounded-[12px]">
             <div className="flex items-center justify-between relative w-full">
-              <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] not-italic relative text-[18px] text-[#3f2578]">
+              <div className="flex flex-col font-mona font-bold justify-center leading-[0] not-italic relative text-[18px] text-[#3f2578]">
                 <p className="leading-[1.6]">Povinné ručení</p>
               </div>
               <button
@@ -208,7 +208,7 @@ export function AutoStep1() {
               </button>
             </div>
             <div className="flex items-center justify-between relative w-full">
-              <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] not-italic relative text-[18px] text-[#3f2578]">
+              <div className="flex flex-col font-mona font-bold justify-center leading-[0] not-italic relative text-[18px] text-[#3f2578]">
                 <p className="leading-[1.6]">Havarijní pojištění</p>
               </div>
               <button
@@ -229,7 +229,7 @@ export function AutoStep1() {
           className="flex gap-[8px] h-[48px] items-center justify-center overflow-clip px-[20px] py-[12px] relative rounded-[12px]"
           style={{ backgroundImage: "linear-gradient(263.127deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%), linear-gradient(90deg, rgb(89, 79, 238) 0%, rgb(89, 79, 238) 100%)" }}
         >
-          <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] not-italic relative text-[16px] text-white whitespace-nowrap">
+          <div className="flex flex-col font-mona font-bold justify-center leading-[0] not-italic relative text-[16px] text-white whitespace-nowrap">
             <p className="leading-[1.6]">Pokračovat</p>
           </div>
         </button>

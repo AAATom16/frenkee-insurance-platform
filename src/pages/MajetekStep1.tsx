@@ -31,7 +31,7 @@ export function MajetekStep1() {
 
   return (
     <div className="bg-white flex flex-col gap-[24px] items-center p-[24px] w-full min-h-screen">
-      <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Display_ExtraBold',sans-serif] justify-center leading-[0] not-italic relative text-[48px] text-center tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(231.904deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
+      <div className="bg-clip-text flex flex-col font-mona font-extrabold justify-center leading-[0] not-italic relative text-[48px] text-center tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(231.904deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
         <p className="leading-none whitespace-pre-wrap">Online pojištění majetku</p>
       </div>
 
@@ -47,7 +47,7 @@ export function MajetekStep1() {
               <div className="flex items-center justify-between relative w-full">
                 <div className="flex items-center relative">
                   <div className="flex items-center relative">
-                    <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] not-italic relative text-[18px] text-[#3f2578] text-center whitespace-nowrap">
+                    <div className="flex flex-col font-mona font-bold justify-center leading-[0] not-italic relative text-[18px] text-[#3f2578] text-center whitespace-nowrap">
                       <p className="leading-[1.6]">Domácnost</p>
                     </div>
                   </div>
@@ -61,7 +61,7 @@ export function MajetekStep1() {
                   <div className="bg-white flex gap-[0px] items-center justify-center overflow-clip p-[2.25px] rounded-[675px] shadow-[0px_0.169px_0.563px_0px_rgba(0,0,0,0.02),0px_0.644px_2.25px_0px_rgba(0,0,0,0.08)] size-[18px]" />
                 </button>
               </div>
-              <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] not-italic relative text-[14px] text-[#3f2578] w-full">
+              <div className="flex flex-col font-mona font-bold justify-center leading-[0] not-italic relative text-[14px] text-[#3f2578] w-full">
                 <p className="leading-[1.6] whitespace-pre-wrap">tvoří soubor movitých věcí sloužících k běžnému užívání osobami žijícími ve společné domácnosti v pojištěné nemovitosti.</p>
               </div>
             </div>
@@ -75,17 +75,17 @@ export function MajetekStep1() {
                 <div className="flex flex-col items-start relative w-full">
                   <div className="flex items-center justify-between relative w-full">
                     <div className="flex gap-[4px] items-center leading-[0] not-italic relative whitespace-nowrap">
-                      <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
+                      <div className="flex flex-col font-mona font-bold justify-center relative text-[#3f2578] text-[18px]">
                         <p className="leading-[1.6]">Hodnota nemovitosti</p>
                       </div>
-                      <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                        <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                      <div className="flex flex-col font-inter font-normal justify-center relative text-[0px] text-[#d60021]">
+                        <p className="font-inter font-bold leading-[1.6] text-[14px]">*</p>
                       </div>
                     </div>
                     <MingIconInformationLine className="overflow-clip relative size-[24px]" />
                   </div>
                   <div className="flex gap-[4px] items-center leading-[0] not-italic relative w-full whitespace-nowrap">
-                    <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[16px]">
+                    <div className="flex flex-col font-mona font-bold justify-center relative text-[#3f2578] text-[16px]">
                       <p className="leading-[1.6]">Cena, za kterou by bylo možné na trhu koupit stejný byt, stejné kvality, ve stejné lokalitě.</p>
                     </div>
                   </div>
@@ -95,7 +95,7 @@ export function MajetekStep1() {
                     type="number"
                     value={hodnotaNemovitosti}
                     onChange={(e) => setHodnotaNemovitosti(e.target.value)}
-                    className="flex flex-[1_0_0] flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#94a3b8] bg-transparent border-none outline-none"
+                    className="flex flex-[1_0_0] flex-col font-mona font-bold justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#94a3b8] bg-transparent border-none outline-none"
                   />
                   <div className="flex h-[24px] items-center justify-center relative w-0">
                     <div className="flex-none rotate-90">
@@ -106,7 +106,7 @@ export function MajetekStep1() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] not-italic relative text-[14px] text-[#3f2578] whitespace-nowrap">
+                  <div className="flex flex-col font-mona font-bold justify-center leading-[0] not-italic relative text-[14px] text-[#3f2578] whitespace-nowrap">
                     <p className="leading-[1.6]">Kč</p>
                   </div>
                 </div>
@@ -122,11 +122,11 @@ export function MajetekStep1() {
                 <div className="flex flex-col items-start relative w-full">
                   <div className="flex items-center justify-between relative w-full">
                     <div className="flex gap-[4px] items-center leading-[0] not-italic relative w-[474px] whitespace-nowrap">
-                      <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
+                      <div className="flex flex-col font-mona font-bold justify-center relative text-[#3f2578] text-[18px]">
                         <p className="leading-[1.6]">Věci zvláštní hodnoty</p>
                       </div>
-                      <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                        <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                      <div className="flex flex-col font-inter font-normal justify-center relative text-[0px] text-[#d60021]">
+                        <p className="font-inter font-bold leading-[1.6] text-[14px]">*</p>
                       </div>
                     </div>
                     <MingIconInformationLine className="overflow-clip relative size-[24px]" />
@@ -137,7 +137,7 @@ export function MajetekStep1() {
                     type="number"
                     value={veciZvlastniHodnoty}
                     onChange={(e) => setVeciZvlastniHodnoty(e.target.value)}
-                    className="flex flex-[1_0_0] flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#94a3b8] bg-transparent border-none outline-none"
+                    className="flex flex-[1_0_0] flex-col font-mona font-bold justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#94a3b8] bg-transparent border-none outline-none"
                   />
                   <div className="flex h-[24px] items-center justify-center relative w-0">
                     <div className="flex-none rotate-90">
@@ -148,7 +148,7 @@ export function MajetekStep1() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] not-italic relative text-[14px] text-[#3f2578] whitespace-nowrap">
+                  <div className="flex flex-col font-mona font-bold justify-center leading-[0] not-italic relative text-[14px] text-[#3f2578] whitespace-nowrap">
                     <p className="leading-[1.6]">Kč</p>
                   </div>
                 </div>
@@ -164,11 +164,11 @@ export function MajetekStep1() {
                 <div className="flex flex-col items-start relative w-full">
                   <div className="flex items-center justify-between relative w-full">
                     <div className="flex gap-[4px] items-center leading-[0] not-italic relative whitespace-nowrap">
-                      <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
+                      <div className="flex flex-col font-mona font-bold justify-center relative text-[#3f2578] text-[18px]">
                         <p className="leading-[1.6]">Vybavení i věci připevněné</p>
                       </div>
-                      <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                        <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                      <div className="flex flex-col font-inter font-normal justify-center relative text-[0px] text-[#d60021]">
+                        <p className="font-inter font-bold leading-[1.6] text-[14px]">*</p>
                       </div>
                     </div>
                     <MingIconInformationLine className="overflow-clip relative size-[24px]" />
@@ -179,7 +179,7 @@ export function MajetekStep1() {
                     type="number"
                     value={vybaveniPripevnene}
                     onChange={(e) => setVybaveniPripevnene(e.target.value)}
-                    className="flex flex-[1_0_0] flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#94a3b8] bg-transparent border-none outline-none"
+                    className="flex flex-[1_0_0] flex-col font-mona font-bold justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#94a3b8] bg-transparent border-none outline-none"
                   />
                   <div className="flex h-[24px] items-center justify-center relative w-0">
                     <div className="flex-none rotate-90">
@@ -190,7 +190,7 @@ export function MajetekStep1() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] not-italic relative text-[14px] text-[#3f2578] whitespace-nowrap">
+                  <div className="flex flex-col font-mona font-bold justify-center leading-[0] not-italic relative text-[14px] text-[#3f2578] whitespace-nowrap">
                     <p className="leading-[1.6]">Kč</p>
                   </div>
                 </div>
@@ -206,11 +206,11 @@ export function MajetekStep1() {
                 <div className="flex flex-col items-start relative w-full">
                   <div className="flex items-center justify-between relative w-full">
                     <div className="flex gap-[4px] items-center leading-[0] not-italic relative w-[509.5px] whitespace-nowrap">
-                      <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center relative text-[#3f2578] text-[18px]">
+                      <div className="flex flex-col font-mona font-bold justify-center relative text-[#3f2578] text-[18px]">
                         <p className="leading-[1.6]">Věci v nebytových prostorech</p>
                       </div>
-                      <div className="flex flex-col font-['Mona_Sans_VF:Regular',sans-serif] font-normal justify-center relative text-[0px] text-[#d60021]">
-                        <p className="font-['Mona_Sans_VF:Bold',sans-serif] font-bold leading-[1.6] text-[14px]">*</p>
+                      <div className="flex flex-col font-inter font-normal justify-center relative text-[0px] text-[#d60021]">
+                        <p className="font-inter font-bold leading-[1.6] text-[14px]">*</p>
                       </div>
                     </div>
                     <MingIconInformationLine className="overflow-clip relative size-[24px]" />
@@ -221,7 +221,7 @@ export function MajetekStep1() {
                     type="number"
                     value={veciNebytove}
                     onChange={(e) => setVeciNebytove(e.target.value)}
-                    className="flex flex-[1_0_0] flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#94a3b8] bg-transparent border-none outline-none"
+                    className="flex flex-[1_0_0] flex-col font-mona font-bold justify-center leading-[0] min-h-px min-w-px not-italic relative text-[14px] text-[#94a3b8] bg-transparent border-none outline-none"
                   />
                   <div className="flex h-[24px] items-center justify-center relative w-0">
                     <div className="flex-none rotate-90">
@@ -232,7 +232,7 @@ export function MajetekStep1() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] not-italic relative text-[14px] text-[#3f2578] whitespace-nowrap">
+                  <div className="flex flex-col font-mona font-bold justify-center leading-[0] not-italic relative text-[14px] text-[#3f2578] whitespace-nowrap">
                     <p className="leading-[1.6]">Kč</p>
                   </div>
                 </div>
@@ -246,7 +246,7 @@ export function MajetekStep1() {
           className="flex gap-[8px] h-[48px] items-center justify-center overflow-clip px-[20px] py-[12px] relative rounded-[12px]"
           style={{ backgroundImage: "linear-gradient(263.127deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%), linear-gradient(90deg, rgb(89, 79, 238) 0%, rgb(89, 79, 238) 100%)" }}
         >
-          <div className="flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] not-italic relative text-[16px] text-white whitespace-nowrap">
+          <div className="flex flex-col font-mona font-bold justify-center leading-[0] not-italic relative text-[16px] text-white whitespace-nowrap">
             <p className="leading-[1.6]">Pokračovat</p>
           </div>
         </button>

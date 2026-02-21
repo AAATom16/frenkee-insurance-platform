@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const imgFrenkeeLogo = "/assets/frenkee-logo.svg";
-const imgActiveLine = "/assets/active-line.svg";
 
 const NAV_ITEMS = [
   { path: '/pojisteni/auto', label: 'Auto' },
@@ -85,15 +84,15 @@ export function Header() {
       {/* Active line indicator */}
       {linePosition && (
         <div 
-          className="absolute top-[54px]" 
+          className="absolute rounded-full"
           style={{ 
             left: `${linePosition.left}px`,
             width: `${linePosition.width}px`,
-            height: '2px'
+            height: '3px',
+            bottom: '12px',
+            backgroundColor: '#3F2578'
           }}
-        >
-          <img alt="" className="block w-full h-full" src={imgActiveLine} />
-        </div>
+        />
       )}
     </header>
   );

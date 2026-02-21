@@ -38,11 +38,11 @@ export function LandingPage() {
           </div>
 
           {/* Right: Bento Grid */}
-          <div className="flex flex-col gap-[24px] items-end w-[761px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)]">
+          <div className="flex flex-col gap-[24px] items-end w-[761px]">
             {/* Top Row */}
             <div className="flex gap-[24px] h-[300px] items-start w-full">
               {/* Auto Insurance - Large */}
-              <div className="bg-[#f8fafc] flex flex-col gap-[24px] h-[300px] items-start p-[24px] rounded-[8px] w-[455px]">
+              <div className="bg-[#f8fafc] flex flex-col gap-[24px] h-[300px] items-start p-[24px] rounded-[8px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-[455px]">
                 <div className="flex flex-col gap-[8px] items-start justify-center w-full">
                   <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] text-[36px]" style={{ backgroundImage: "linear-gradient(258.806deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
                     <p className="leading-[1.1] whitespace-pre-wrap">Pojištění aut</p>
@@ -71,7 +71,7 @@ export function LandingPage() {
               </div>
 
               {/* Travel Insurance */}
-              <div className="bg-[#f8fafc] flex flex-col gap-[8px] h-[300px] items-start justify-end p-[24px] rounded-[8px] w-[282px]">
+              <div className="bg-[#f8fafc] flex flex-col gap-[8px] h-[300px] items-start justify-end p-[24px] rounded-[8px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-[282px]">
                 <div className="flex items-center justify-center -scale-y-100 rotate-180 shrink-0">
                   <div className="h-[241.75px] w-[256px] relative">
                     <img alt="" className="absolute h-[158.84%] left-0 max-w-none top-[-15.31%] w-full" src={imgTravelAirplane} />
@@ -95,7 +95,7 @@ export function LandingPage() {
               {/* Left Column */}
               <div className="flex flex-col gap-[24px] items-center w-[282px]">
                 {/* Business Insurance */}
-                <div className="bg-[#f8fafc] flex flex-col gap-[8px] h-[300px] items-start justify-end p-[24px] rounded-[8px] w-full">
+                <div className="bg-[#f8fafc] flex flex-col gap-[8px] h-[300px] items-start justify-end p-[24px] rounded-[8px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-full">
                   <div className="h-[116px] w-[246.764px] relative shrink-0">
                     <img alt="" className="absolute h-[164.68%] left-[-7.86%] max-w-none top-[-37.74%] w-[116.12%]" src={imgBusinessDesk} />
                   </div>
@@ -109,7 +109,7 @@ export function LandingPage() {
                 </div>
 
                 {/* Property Insurance */}
-                <div className="bg-[#f8fafc] flex flex-col gap-[8px] h-[300px] items-start justify-end p-[24px] rounded-[8px] w-full">
+                <div className="bg-[#f8fafc] flex flex-col gap-[8px] h-[300px] items-start justify-end p-[24px] rounded-[8px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-full">
                   <div className="h-[171.8px] w-[204.8px] relative shrink-0">
                     <img alt="" className="absolute h-[178.81%] left-0 max-w-none top-[-30.38%] w-full" src={imgHouse3d} />
                   </div>
@@ -129,7 +129,7 @@ export function LandingPage() {
               {/* Right Column */}
               <div className="flex flex-col gap-[24px] items-center w-[455px]">
                 {/* Life Insurance */}
-                <div className="bg-[#f8fafc] flex gap-[8px] h-[300px] items-end p-[24px] rounded-[8px] w-full">
+                <div className="bg-[#f8fafc] flex gap-[8px] h-[300px] items-end p-[24px] rounded-[8px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-full">
                   <div className="flex flex-col gap-[8px] items-start flex-1">
                     <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] text-[36px]" style={{ backgroundImage: "linear-gradient(266.187deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
                       <p className="leading-[1.1] whitespace-pre-wrap">Životní pojištění</p>
@@ -147,7 +147,7 @@ export function LandingPage() {
                 {/* Bottom Row: Pet & Foreigner */}
                 <div className="flex gap-[24px] items-start w-full">
                   {/* Pet Insurance */}
-                  <div className="bg-[#f8fafc] flex flex-col gap-[8px] h-[300px] items-start justify-center p-[24px] rounded-[8px] w-[215.5px]">
+                  <div className="bg-[#f8fafc] flex flex-col gap-[8px] h-[300px] items-start justify-center p-[24px] rounded-[8px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-[215.5px]">
                     <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] text-[36px] w-full" style={{ backgroundImage: "linear-gradient(267.185deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
                       <p className="leading-[1.1] whitespace-pre-wrap">Pojištění mazlíčků</p>
                     </div>
@@ -161,7 +161,7 @@ export function LandingPage() {
                   </div>
 
                   {/* Foreigner Insurance */}
-                  <div className="bg-[#f8fafc] flex flex-col h-[300px] items-start justify-between p-[24px] rounded-[8px] w-[215.5px]">
+                  <div className="bg-[#f8fafc] flex flex-col h-[300px] items-start justify-between p-[24px] rounded-[8px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-[215.5px]">
                     <div className="w-full relative shrink-0" style={{ aspectRatio: "307/202" }}>
                       <img alt="" className="absolute h-[126.73%] left-[-12.38%] max-w-none top-[-11.88%] w-[125.08%]" src={imgEuFlag3d} />
                     </div>

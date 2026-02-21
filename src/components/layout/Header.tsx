@@ -1,6 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 
 const imgFrenkeeLogo = "/assets/frenkee-logo.svg";
+const imgActiveLine = "/assets/active-line.svg";
 
 const NAV_ITEMS = [
   { path: '/pojisteni/auto', label: 'Auto' },
@@ -17,37 +18,42 @@ export function Header() {
 
   return (
     <header className="bg-white flex items-center justify-between px-[24px] py-[12px] relative rounded-[9px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-full">
-      <Link to="/" className="flex items-center">
+      <Link to="/" className="flex items-center shrink-0">
         <img alt="Frenkee" className="h-[29.62px] w-[139.864px]" src={imgFrenkeeLogo} />
       </Link>
-      <nav className="flex gap-[12px] items-center">
-        {NAV_ITEMS.map((item) => {
+      <nav className="flex gap-[12px] items-center shrink-0 relative">
+        {NAV_ITEMS.map((item, index) => {
           const isActive = location.pathname.startsWith(item.path);
           return (
             <Link
               key={item.path}
               to={item.path}
-              className={`flex items-center justify-center px-[4px] py-[4px] rounded-[4px] ${
-                isActive ? 'bg-white' : ''
+              className={`flex items-center justify-center relative ${
+                isActive ? 'bg-white px-[4px] py-[4px] rounded-[4px]' : ''
               }`}
             >
-              <p className={`font-['Mona_Sans_VF:Bold',sans-serif] text-[17px] leading-[20px] ${
+              <p className={`font-['Mona_Sans_VF:Bold',sans-serif] text-[17px] leading-[20px] whitespace-nowrap ${
                 isActive ? 'text-[#3f2578]' : 'text-[#64748b]'
               }`}>
                 {item.label}
               </p>
+              {isActive && (
+                <div className="absolute h-0 left-0 top-[42px] w-[81px]">
+                  <img alt="" className="block max-w-none w-full" src={imgActiveLine} />
+                </div>
+              )}
             </Link>
           );
         })}
       </nav>
-      <div className="flex gap-[12px] items-center">
-        <Link to="/registrace" className="bg-[#3f2578] flex items-center justify-center overflow-clip px-[18px] py-[10px] rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
+      <div className="flex gap-[12px] items-center shrink-0">
+        <Link to="/registrace" className="bg-[#3f2578] flex items-center justify-center px-[18px] py-[10px] rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
           <p className="font-['Mona_Sans_VF:Display_ExtraBold',sans-serif] leading-[24px] text-[16px] text-white">
             Registrace
           </p>
         </Link>
         <Link to="/kontakt" className="flex items-center justify-center">
-          <p className="font-['Mona_Sans_VF:Medium',sans-serif] text-[17px] leading-[20px] text-[#3f2578] underline">
+          <p className="font-['Mona_Sans_VF:Medium',sans-serif] text-[17px] leading-[20px] text-[#3f2578] underline decoration-solid">
             Kontakt
           </p>
         </Link>

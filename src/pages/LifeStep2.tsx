@@ -1,138 +1,125 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const STEP_LABELS = ['Osobní údaje', 'Zdraví', 'Krytí', 'Obmyvatelé', 'Shrnutí'];
+const STEP_LABELS = ['Úvod', 'Zdraví', 'Krytí', 'Nabídky', 'Kontakt', 'Shrnutí'];
 
-function Progress({ current }: { current: number }) {
+function Progress({ current, total = 6 }: { current: number; total?: number }) {
   return (
-    <div className="flex items-center justify-center gap-[12px] w-full">
-      {[1, 2, 3, 4, 5].map((step) => (
-        <div key={step} className="flex items-center gap-[12px]">
-          <div className="flex flex-col items-center gap-[8px]">
-            <div
-              className={`flex items-center justify-center rounded-full size-[40px] ${step <= current ? 'bg-[#3f2578]' : 'bg-[#e2e9f0]'}`}
-            >
-              <span
-                className={`font-bold text-[16px] ${step <= current ? 'text-white' : 'text-[#94a3b8]'}`}
-                style={{ fontFamily: "'Mona Sans', sans-serif" }}
-              >
-                {step}
-              </span>
+    <div className="flex items-center justify-center gap-[8px] w-full flex-wrap">
+      {Array.from({ length: total }, (_, i) => i + 1).map((step) => (
+        <div key={step} className="flex items-center gap-[8px]">
+          <div className="flex flex-col items-center gap-[4px]">
+            <div className={`flex items-center justify-center rounded-full size-[36px] ${step <= current ? 'bg-[#3f2578]' : 'bg-[#e2e9f0]'}`}>
+              <span className={`font-bold text-[14px] ${step <= current ? 'text-white' : 'text-[#94a3b8]'}`} style={{ fontFamily: "'Mona Sans', sans-serif" }}>{step}</span>
             </div>
-            <span
-              className={`font-bold text-[14px] whitespace-nowrap ${step <= current ? 'text-[#3f2578]' : 'text-[#94a3b8]'}`}
-              style={{ fontFamily: "'Mona Sans', sans-serif" }}
-            >
-              {STEP_LABELS[step - 1]}
-            </span>
+            <span className={`font-bold text-[12px] whitespace-nowrap max-w-[52px] text-center ${step <= current ? 'text-[#3f2578]' : 'text-[#94a3b8]'}`} style={{ fontFamily: "'Mona Sans', sans-serif" }}>{STEP_LABELS[step - 1]}</span>
           </div>
-          {step < 5 && <div className={`h-[2px] w-[60px] ${step < current ? 'bg-[#3f2578]' : 'bg-[#e2e9f0]'}`} />}
+          {step < total && <div className={`h-[2px] w-[40px] ${step < current ? 'bg-[#3f2578]' : 'bg-[#e2e9f0]'}`} />}
         </div>
       ))}
     </div>
   );
 }
 
+const POVOLANI = ['Úředník', 'Manuální', 'Řidič', 'Zdravotník', 'Pedagog', 'Podnikatel', 'Jiné'];
+const SPORT = ['Žádný', 'Rekreačně', 'Běh', 'Cyklismus', 'Fotbal', 'Lyžování', 'Jiné'];
+const KONICKY = ['Žádné', 'Horolezectví', 'Potápění', 'Létání', 'Jiné'];
+const CESTOVANI = ['Ne', 'Občas', 'Často do rizikových oblastí'];
+
 export function LifeStep2() {
   const navigate = useNavigate();
-  const [kurak, setKurak] = useState(false);
-  const [zamestnani, setZamestnani] = useState('');
-  const [vyska, setVyska] = useState('');
   const [vaha, setVaha] = useState('');
-  const [vzdelani, setVzdelani] = useState('');
+  const [vyska, setVyska] = useState('');
+  const [povolani, setPovolani] = useState('');
+  const [sport, setSport] = useState('');
+  const [konicky, setKonicky] = useState('');
+  const [cestovani, setCestovani] = useState('');
+  const [predchoziPojisteni, setPredchoziPojisteni] = useState<'ano' | 'ne'>('ano');
+  const [onemocneni, setOnemocneni] = useState<'ano' | 'ne'>('ne');
 
   return (
     <div className="bg-white flex flex-col gap-[24px] items-center p-[24px] w-full min-h-screen">
-      <div
-        className="bg-clip-text flex flex-col justify-center leading-[0] text-[48px] text-center tracking-[-1px] w-full"
-        style={{
-          backgroundImage: 'linear-gradient(231.904deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)',
-          WebkitTextFillColor: 'transparent',
-          fontFamily: "'Mona Sans', sans-serif",
-          fontWeight: 800,
-        }}
-      >
-        <p className="leading-none whitespace-pre-wrap">Online sjednání životního pojištění</p>
-      </div>
-      <p className="text-[#3f2578] text-[16px] font-bold text-center" style={{ fontFamily: "'Mona Sans', sans-serif" }}>
-        5 kroků k životnímu pojištění
-      </p>
+      <h1 className="text-[32px] md:text-[40px] font-bold text-center tracking-tight" style={{ fontFamily: "'Mona Sans', sans-serif", color: '#3f2578' }}>
+        Online sjednání životního pojištění
+      </h1>
 
-      <div className="flex flex-col gap-[24px] items-center px-[99px] py-[24px] w-[1000px] max-w-full">
+      <div className="flex flex-col gap-[24px] items-center px-4 md:px-[99px] py-[24px] w-full max-w-[1000px]">
         <Progress current={2} />
 
-        <div className="flex flex-col gap-[16px] w-full max-w-[560px]">
-          <div className="flex items-center justify-between p-[16px] rounded-[12px] border border-[#edf2f7] bg-[#f8fafc]">
-            <span className="text-[#3f2578] text-[18px] font-bold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>
-              Je pojištěný kuřák?
-            </span>
-            <button
-              type="button"
-              onClick={() => setKurak(!kurak)}
-              className={`flex h-[22.5px] items-center rounded-full w-[40.5px] p-[2.25px] transition-colors ${kurak ? 'bg-[#3f2578] justify-end' : 'bg-gray-300 justify-start'}`}
-            >
-              <div className="bg-white size-[18px] rounded-full shadow-sm" />
-            </button>
+        <div className="flex flex-col md:flex-row gap-8 md:gap-12 w-full items-start">
+          <div className="flex flex-col gap-[20px] w-full flex-1 min-w-0">
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Váha (kg)</label>
+              <input type="number" value={vaha} onChange={(e) => setVaha(e.target.value)} placeholder="70" className="border border-[#e2e9f0] h-[44px] px-[12px] rounded-[10px] text-[16px] w-full outline-none" style={{ fontFamily: "'Inter', sans-serif" }} />
+            </div>
+            <div>
+              <label className="block text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Výška (cm)</label>
+              <input type="number" value={vyska} onChange={(e) => setVyska(e.target.value)} placeholder="175" className="border border-[#e2e9f0] h-[44px] px-[12px] rounded-[10px] text-[16px] w-full outline-none" style={{ fontFamily: "'Inter', sans-serif" }} />
+            </div>
           </div>
 
-          <div className="flex flex-col gap-[8px]">
-            <label className="text-[#3f2578] text-[18px] font-bold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Zaměstnání</label>
-            <input
-              type="text"
-              value={zamestnani}
-              onChange={(e) => setZamestnani(e.target.value)}
-              placeholder="např. Úředník"
-              className="border border-[#e2e9f0] h-[40px] px-[12px] rounded-[8px] text-[14px] w-full outline-none"
-              style={{ fontFamily: "'Inter', sans-serif" }}
-            />
-          </div>
-          <div className="flex gap-[12px]">
-            <div className="flex flex-col gap-[8px] flex-1">
-              <label className="text-[#3f2578] text-[18px] font-bold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Výška (cm)</label>
-              <input
-                type="number"
-                value={vyska}
-                onChange={(e) => setVyska(e.target.value)}
-                placeholder="175"
-                className="border border-[#e2e9f0] h-[40px] px-[12px] rounded-[8px] text-[14px] w-full outline-none"
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              />
-            </div>
-            <div className="flex flex-col gap-[8px] flex-1">
-              <label className="text-[#3f2578] text-[18px] font-bold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Váha (kg)</label>
-              <input
-                type="number"
-                value={vaha}
-                onChange={(e) => setVaha(e.target.value)}
-                placeholder="70"
-                className="border border-[#e2e9f0] h-[40px] px-[12px] rounded-[8px] text-[14px] w-full outline-none"
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              />
-            </div>
-          </div>
-          <div className="flex flex-col gap-[8px]">
-            <label className="text-[#3f2578] text-[18px] font-bold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Vzdělání</label>
-            <select
-              value={vzdelani}
-              onChange={(e) => setVzdelani(e.target.value)}
-              className="border border-[#e2e9f0] h-[40px] px-[12px] rounded-[8px] text-[14px] w-full outline-none bg-white"
-              style={{ fontFamily: "'Inter', sans-serif" }}
-            >
+          <div>
+            <label className="block text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Povolání</label>
+            <select value={povolani} onChange={(e) => setPovolani(e.target.value)} className="border border-[#e2e9f0] h-[44px] px-[12px] rounded-[10px] text-[16px] w-full outline-none bg-white" style={{ fontFamily: "'Inter', sans-serif" }}>
               <option value="">Vyberte...</option>
-              <option value="zs">Základní</option>
-              <option value="ss">Střední</option>
-              <option value="vs">Vysokoškolské</option>
+              {POVOLANI.map((p) => <option key={p} value={p}>{p}</option>)}
+            </select>
+          </div>
+          <div>
+            <label className="block text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Sportovní aktivity</label>
+            <select value={sport} onChange={(e) => setSport(e.target.value)} className="border border-[#e2e9f0] h-[44px] px-[12px] rounded-[10px] text-[16px] w-full outline-none bg-white" style={{ fontFamily: "'Inter', sans-serif" }}>
+              <option value="">Vyberte...</option>
+              {SPORT.map((s) => <option key={s} value={s}>{s}</option>)}
+            </select>
+          </div>
+          <div>
+            <label className="block text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Rizikové koníčky</label>
+            <select value={konicky} onChange={(e) => setKonicky(e.target.value)} className="border border-[#e2e9f0] h-[44px] px-[12px] rounded-[10px] text-[16px] w-full outline-none bg-white" style={{ fontFamily: "'Inter', sans-serif" }}>
+              <option value="">Vyberte...</option>
+              {KONICKY.map((k) => <option key={k} value={k}>{k}</option>)}
+            </select>
+          </div>
+          <div>
+            <label className="block text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Cestování do rizikových zemí</label>
+            <select value={cestovani} onChange={(e) => setCestovani(e.target.value)} className="border border-[#e2e9f0] h-[44px] px-[12px] rounded-[10px] text-[16px] w-full outline-none bg-white" style={{ fontFamily: "'Inter', sans-serif" }}>
+              <option value="">Vyberte...</option>
+              {CESTOVANI.map((c) => <option key={c} value={c}>{c}</option>)}
             </select>
           </div>
 
-          <button
-            type="button"
-            onClick={() => navigate('/pojisteni/zivot/kryti')}
-            className="flex h-[48px] items-center justify-center px-[20px] py-[12px] rounded-[12px] w-full mt-[8px]"
-            style={{ backgroundImage: 'linear-gradient(263.127deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%)' }}
-          >
-            <span className="text-white text-[16px] font-bold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Pokračovat</span>
-          </button>
+          <div>
+            <p className="text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Předchozí pojištění</p>
+            <div className="flex gap-[12px]">
+              <label className={`flex items-center gap-2 px-4 py-3 rounded-[10px] border-2 cursor-pointer ${predchoziPojisteni === 'ano' ? 'border-[#3f2578] bg-[#f5f3ff]' : 'border-[#e2e9f0]'}`}>
+                <input type="radio" name="predchozi" checked={predchoziPojisteni === 'ano'} onChange={() => setPredchoziPojisteni('ano')} className="accent-[#3f2578]" />
+                <span className="font-semibold text-[#3f2578]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Ano</span>
+              </label>
+              <label className={`flex items-center gap-2 px-4 py-3 rounded-[10px] border-2 cursor-pointer ${predchoziPojisteni === 'ne' ? 'border-[#3f2578] bg-[#f5f3ff]' : 'border-[#e2e9f0]'}`}>
+                <input type="radio" name="predchozi" checked={predchoziPojisteni === 'ne'} onChange={() => setPredchoziPojisteni('ne')} className="accent-[#3f2578]" />
+                <span className="font-semibold text-[#3f2578]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Ne</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <p className="text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Závažná onemocnění</p>
+            <div className="flex gap-[12px]">
+              <label className={`flex items-center gap-2 px-4 py-3 rounded-[10px] border-2 cursor-pointer ${onemocneni === 'ano' ? 'border-[#3f2578] bg-[#f5f3ff]' : 'border-[#e2e9f0]'}`}>
+                <input type="radio" name="onemocneni" checked={onemocneni === 'ano'} onChange={() => setOnemocneni('ano')} className="accent-[#3f2578]" />
+                <span className="font-semibold text-[#3f2578]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Ano</span>
+              </label>
+              <label className={`flex items-center gap-2 px-4 py-3 rounded-[10px] border-2 cursor-pointer ${onemocneni === 'ne' ? 'border-[#3f2578] bg-[#f5f3ff]' : 'border-[#e2e9f0]'}`}>
+                <input type="radio" name="onemocneni" checked={onemocneni === 'ne'} onChange={() => setOnemocneni('ne')} className="accent-[#3f2578]" />
+                <span className="font-semibold text-[#3f2578]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Ne</span>
+              </label>
+            </div>
+          </div>
+
+          <button type="button" onClick={() => navigate('/pojisteni/zivot/kryti')} className="flex h-[52px] items-center justify-center rounded-[12px] w-full mt-2 text-white text-[18px] font-bold" style={{ backgroundImage: 'linear-gradient(263.127deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%)', fontFamily: "'Mona Sans', sans-serif" }}>Pokračovat</button>
+          </div>
+          <div className="w-full md:w-[280px] shrink-0 flex justify-center md:justify-end">
+            <img src="/assets/life-char-2.svg" alt="" className="max-h-[280px] w-auto object-contain" />
+          </div>
         </div>
       </div>
     </div>

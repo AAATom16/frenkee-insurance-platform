@@ -10,6 +10,7 @@ export { LifeStep2 } from './LifeStep2';
 export { LifeStep3 } from './LifeStep3';
 export { LifeStep4 } from './LifeStep4';
 export { LifeStep5 } from './LifeStep5';
+export { LifeStep6 } from './LifeStep6';
 export { KanbanPage } from './KanbanPage';
 export { MajetekFlowPage } from './majetek/MajetekFlowPage';
 export { ZakladniUdajePage } from './majetek/ZakladniUdajePage';

@@ -1,0 +1,13 @@
+<svg width="280" height="320" viewBox="0 0 280 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- postava s clipboardem -->
+  <ellipse cx="140" cy="282" rx="68" ry="18" fill="#E2E9F0"/>
+  <path d="M98 282 L98 188 Q98 128 140 102 Q182 128 182 188 L182 282" fill="#3B82F6"/>
+  <path d="M128 102 L152 78 L152 102 L128 102" fill="#3B82F6"/>
+  <circle cx="140" cy="88" r="30" fill="#FCD5B0"/>
+  <!-- clipboard -->
+  <rect x="165" y="130" width="56" height="72" rx="4" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="2"/>
+  <line x1="170" y1="145" x2="211" y2="145" stroke="#94A3B8" stroke-width="1"/>
+  <line x1="170" y1="158" x2="201" y2="158" stroke="#94A3B8" stroke-width="1"/>
+  <line x1="170" y1="171" x2="206" y2="171" stroke="#94A3B8" stroke-width="1"/>
+  <rect x="178" y="118" width="30" height="8" rx="2" fill="#94A3B8"/>
+</svg>

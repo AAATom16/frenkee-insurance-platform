@@ -3,13 +3,16 @@ import { MainLayout } from './components/layout';
 import {
   LandingPage,
   ContactPage,
-  TravelFlowPage,
   KanbanPage,
   ZakladniUdajePage,
   DetailBytuPage,
   DomacnostPage,
   OsobniUdajePage,
 } from './pages';
+import { TravelStep1 } from './pages/TravelStep1';
+import { TravelStep2 } from './pages/TravelStep2';
+import { TravelStep3 } from './pages/TravelStep3';
+import { TravelStep4 } from './pages/TravelStep4';
 import { MajetekStep1 } from './pages/MajetekStep1';
 import { MajetekStep2 } from './pages/MajetekStep2';
 import { MajetekStep3 } from './pages/MajetekStep3';
@@ -29,7 +32,10 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<LandingPage />} />
           <Route path="kontakt" element={<ContactPage />} />
-          <Route path="pojisteni/cestovani" element={<TravelFlowPage />} />
+          <Route path="pojisteni/cestovani" element={<TravelStep1 />} />
+          <Route path="pojisteni/cestovani/nabidky" element={<TravelStep2 />} />
+          <Route path="pojisteni/cestovani/udaje" element={<TravelStep3 />} />
+          <Route path="pojisteni/cestovani/platba" element={<TravelStep4 />} />
           <Route path="pojisteni/auto" element={<AutoStep1 />} />
           <Route path="pojisteni/auto/krok-2" element={<AutoStep2 />} />
           <Route path="pojisteni/auto/krok-3" element={<AutoStep3 />} />

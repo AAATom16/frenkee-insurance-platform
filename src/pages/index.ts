@@ -1,6 +1,10 @@
 export { LandingPage } from './LandingPage';
 export { ContactPage } from './ContactPage';
 export { TravelFlowPage } from './TravelFlowPage';
+export { TravelStep1 } from './TravelStep1';
+export { TravelStep2 } from './TravelStep2';
+export { TravelStep3 } from './TravelStep3';
+export { TravelStep4 } from './TravelStep4';
 export { KanbanPage } from './KanbanPage';
 export { MajetekFlowPage } from './majetek/MajetekFlowPage';
 export { ZakladniUdajePage } from './majetek/ZakladniUdajePage';

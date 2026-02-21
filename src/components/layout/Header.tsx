@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 const imgFrenkeeLogo = "/assets/frenkee-logo.svg";
@@ -15,22 +16,44 @@ const NAV_ITEMS = [
 
 export function Header() {
   const location = useLocation();
+  const navRef = React.useRef<HTMLElement>(null);
+  const [linePosition, setLinePosition] = React.useState<{ left: number; width: number } | null>(null);
+
+  React.useEffect(() => {
+    if (!navRef.current) return;
+
+    const activeLink = navRef.current.querySelector('a[data-active="true"]');
+    if (activeLink) {
+      const headerRect = navRef.current.closest('header')?.getBoundingClientRect();
+      const linkRect = activeLink.getBoundingClientRect();
+      
+      if (headerRect) {
+        setLinePosition({
+          left: linkRect.left - headerRect.left,
+          width: linkRect.width
+        });
+      }
+    } else {
+      setLinePosition(null);
+    }
+  }, [location.pathname]);
 
   return (
-    <header className="bg-white flex items-center justify-between px-[24px] py-[12px] relative rounded-[9px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-[1200px] h-[80px] overflow-visible">
+    <header className="bg-white flex items-center justify-between px-[24px] py-[12px] relative rounded-[9px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-[1200px] h-[80px]">
       <div className="flex items-center shrink-0">
         <Link to="/">
           <img alt="Frenkee" className="h-[29.62px] w-[139.864px]" src={imgFrenkeeLogo} />
         </Link>
       </div>
-      <nav className="flex gap-[12px] items-center shrink-0">
+      <nav ref={navRef} className="flex gap-[12px] items-center shrink-0">
         {NAV_ITEMS.map((item) => {
           const isActive = location.pathname.startsWith(item.path);
           return (
             <Link
               key={item.path}
               to={item.path}
-              className={`flex items-center justify-center relative ${
+              data-active={isActive}
+              className={`flex items-center justify-center ${
                 isActive ? 'bg-white px-[4px] py-[4px] rounded-[4px]' : ''
               }`}
             >
@@ -42,11 +65,6 @@ export function Header() {
               >
                 {item.label}
               </p>
-              {isActive && (
-                <div className="absolute left-0 right-0 top-[calc(100%+8px)]">
-                  <img alt="" className="block w-full" src={imgActiveLine} />
-                </div>
-              )}
             </Link>
           );
         })}
@@ -63,6 +81,21 @@ export function Header() {
           </p>
         </Link>
       </div>
+      
+      {/* Active line indicator */}
+      {linePosition && (
+        <div 
+          className="absolute h-0 top-[54px]" 
+          style={{ 
+            left: `${linePosition.left}px`,
+            width: `${linePosition.width}px`
+          }}
+        >
+          <div className="absolute inset-[-2px_0_0_0]">
+            <img alt="" className="block max-w-none w-full" src={imgActiveLine} />
+          </div>
+        </div>
+      )}
     </header>
   );
 }

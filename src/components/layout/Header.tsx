@@ -17,18 +17,20 @@ export function Header() {
   const location = useLocation();
 
   return (
-    <header className="bg-white flex items-center justify-between px-[24px] py-[12px] relative rounded-[9px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-full">
-      <Link to="/" className="flex items-center shrink-0">
-        <img alt="Frenkee" className="h-[29.62px] w-[139.864px]" src={imgFrenkeeLogo} />
-      </Link>
-      <nav className="flex gap-[12px] items-center shrink-0 relative">
+    <header className="bg-white flex items-center justify-between px-[24px] py-[12px] relative rounded-[9px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-[1200px] h-[80px]">
+      <div className="flex items-center shrink-0">
+        <Link to="/">
+          <img alt="Frenkee" className="h-[29.62px] w-[139.864px]" src={imgFrenkeeLogo} />
+        </Link>
+      </div>
+      <nav className="flex gap-[12px] items-center shrink-0">
         {NAV_ITEMS.map((item) => {
           const isActive = location.pathname.startsWith(item.path);
           return (
             <Link
               key={item.path}
               to={item.path}
-              className={`flex items-center justify-center relative ${
+              className={`flex items-center justify-center ${
                 isActive ? 'bg-white px-[4px] py-[4px] rounded-[4px]' : ''
               }`}
             >
@@ -37,11 +39,6 @@ export function Header() {
               }`}>
                 {item.label}
               </p>
-              {isActive && (
-                <div className="absolute h-0 left-0 top-[42px] w-[81px]">
-                  <img alt="" className="block max-w-none w-full" src={imgActiveLine} />
-                </div>
-              )}
             </Link>
           );
         })}
@@ -58,6 +55,13 @@ export function Header() {
           </p>
         </Link>
       </div>
+      {location.pathname.startsWith('/pojisteni/cestovani') && (
+        <div className="absolute h-0 left-[495px] top-[54px] w-[81px]">
+          <div className="absolute inset-[-2px_0_0_0]">
+            <img alt="" className="block max-w-none w-full" src={imgActiveLine} />
+          </div>
+        </div>
+      )}
     </header>
   );
 }

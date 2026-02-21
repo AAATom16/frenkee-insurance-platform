@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
-import { Button } from '../ui';
+
+const imgFrenkeeLogo = "/assets/frenkee-logo.svg";
 
 const NAV_ITEMS = [
   { path: '/pojisteni/auto', label: 'Auto' },
@@ -15,40 +16,41 @@ export function Header() {
   const location = useLocation();
 
   return (
-    <header className="border-b border-[var(--color-border)] bg-white sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="heading-6 text-[var(--color-primary)]">
-            Frenkee
-          </Link>
-          <nav className="hidden md:flex items-center gap-8">
-            {NAV_ITEMS.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`body-sm font-medium transition-colors ${
-                  location.pathname.startsWith(item.path)
-                    ? 'text-[var(--color-primary)] border-b-2 border-[var(--color-primary)] pb-1'
-                    : 'text-[var(--color-text-muted)] hover:text-[var(--color-text)]'
-                }`}
-              >
+    <header className="bg-white flex items-center justify-between px-[24px] py-[12px] relative rounded-[9px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-full">
+      <Link to="/" className="flex items-center">
+        <img alt="Frenkee" className="h-[29.62px] w-[139.864px]" src={imgFrenkeeLogo} />
+      </Link>
+      <nav className="flex gap-[12px] items-center">
+        {NAV_ITEMS.map((item) => {
+          const isActive = location.pathname.startsWith(item.path);
+          return (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`flex items-center justify-center px-[4px] py-[4px] rounded-[4px] ${
+                isActive ? 'bg-white' : ''
+              }`}
+            >
+              <p className={`font-['Mona_Sans_VF:Bold',sans-serif] text-[17px] leading-[20px] ${
+                isActive ? 'text-[#3f2578]' : 'text-[#64748b]'
+              }`}>
                 {item.label}
-              </Link>
-            ))}
-          </nav>
-          <div className="flex items-center gap-4">
-            <Link to="/registrace">
-              <Button variant="primary" size="sm">
-                Registrace
-              </Button>
+              </p>
             </Link>
-            <Link to="/kontakt">
-              <Button variant="outline" size="sm">
-                Kontakt
-              </Button>
-            </Link>
-          </div>
-        </div>
+          );
+        })}
+      </nav>
+      <div className="flex gap-[12px] items-center">
+        <Link to="/registrace" className="bg-[#3f2578] flex items-center justify-center overflow-clip px-[18px] py-[10px] rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
+          <p className="font-['Mona_Sans_VF:Display_ExtraBold',sans-serif] leading-[24px] text-[16px] text-white">
+            Registrace
+          </p>
+        </Link>
+        <Link to="/kontakt" className="flex items-center justify-center">
+          <p className="font-['Mona_Sans_VF:Medium',sans-serif] text-[17px] leading-[20px] text-[#3f2578] underline">
+            Kontakt
+          </p>
+        </Link>
       </div>
     </header>
   );

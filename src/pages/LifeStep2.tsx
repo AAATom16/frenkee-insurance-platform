@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const STEP_LABELS = ['Úvod', 'Zdraví', 'Krytí', 'Nabídky', 'Kontakt', 'Shrnutí'];
+const STEP_LABELS = ['Úvod', 'Zdraví', 'Krytí', 'Nabídky', 'Kontakt', 'Shrnutí', 'Kontrola', 'Hotovo'];
 
-function Progress({ current, total = 6 }: { current: number; total?: number }) {
+function Progress({ current, total = 8 }: { current: number; total?: number }) {
   return (
     <div className="flex items-center justify-center gap-[8px] w-full flex-wrap">
       {Array.from({ length: total }, (_, i) => i + 1).map((step) => (
@@ -35,7 +35,7 @@ export function LifeStep2() {
   const [konicky, setKonicky] = useState('');
   const [cestovani, setCestovani] = useState('');
   const [predchoziPojisteni, setPredchoziPojisteni] = useState<'ano' | 'ne'>('ano');
-  const [onemocneni, setOnemocneni] = useState<'ano' | 'ne'>('ne');
+  const [onemocneni, setOnemocneni] = useState('');
 
   return (
     <div className="bg-white flex flex-col gap-[24px] items-center p-[24px] w-full min-h-screen">
@@ -44,7 +44,8 @@ export function LifeStep2() {
       </h1>
 
       <div className="flex flex-col gap-[24px] items-center px-4 md:px-[99px] py-[24px] w-full max-w-[1000px]">
-        <Progress current={2} />
+        <p className="text-[#94a3b8] text-[14px] font-semibold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Krok 2 z 8</p>
+        <Progress current={2} total={8} />
 
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 w-full items-start">
           <div className="flex flex-col gap-[20px] w-full flex-1 min-w-0">
@@ -67,21 +68,21 @@ export function LifeStep2() {
             </select>
           </div>
           <div>
-            <label className="block text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Sportovní aktivity</label>
+            <label className="block text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Sporty</label>
             <select value={sport} onChange={(e) => setSport(e.target.value)} className="border border-[#e2e9f0] h-[44px] px-[12px] rounded-[10px] text-[16px] w-full outline-none bg-white" style={{ fontFamily: "'Inter', sans-serif" }}>
               <option value="">Vyberte...</option>
               {SPORT.map((s) => <option key={s} value={s}>{s}</option>)}
             </select>
           </div>
           <div>
-            <label className="block text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Rizikové koníčky</label>
+            <label className="block text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Koníčky</label>
             <select value={konicky} onChange={(e) => setKonicky(e.target.value)} className="border border-[#e2e9f0] h-[44px] px-[12px] rounded-[10px] text-[16px] w-full outline-none bg-white" style={{ fontFamily: "'Inter', sans-serif" }}>
               <option value="">Vyberte...</option>
               {KONICKY.map((k) => <option key={k} value={k}>{k}</option>)}
             </select>
           </div>
           <div>
-            <label className="block text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Cestování do rizikových zemí</label>
+            <label className="block text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Cestování</label>
             <select value={cestovani} onChange={(e) => setCestovani(e.target.value)} className="border border-[#e2e9f0] h-[44px] px-[12px] rounded-[10px] text-[16px] w-full outline-none bg-white" style={{ fontFamily: "'Inter', sans-serif" }}>
               <option value="">Vyberte...</option>
               {CESTOVANI.map((c) => <option key={c} value={c}>{c}</option>)}
@@ -89,7 +90,7 @@ export function LifeStep2() {
           </div>
 
           <div>
-            <p className="text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Předchozí pojištění</p>
+            <p className="text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Mám již pojištění?</p>
             <div className="flex gap-[12px]">
               <label className={`flex items-center gap-2 px-4 py-3 rounded-[10px] border-2 cursor-pointer ${predchoziPojisteni === 'ano' ? 'border-[#3f2578] bg-[#f5f3ff]' : 'border-[#e2e9f0]'}`}>
                 <input type="radio" name="predchozi" checked={predchoziPojisteni === 'ano'} onChange={() => setPredchoziPojisteni('ano')} className="accent-[#3f2578]" />
@@ -102,17 +103,12 @@ export function LifeStep2() {
             </div>
           </div>
           <div>
-            <p className="text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Závažná onemocnění</p>
-            <div className="flex gap-[12px]">
-              <label className={`flex items-center gap-2 px-4 py-3 rounded-[10px] border-2 cursor-pointer ${onemocneni === 'ano' ? 'border-[#3f2578] bg-[#f5f3ff]' : 'border-[#e2e9f0]'}`}>
-                <input type="radio" name="onemocneni" checked={onemocneni === 'ano'} onChange={() => setOnemocneni('ano')} className="accent-[#3f2578]" />
-                <span className="font-semibold text-[#3f2578]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Ano</span>
-              </label>
-              <label className={`flex items-center gap-2 px-4 py-3 rounded-[10px] border-2 cursor-pointer ${onemocneni === 'ne' ? 'border-[#3f2578] bg-[#f5f3ff]' : 'border-[#e2e9f0]'}`}>
-                <input type="radio" name="onemocneni" checked={onemocneni === 'ne'} onChange={() => setOnemocneni('ne')} className="accent-[#3f2578]" />
-                <span className="font-semibold text-[#3f2578]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Ne</span>
-              </label>
-            </div>
+            <label className="block text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Závažná onemocnění</label>
+            <select value={onemocneni} onChange={(e) => setOnemocneni(e.target.value)} className="border border-[#e2e9f0] h-[44px] px-[12px] rounded-[10px] text-[16px] w-full outline-none bg-white" style={{ fontFamily: "'Inter', sans-serif" }}>
+              <option value="">Vyberte...</option>
+              <option value="ne">Žádná</option>
+              <option value="ano">Ano</option>
+            </select>
           </div>
 
           <button type="button" onClick={() => navigate('/pojisteni/zivot/kryti')} className="flex h-[52px] items-center justify-center rounded-[12px] w-full mt-2 text-white text-[18px] font-bold" style={{ backgroundImage: 'linear-gradient(263.127deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%)', fontFamily: "'Mona Sans', sans-serif" }}>Pokračovat</button>

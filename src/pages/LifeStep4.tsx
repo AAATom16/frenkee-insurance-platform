@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const STEP_LABELS = ['Úvod', 'Zdraví', 'Krytí', 'Nabídky', 'Kontakt', 'Shrnutí'];
+const STEP_LABELS = ['Úvod', 'Zdraví', 'Krytí', 'Nabídky', 'Kontakt', 'Shrnutí', 'Kontrola', 'Hotovo'];
 
-function Progress({ current, total = 6 }: { current: number; total?: number }) {
+function Progress({ current, total = 8 }: { current: number; total?: number }) {
   return (
     <div className="flex items-center justify-center gap-[8px] w-full flex-wrap">
       {Array.from({ length: total }, (_, i) => i + 1).map((step) => (
@@ -21,19 +21,18 @@ function Progress({ current, total = 6 }: { current: number; total?: number }) {
   );
 }
 
-const DOBA_OPTIONS = ['Do 65 let', 'Do 70 let', '10 let', '20 let', '30 let'];
-const FREKVENCE_OPTIONS = ['Měsíčně', 'Čtvrtletně', 'Pololetně', 'Ročně'];
+const FREKVENCE_OPTIONS = ['Měsíčně', 'Čtvrtletně', 'Pololetně', 'Ročně'] as const;
 
 const NABIDKY = [
-  { id: 'a', smrt: '500 000 Kč', cena: 658 },
-  { id: 'b', smrt: '1 000 000 Kč', cena: 892 },
-  { id: 'c', smrt: '1 500 000 Kč', cena: 1124 },
+  { id: 'a', title: 'Standardní tarif', benefits: 'Základní krytí', cena: 150, period: 'měsíc' },
+  { id: 'b', title: 'Ideální tarif', benefits: 'Rozšířené krytí', cena: 280, period: 'měsíc' },
+  { id: 'c', title: 'Komplexní tarif', benefits: 'Kompletní krytí', cena: 420, period: 'měsíc' },
 ];
 
 export function LifeStep4() {
   const navigate = useNavigate();
-  const [doba, setDoba] = useState('Do 65 let');
-  const [frekvence, setFrekvence] = useState('Měsíčně');
+  const [castka, setCastka] = useState('');
+  const [frekvence, setFrekvence] = useState<(typeof FREKVENCE_OPTIONS)[number]>('Měsíčně');
 
   return (
     <div className="bg-white flex flex-col gap-[24px] items-center p-[24px] w-full min-h-screen">
@@ -42,21 +41,35 @@ export function LifeStep4() {
       </h1>
 
       <div className="flex flex-col gap-[24px] items-center px-4 md:px-[99px] py-[24px] w-full max-w-[1000px]">
-        <Progress current={4} />
+        <p className="text-[#94a3b8] text-[14px] font-semibold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Krok 4 z 8</p>
+        <Progress current={4} total={8} />
 
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 w-full items-start">
           <div className="flex flex-col gap-[20px] w-full flex-1 min-w-0">
           <div>
             <label className="block text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Chci pojistit na</label>
-            <select value={doba} onChange={(e) => setDoba(e.target.value)} className="border border-[#e2e9f0] h-[44px] px-[12px] rounded-[10px] text-[16px] w-full outline-none bg-white" style={{ fontFamily: "'Inter', sans-serif" }}>
-              {DOBA_OPTIONS.map((d) => <option key={d} value={d}>{d}</option>)}
-            </select>
+            <div className="flex items-center gap-2">
+              <input
+                type="text"
+                value={castka}
+                onChange={(e) => setCastka(e.target.value.replace(/\D/g, ''))}
+                placeholder="500 000"
+                className="border border-[#e2e9f0] h-[44px] px-[12px] rounded-[10px] text-[16px] flex-1 outline-none"
+                style={{ fontFamily: "'Inter', sans-serif" }}
+              />
+              <span className="text-[#3f2578] font-semibold whitespace-nowrap" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Kč</span>
+            </div>
           </div>
           <div>
-            <label className="block text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Frekvence placení</label>
-            <select value={frekvence} onChange={(e) => setFrekvence(e.target.value)} className="border border-[#e2e9f0] h-[44px] px-[12px] rounded-[10px] text-[16px] w-full outline-none bg-white" style={{ fontFamily: "'Inter', sans-serif" }}>
-              {FREKVENCE_OPTIONS.map((f) => <option key={f} value={f}>{f}</option>)}
-            </select>
+            <p className="text-[#3f2578] text-[18px] font-bold mb-[8px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Frekvence placení</p>
+            <div className="flex flex-wrap gap-[12px]">
+              {FREKVENCE_OPTIONS.map((f) => (
+                <label key={f} className={`flex items-center gap-2 px-4 py-3 rounded-[10px] border-2 cursor-pointer ${frekvence === f ? 'border-[#3f2578] bg-[#f5f3ff]' : 'border-[#e2e9f0]'}`}>
+                  <input type="radio" name="frekvence" checked={frekvence === f} onChange={() => setFrekvence(f)} className="accent-[#3f2578]" />
+                  <span className="font-semibold text-[#3f2578]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>{f}</span>
+                </label>
+              ))}
+            </div>
           </div>
 
           <p className="text-[#3f2578] text-[18px] font-bold pt-2" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Vyberte nabídku</p>
@@ -64,11 +77,11 @@ export function LifeStep4() {
             {NABIDKY.map((n) => (
               <div key={n.id} className="border-2 border-[#e2e9f0] rounded-[12px] p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white hover:border-[#3f2578]/40">
                 <div>
-                  <p className="text-[#3f2578] font-semibold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Smrt {n.smrt}</p>
-                  <p className="text-[#64748b] text-[14px] mt-1" style={{ fontFamily: "'Inter', sans-serif" }}>Invalidita, Vážné nemoci v ceně</p>
+                  <p className="text-[#3f2578] font-semibold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>{n.title}</p>
+                  <p className="text-[#64748b] text-[14px] mt-1" style={{ fontFamily: "'Inter', sans-serif" }}>{n.benefits}</p>
                 </div>
                 <div className="flex items-center gap-4">
-                  <p className="text-[#3f2578] text-[20px] font-bold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>{n.cena} Kč <span className="text-[14px] font-normal text-[#64748b]">/ měsíc</span></p>
+                  <p className="text-[#3f2578] text-[20px] font-bold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>{n.cena} Kč <span className="text-[14px] font-normal text-[#64748b]">/ {n.period}</span></p>
                   <button
                     type="button"
                     onClick={() => navigate('/pojisteni/zivot/kontakt')}

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const STEP_LABELS = ['Úvod', 'Zdraví', 'Krytí', 'Nabídky', 'Kontakt', 'Shrnutí'];
+const STEP_LABELS = ['Úvod', 'Zdraví', 'Krytí', 'Nabídky', 'Kontakt', 'Shrnutí', 'Kontrola', 'Hotovo'];
 
-function Progress({ current, total = 6 }: { current: number; total?: number }) {
+function Progress({ current, total = 8 }: { current: number; total?: number }) {
   return (
     <div className="flex items-center justify-center gap-[8px] w-full flex-wrap">
       {Array.from({ length: total }, (_, i) => i + 1).map((step) => (
@@ -39,7 +39,8 @@ export function LifeStep5() {
       </h1>
 
       <div className="flex flex-col gap-[24px] items-center px-4 md:px-[99px] py-[24px] w-full max-w-[1000px]">
-        <Progress current={5} />
+        <p className="text-[#94a3b8] text-[14px] font-semibold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Krok 5 z 8</p>
+        <Progress current={5} total={8} />
 
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 w-full items-start">
           <div className="flex flex-col gap-[16px] w-full flex-1 min-w-0">
@@ -77,7 +78,10 @@ export function LifeStep5() {
           </div>
           <label className="flex items-center gap-3 cursor-pointer pt-2">
             <input type="checkbox" checked={souhlas} onChange={(e) => setSouhlas(e.target.checked)} className="size-[18px] accent-[#3f2578]" />
-            <span className="text-[#64748b] text-[14px]" style={{ fontFamily: "'Inter', sans-serif" }}>Souhlasím s podmínkami</span>
+            <span className="text-[#64748b] text-[14px]" style={{ fontFamily: "'Inter', sans-serif" }}>
+              Souhlasím s{' '}
+              <a href="/obchodni-podminky" className="text-[#3f2578] underline font-medium">obchodními podmínkami</a>
+            </span>
           </label>
 
           <button type="button" onClick={() => navigate('/pojisteni/zivot/shrnuti')} className="flex h-[52px] items-center justify-center rounded-[12px] w-full mt-2 text-white text-[18px] font-bold" style={{ backgroundImage: 'linear-gradient(263.127deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%)', fontFamily: "'Mona Sans', sans-serif" }}>Pokračovat</button>

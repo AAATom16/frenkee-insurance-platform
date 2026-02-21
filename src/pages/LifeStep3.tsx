@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const STEP_LABELS = ['Úvod', 'Zdraví', 'Krytí', 'Nabídky', 'Kontakt', 'Shrnutí'];
+const STEP_LABELS = ['Úvod', 'Zdraví', 'Krytí', 'Nabídky', 'Kontakt', 'Shrnutí', 'Kontrola', 'Hotovo'];
 
-function Progress({ current, total = 6 }: { current: number; total?: number }) {
+function Progress({ current, total = 8 }: { current: number; total?: number }) {
   return (
     <div className="flex items-center justify-center gap-[8px] w-full flex-wrap">
       {Array.from({ length: total }, (_, i) => i + 1).map((step) => (
@@ -49,7 +49,8 @@ export function LifeStep3() {
       </h1>
 
       <div className="flex flex-col gap-[24px] items-center px-4 md:px-[99px] py-[24px] w-full max-w-[1000px]">
-        <Progress current={3} />
+        <p className="text-[#94a3b8] text-[14px] font-semibold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Krok 3 z 8</p>
+        <Progress current={3} total={8} />
 
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 w-full items-start">
           <div className="w-full md:w-[280px] shrink-0 flex justify-center md:justify-start order-2 md:order-1">

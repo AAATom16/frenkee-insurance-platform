@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 
-const imgTravelPerson = "/assets/travel-person-new.png";
-const imgBusinessPerson = "/assets/business-person-new.png";
-const imgHouseImage = "/assets/house-image-new.png";
-const imgLifeInsurance = "/assets/life-insurance-new.png";
-const imgPetInsurance = "/assets/pet-insurance-new.png";
-const imgForeignerInsurance = "/assets/foreigner-insurance-new.png";
+const imgTravelAirplane = "/assets/travel-airplane.png";
+const imgBusinessDesk = "/assets/business-desk.png";
+const imgHouse3d = "/assets/house-3d.png";
+const imgLifePersonInjury = "/assets/life-person-injury.png";
+const imgPetsDogCat = "/assets/pets-dog-cat.png";
+const imgEuFlag3d = "/assets/eu-flag-3d.png";
 const imgCarIcon1 = "/assets/car-icon-1.svg";
 const imgCarIcon2 = "/assets/car-icon-2.svg";
 const imgHeroGradient = "/assets/hero-gradient.png";
@@ -16,7 +16,7 @@ export function LandingPage() {
   return (
     <div className="bg-white flex flex-col gap-[24px] items-center w-full">
       {/* Hero Section */}
-      <div className="bg-white flex flex-col gap-[48px] items-center pb-[80px] pt-[120px] px-[24px] relative w-full">
+      <div className="bg-white flex items-center justify-center pb-[80px] pt-[120px] px-[24px] relative w-full">
         <div className="absolute left-[598px] opacity-50 size-[1000px] top-[-230px] pointer-events-none">
           <img alt="" className="absolute inset-0 max-w-none object-contain size-full" src={imgHeroGradient} />
         </div>
@@ -24,10 +24,10 @@ export function LandingPage() {
           <img alt="" className="block max-w-none size-full" src={imgEllipseBg} />
         </div>
         
-        <div className="flex gap-[48px] items-start max-w-[1200px] relative w-full z-10">
+        <div className="flex gap-[48px] items-start w-[1200px] h-[948px] relative z-10">
           {/* Left: Heading */}
-          <div className="flex flex-col gap-[0px] items-center w-[391px] py-[40px]">
-            <div className="flex flex-col gap-[8px] items-start leading-[0] text-center w-full">
+          <div className="flex flex-col gap-[0px] items-start w-[391px] py-[40px]">
+            <div className="flex flex-col gap-[8px] items-start leading-[0] w-full">
               <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Display_ExtraBold',sans-serif] justify-center text-[72px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(265.802deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
                 <p className="leading-none whitespace-pre-wrap">Finance jednoduše</p>
               </div>
@@ -38,11 +38,11 @@ export function LandingPage() {
           </div>
 
           {/* Right: Bento Grid */}
-          <div className="flex flex-col gap-[24px] items-end flex-1 shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)]">
+          <div className="flex flex-col gap-[24px] items-end w-[761px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)]">
             {/* Top Row */}
-            <div className="flex flex-wrap gap-[24px] h-[300px] items-start justify-center w-full">
+            <div className="flex gap-[24px] h-[300px] items-start w-full">
               {/* Auto Insurance - Large */}
-              <div className="bg-[#f8fafc] flex flex-col gap-[24px] h-[300px] items-start p-[24px] rounded-[8px] flex-1 min-w-[300px]">
+              <div className="bg-[#f8fafc] flex flex-col gap-[24px] h-[300px] items-start p-[24px] rounded-[8px] w-[455px]">
                 <div className="flex flex-col gap-[8px] items-start justify-center w-full">
                   <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] text-[36px]" style={{ backgroundImage: "linear-gradient(258.806deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
                     <p className="leading-[1.1] whitespace-pre-wrap">Pojištění aut</p>
@@ -72,9 +72,9 @@ export function LandingPage() {
 
               {/* Travel Insurance */}
               <div className="bg-[#f8fafc] flex flex-col gap-[8px] h-[300px] items-start justify-end p-[24px] rounded-[8px] w-[282px]">
-                <div className="flex items-center justify-center -scale-y-100 rotate-180">
+                <div className="flex items-center justify-center -scale-y-100 rotate-180 shrink-0">
                   <div className="h-[241.75px] w-[256px] relative">
-                    <img alt="" className="absolute h-[158.84%] left-0 max-w-none top-[-15.31%] w-full" src={imgTravelPerson} />
+                    <img alt="" className="absolute h-[158.84%] left-0 max-w-none top-[-15.31%] w-full" src={imgTravelAirplane} />
                   </div>
                 </div>
                 <div className="flex flex-col gap-[8px] items-start leading-[0] w-full">
@@ -96,8 +96,8 @@ export function LandingPage() {
               <div className="flex flex-col gap-[24px] items-center w-[282px]">
                 {/* Business Insurance */}
                 <div className="bg-[#f8fafc] flex flex-col gap-[8px] h-[300px] items-start justify-end p-[24px] rounded-[8px] w-full">
-                  <div className="h-[116px] w-[246.764px] relative">
-                    <img alt="" className="absolute h-[164.68%] left-[-7.86%] max-w-none top-[-37.74%] w-[116.12%]" src={imgBusinessPerson} />
+                  <div className="h-[116px] w-[246.764px] relative shrink-0">
+                    <img alt="" className="absolute h-[164.68%] left-[-7.86%] max-w-none top-[-37.74%] w-[116.12%]" src={imgBusinessDesk} />
                   </div>
                   <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] text-[36px] w-full" style={{ backgroundImage: "linear-gradient(266.07deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
                     <p className="leading-[1.1] whitespace-pre-wrap">Pojištění pro firmy a OSVČ</p>
@@ -110,8 +110,8 @@ export function LandingPage() {
 
                 {/* Property Insurance */}
                 <div className="bg-[#f8fafc] flex flex-col gap-[8px] h-[300px] items-start justify-end p-[24px] rounded-[8px] w-full">
-                  <div className="h-[171.8px] w-[204.8px] relative">
-                    <img alt="" className="absolute h-[178.81%] left-0 max-w-none top-[-30.38%] w-full" src={imgHouseImage} />
+                  <div className="h-[171.8px] w-[204.8px] relative shrink-0">
+                    <img alt="" className="absolute h-[178.81%] left-0 max-w-none top-[-30.38%] w-full" src={imgHouse3d} />
                   </div>
                   <div className="flex flex-col gap-[8px] items-start leading-[0] w-full">
                     <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center text-[36px] w-full" style={{ backgroundImage: "linear-gradient(266.07deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
@@ -127,32 +127,32 @@ export function LandingPage() {
               </div>
 
               {/* Right Column */}
-              <div className="flex flex-col gap-[24px] items-center flex-1">
+              <div className="flex flex-col gap-[24px] items-center w-[455px]">
                 {/* Life Insurance */}
                 <div className="bg-[#f8fafc] flex gap-[8px] h-[300px] items-end p-[24px] rounded-[8px] w-full">
                   <div className="flex flex-col gap-[8px] items-start flex-1">
                     <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] text-[36px]" style={{ backgroundImage: "linear-gradient(266.187deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
                       <p className="leading-[1.1] whitespace-pre-wrap">Životní pojištění</p>
                     </div>
-                    <p className="font-['Inter:Bold',sans-serif] font-bold leading-[0] text-[#3f2578] text-[16px]">Životko, které dává smysl</p>
+                    <p className="font-['Inter:Bold',sans-serif] font-bold leading-[1.5] text-[#3f2578] text-[16px]">Životko, které dává smysl</p>
                     <Link to="/pojisteni/zivot" className="flex gap-[8px] h-[48px] items-center justify-center px-[20px] py-[12px] rounded-[12px]" style={{ backgroundImage: "linear-gradient(264.45deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%)" }}>
                       <p className="font-['Inter:Medium',sans-serif] font-medium leading-[1.6] text-[16px] text-white">Spočítat</p>
                     </Link>
                   </div>
-                  <div className="h-[282px] w-[172px] relative">
-                    <img alt="" className="absolute h-[111.35%] left-[-21.61%] max-w-none top-0 w-[121.71%]" src={imgLifeInsurance} />
+                  <div className="h-[282px] w-[172px] relative shrink-0">
+                    <img alt="" className="absolute h-[111.35%] left-[-21.61%] max-w-none top-0 w-[121.71%]" src={imgLifePersonInjury} />
                   </div>
                 </div>
 
                 {/* Bottom Row: Pet & Foreigner */}
-                <div className="flex flex-wrap gap-[24px] items-start justify-center w-full">
+                <div className="flex gap-[24px] items-start w-full">
                   {/* Pet Insurance */}
-                  <div className="bg-[#f8fafc] flex flex-col gap-[8px] h-[300px] items-start justify-center p-[24px] rounded-[8px] flex-1 min-w-[200px]">
+                  <div className="bg-[#f8fafc] flex flex-col gap-[8px] h-[300px] items-start justify-center p-[24px] rounded-[8px] w-[215.5px]">
                     <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] text-[36px] w-full" style={{ backgroundImage: "linear-gradient(267.185deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
                       <p className="leading-[1.1] whitespace-pre-wrap">Pojištění mazlíčků</p>
                     </div>
-                    <div className="h-[143px] w-[175.789px] relative">
-                      <img alt="" className="absolute h-[184.39%] left-0 max-w-none top-[-39.38%] w-full" src={imgPetInsurance} />
+                    <div className="h-[143px] w-[175.789px] relative shrink-0">
+                      <img alt="" className="absolute h-[184.39%] left-0 max-w-none top-[-39.38%] w-full" src={imgPetsDogCat} />
                     </div>
                     <Link to="/pojisteni/mazlicci" className="flex gap-[8px] items-center justify-center py-[2px] rounded-[6px] text-[#ef8600] text-center">
                       <p className="font-['Mona_Sans_VF:SemiBold',sans-serif] leading-[1.5] text-[16px]">Spočítat</p>
@@ -161,9 +161,9 @@ export function LandingPage() {
                   </div>
 
                   {/* Foreigner Insurance */}
-                  <div className="bg-[#f8fafc] flex flex-col h-[300px] items-start justify-between p-[24px] rounded-[8px] flex-1 min-w-[200px]">
-                    <div className="w-full relative" style={{ aspectRatio: "307/202" }}>
-                      <img alt="" className="absolute h-[126.73%] left-[-12.38%] max-w-none top-[-11.88%] w-[125.08%]" src={imgForeignerInsurance} />
+                  <div className="bg-[#f8fafc] flex flex-col h-[300px] items-start justify-between p-[24px] rounded-[8px] w-[215.5px]">
+                    <div className="w-full relative shrink-0" style={{ aspectRatio: "307/202" }}>
+                      <img alt="" className="absolute h-[126.73%] left-[-12.38%] max-w-none top-[-11.88%] w-[125.08%]" src={imgEuFlag3d} />
                     </div>
                     <div className="flex flex-col gap-[4px] items-start w-full">
                       <div className="bg-clip-text flex flex-col font-['Mona_Sans_VF:Bold',sans-serif] justify-center leading-[0] text-[30px] w-full" style={{ backgroundImage: "linear-gradient(266.589deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>

@@ -28,10 +28,10 @@ export function LandingPage() {
           {/* Left: Heading */}
           <div className="flex flex-col gap-[0px] items-start w-[391px] py-[40px]">
             <div className="flex flex-col gap-[8px] items-start leading-[0] w-full">
-              <div className="bg-clip-text flex flex-col font-mona font-extrabold justify-center text-[72px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(265.802deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
+              <div className="bg-clip-text flex flex-col justify-center text-[72px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(265.802deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 800 }}>
                 <p className="leading-none whitespace-pre-wrap">Finance jednoduše</p>
               </div>
-              <div className="flex flex-col font-inter font-bold justify-center text-[#3f2578] text-[20px] w-full">
+              <div className="flex flex-col justify-center text-[#3f2578] text-[20px] w-full" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>
                 <p className="leading-[1.6] whitespace-pre-wrap">Bez chytáků a otravných schůzek</p>
               </div>
             </div>
@@ -44,12 +44,12 @@ export function LandingPage() {
               {/* Auto Insurance - Large */}
               <div className="bg-[#f8fafc] flex flex-col gap-[24px] h-[300px] items-start p-[24px] rounded-[8px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-[455px]">
                 <div className="flex flex-col gap-[8px] items-start justify-center w-full">
-                  <div className="bg-clip-text flex flex-col font-mona font-bold justify-center leading-[0] text-[36px]" style={{ backgroundImage: "linear-gradient(258.806deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
+                  <div className="bg-clip-text flex flex-col justify-center leading-[0] text-[36px]" style={{ backgroundImage: "linear-gradient(258.806deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 700 }}>
                     <p className="leading-[1.1] whitespace-pre-wrap">Pojištění aut</p>
                   </div>
-                  <div className="flex flex-col font-inter font-bold justify-center leading-[1.5] text-[#3f2578] text-[16px] whitespace-pre-wrap">
-                    <p className="mb-0">Jednoduché online sjednání.</p>
-                    <p>Ušetřete čas a peníze!</p>
+                  <div className="flex flex-col justify-center leading-[1.5] text-[#3f2578] text-[16px] whitespace-pre-wrap">
+                    <p className="mb-0" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 700 }}>Jednoduché online sjednání.</p>
+                    <p style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>Ušetřete čas a peníze!</p>
                   </div>
                 </div>
                 <div className="flex flex-col gap-[8px] items-start">
@@ -61,11 +61,11 @@ export function LandingPage() {
                       </div>
                     </div>
                     <div className="absolute flex flex-col items-center justify-center left-1/2 -translate-x-1/2 opacity-50 top-[15px]">
-                      <p className="font-open-sans leading-normal text-[#635c73] text-[15px]">Zadejte SPZ</p>
+                      <p className="leading-normal text-[#635c73] text-[15px]" style={{ fontFamily: "'Open Sans', sans-serif", fontWeight: 400 }}>Zadejte SPZ</p>
                     </div>
                   </div>
                   <Link to="/pojisteni/auto" className="flex gap-[8px] h-[48px] items-center justify-center px-[20px] py-[12px] rounded-[12px] w-[344px]" style={{ backgroundImage: "linear-gradient(252.181deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%)" }}>
-                    <p className="font-inter font-medium leading-[1.6] text-[16px] text-white whitespace-nowrap">Chci povinné ručení + havarijní pojištění</p>
+                    <p className="leading-[1.6] text-[16px] text-white whitespace-nowrap" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}>Chci povinné ručení + havarijní pojištění</p>
                   </Link>
                 </div>
               </div>
@@ -78,13 +78,13 @@ export function LandingPage() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-[8px] items-start leading-[0] w-full">
-                  <div className="bg-clip-text flex flex-col font-mona font-bold justify-center text-[36px] w-full" style={{ backgroundImage: "linear-gradient(266.07deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
+                  <div className="bg-clip-text flex flex-col justify-center text-[36px] w-full" style={{ backgroundImage: "linear-gradient(266.07deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 700 }}>
                     <p className="leading-[1.1] whitespace-pre-wrap">Cestovní pojištění</p>
                   </div>
-                  <p className="font-inter font-bold leading-[1.5] text-[#3f2578] text-[16px]">Se slevou až 50%!</p>
+                  <p className="leading-[1.5] text-[#3f2578] text-[16px]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>Se slevou až 50%!</p>
                 </div>
                 <Link to="/pojisteni/cestovani" className="flex gap-[8px] items-center justify-center py-[2px] rounded-[6px] text-[#ef8600] text-center">
-                  <p className="font-mona font-semibold leading-[1.5] text-[16px]">Spočítat</p>
+                  <p className="leading-[1.5] text-[16px]" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 600 }}>Spočítat</p>
                   <p className="text-[18px]">→</p>
                 </Link>
               </div>
@@ -99,11 +99,11 @@ export function LandingPage() {
                   <div className="h-[116px] w-[246.764px] relative shrink-0">
                     <img alt="" className="absolute h-[164.68%] left-[-7.86%] max-w-none top-[-37.74%] w-[116.12%]" src={imgBusinessDesk} />
                   </div>
-                  <div className="bg-clip-text flex flex-col font-mona font-bold justify-center leading-[0] text-[36px] w-full" style={{ backgroundImage: "linear-gradient(266.07deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
+                  <div className="bg-clip-text flex flex-col justify-center leading-[0] text-[36px] w-full" style={{ backgroundImage: "linear-gradient(266.07deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 700 }}>
                     <p className="leading-[1.1] whitespace-pre-wrap">Pojištění pro firmy a OSVČ</p>
                   </div>
                   <Link to="/pro-firmy" className="flex gap-[8px] items-center justify-center py-[2px] rounded-[6px] text-[#ef8600] text-center">
-                    <p className="font-mona font-semibold leading-[1.5] text-[16px]">Spočítat</p>
+                    <p className="leading-[1.5] text-[16px]" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 600 }}>Spočítat</p>
                     <p className="text-[18px]">→</p>
                   </Link>
                 </div>
@@ -114,12 +114,12 @@ export function LandingPage() {
                     <img alt="" className="absolute h-[178.81%] left-0 max-w-none top-[-30.38%] w-full" src={imgHouse3d} />
                   </div>
                   <div className="flex flex-col gap-[8px] items-start leading-[0] w-full">
-                    <div className="bg-clip-text flex flex-col font-mona font-bold justify-center text-[36px] w-full" style={{ backgroundImage: "linear-gradient(266.07deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
+                    <div className="bg-clip-text flex flex-col justify-center text-[36px] w-full" style={{ backgroundImage: "linear-gradient(266.07deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 700 }}>
                       <p className="leading-[1.1] whitespace-pre-wrap">Pojištění majetku</p>
                     </div>
-                    <p className="font-inter font-bold leading-[1.5] text-[#3f2578] text-[16px]">Stačí pár kliknutí a můžete v klidu spát!</p>
+                    <p className="leading-[1.5] text-[#3f2578] text-[16px]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>Stačí pár kliknutí a můžete v klidu spát!</p>
                     <Link to="/pojisteni/majetek" className="flex gap-[8px] items-center justify-center py-[2px] rounded-[6px] text-[#ef8600] text-center">
-                      <p className="font-mona font-semibold leading-[1.5] text-[16px]">Spočítat</p>
+                      <p className="leading-[1.5] text-[16px]" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 600 }}>Spočítat</p>
                       <p className="text-[18px]">→</p>
                     </Link>
                   </div>
@@ -131,12 +131,12 @@ export function LandingPage() {
                 {/* Life Insurance */}
                 <div className="bg-[#f8fafc] flex gap-[8px] h-[300px] items-end p-[24px] rounded-[8px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-full">
                   <div className="flex flex-col gap-[8px] items-start flex-1">
-                    <div className="bg-clip-text flex flex-col font-mona font-bold justify-center leading-[0] text-[36px]" style={{ backgroundImage: "linear-gradient(266.187deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
+                    <div className="bg-clip-text flex flex-col justify-center leading-[0] text-[36px]" style={{ backgroundImage: "linear-gradient(266.187deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 700 }}>
                       <p className="leading-[1.1] whitespace-pre-wrap">Životní pojištění</p>
                     </div>
-                    <p className="font-inter font-bold leading-[1.5] text-[#3f2578] text-[16px]">Životko, které dává smysl</p>
+                    <p className="leading-[1.5] text-[#3f2578] text-[16px]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>Životko, které dává smysl</p>
                     <Link to="/pojisteni/zivot" className="flex gap-[8px] h-[48px] items-center justify-center px-[20px] py-[12px] rounded-[12px]" style={{ backgroundImage: "linear-gradient(264.45deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%)" }}>
-                      <p className="font-inter font-medium leading-[1.6] text-[16px] text-white">Spočítat</p>
+                      <p className="leading-[1.6] text-[16px] text-white" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}>Spočítat</p>
                     </Link>
                   </div>
                   <div className="h-[282px] w-[172px] relative shrink-0">
@@ -148,14 +148,14 @@ export function LandingPage() {
                 <div className="flex gap-[24px] items-start w-full">
                   {/* Pet Insurance */}
                   <div className="bg-[#f8fafc] flex flex-col gap-[8px] h-[300px] items-start justify-center p-[24px] rounded-[8px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-[215.5px]">
-                    <div className="bg-clip-text flex flex-col font-mona font-bold justify-center leading-[0] text-[36px] w-full" style={{ backgroundImage: "linear-gradient(267.185deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
+                    <div className="bg-clip-text flex flex-col justify-center leading-[0] text-[36px] w-full" style={{ backgroundImage: "linear-gradient(267.185deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 700 }}>
                       <p className="leading-[1.1] whitespace-pre-wrap">Pojištění mazlíčků</p>
                     </div>
                     <div className="h-[143px] w-[175.789px] relative shrink-0">
                       <img alt="" className="absolute h-[184.39%] left-0 max-w-none top-[-39.38%] w-full" src={imgPetsDogCat} />
                     </div>
                     <Link to="/pojisteni/mazlicci" className="flex gap-[8px] items-center justify-center py-[2px] rounded-[6px] text-[#ef8600] text-center">
-                      <p className="font-mona font-semibold leading-[1.5] text-[16px]">Spočítat</p>
+                      <p className="leading-[1.5] text-[16px]" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 600 }}>Spočítat</p>
                       <p className="text-[18px]">→</p>
                     </Link>
                   </div>
@@ -166,11 +166,11 @@ export function LandingPage() {
                       <img alt="" className="absolute h-[126.73%] left-[-12.38%] max-w-none top-[-11.88%] w-[125.08%]" src={imgEuFlag3d} />
                     </div>
                     <div className="flex flex-col gap-[4px] items-start w-full">
-                      <div className="bg-clip-text flex flex-col font-mona font-bold justify-center leading-[0] text-[30px] w-full" style={{ backgroundImage: "linear-gradient(266.589deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent" }}>
+                      <div className="bg-clip-text flex flex-col justify-center leading-[0] text-[30px] w-full" style={{ backgroundImage: "linear-gradient(266.589deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 700 }}>
                         <p className="leading-[1.1] whitespace-pre-wrap">Pojištění pro cizince</p>
                       </div>
                       <Link to="/pojisteni/cizinci" className="flex gap-[8px] items-center justify-center py-[2px] rounded-[6px] text-[#ef8600] text-center">
-                        <p className="font-mona font-semibold leading-[1.5] text-[16px]">Spočítat</p>
+                        <p className="leading-[1.5] text-[16px]" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 600 }}>Spočítat</p>
                         <p className="text-[18px]">→</p>
                       </Link>
                     </div>
@@ -191,13 +191,13 @@ export function LandingPage() {
       <div className="flex gap-[48px] items-start justify-center max-w-[1200px] pb-[200px] pt-[10px] w-[1200px]">
         <div className="flex flex-col gap-[0px] items-start flex-1 pb-[48px]">
           <div className="flex flex-col gap-[8px] items-start leading-[0] w-full">
-            <div className="bg-clip-text flex flex-col font-mona font-extrabold justify-center text-[48px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(252.026deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
+            <div className="bg-clip-text flex flex-col justify-center text-[48px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(252.026deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 800 }}>
               <p className="leading-none whitespace-pre-wrap">Proč si vybrat nás?</p>
             </div>
-            <div className="flex flex-col font-mona justify-center text-[#3f2578] text-[18px] w-full">
+            <div className="flex flex-col justify-center text-[#3f2578] text-[18px] w-full" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 400 }}>
               <p className="whitespace-pre-wrap">
                 <span className="leading-[1.5]">Frenkee není jen další nudný porovnávač, kam se musí zadat telefon a e-mail, abyste vůbec viděli nabídku. Nejde nám o to, dostat vás do nekonečného kolotoče otravných telefonátů. Děláme to jinak. </span>
-                <span className="font-mona font-black leading-[1.5] text-[#ef8600]">Dáváme rady, tipy a férové nabídky až v okamžiku, kdy sami uznáte za vhodné.</span>
+                <span className="leading-[1.5] text-[#ef8600]">Dáváme rady, tipy a férové nabídky až v okamžiku, kdy sami uznáte za vhodné.</span>
               </p>
             </div>
           </div>
@@ -209,10 +209,10 @@ export function LandingPage() {
               <img alt="" className="size-[36px]" src="/assets/icon-call-slash.svg" />
             </div>
             <div className="flex flex-col gap-[2px] items-start justify-center leading-[0] flex-1 text-[#3f2578]">
-              <div className="bg-clip-text flex flex-col font-mona font-bold justify-center text-[18px] w-full" style={{ backgroundImage: "linear-gradient(245.185deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
+              <div className="bg-clip-text flex flex-col justify-center text-[18px] w-full" style={{ backgroundImage: "linear-gradient(245.185deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 700 }}>
                 <p className="leading-[1.6] whitespace-pre-wrap">Bez otravných telefonátů a nabídek</p>
               </div>
-              <p className="font-inter leading-[1.9] text-[16px] w-full">Nikdy vám nebudeme volat a otravovat Vás s nabídkami, které jste nechtěli.</p>
+              <p className="leading-[1.9] text-[16px] w-full" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>Nikdy vám nebudeme volat a otravovat Vás s nabídkami, které jste nechtěli.</p>
             </div>
           </div>
           {/* Feature 2 */}
@@ -221,10 +221,10 @@ export function LandingPage() {
               <img alt="" className="size-[36px]" src="/assets/icon-global-edit.svg" />
             </div>
             <div className="flex flex-col gap-[2px] items-start justify-center leading-[0] flex-1 text-[#3f2578]">
-              <div className="bg-clip-text flex flex-col font-inter font-bold justify-center text-[18px] w-full" style={{ backgroundImage: "linear-gradient(245.185deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
+              <div className="bg-clip-text flex flex-col justify-center text-[18px] w-full" style={{ backgroundImage: "linear-gradient(245.185deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent", fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>
                 <p className="leading-[1.6] whitespace-pre-wrap">100% Online a bez "papírování"</p>
               </div>
-              <p className="font-inter leading-[1.9] text-[16px] w-full">Frenkee funguje online, téměř vše si vyřešiíte z pohodlí svého gauč</p>
+              <p className="leading-[1.9] text-[16px] w-full" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>Frenkee funguje online, téměř vše si vyřešiíte z pohodlí svého gauč</p>
             </div>
           </div>
           {/* Feature 3 */}
@@ -233,10 +233,10 @@ export function LandingPage() {
               <img alt="" className="size-[36px]" src="/assets/icon-lamp-on.svg" />
             </div>
             <div className="flex flex-col gap-[2px] items-start justify-center leading-[0] flex-1 text-[#3f2578]">
-              <div className="bg-clip-text flex flex-col font-inter font-bold justify-center text-[18px] w-full" style={{ backgroundImage: "linear-gradient(245.185deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
+              <div className="bg-clip-text flex flex-col justify-center text-[18px] w-full" style={{ backgroundImage: "linear-gradient(245.185deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent", fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>
                 <p className="leading-[1.6] whitespace-pre-wrap">Tým expertů 20 roky zkušeností a AI Asistentem</p>
               </div>
-              <p className="font-inter leading-[1.9] text-[16px] w-full">Když si nebudete vědět rady, můžete se obrátit na Frenka, AI asistenta, který vám se vším pomůže nebo se spojit s jedním z našich specialstů.</p>
+              <p className="leading-[1.9] text-[16px] w-full" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>Když si nebudete vědět rady, můžete se obrátit na Frenka, AI asistenta, který vám se vším pomůže nebo se spojit s jedním z našich specialstů.</p>
             </div>
           </div>
         </div>
@@ -245,48 +245,48 @@ export function LandingPage() {
       {/* Testimonials Section */}
       <div className="flex flex-col gap-[48px] items-center max-w-[1200px] w-full">
         <div className="flex flex-col gap-[8px] items-start leading-[0] text-center w-[600px]">
-          <div className="bg-clip-text flex flex-col font-mona font-extrabold justify-center text-[48px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(251.328deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
+          <div className="bg-clip-text flex flex-col justify-center text-[48px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(251.328deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 800 }}>
             <p className="leading-none whitespace-pre-wrap">Co říkají naši klienti</p>
           </div>
-          <p className="font-mona leading-[1.6] text-[#3f2578] text-[18px] w-full">Přečtěte si reálné recenze z Googlu</p>
+          <p className="leading-[1.6] text-[#3f2578] text-[18px] w-full" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 400 }}>Přečtěte si reálné recenze z Googlu</p>
         </div>
         <div className="flex gap-[24px] items-stretch justify-center w-full">
           {/* Testimonial 1 */}
           <div className="bg-[rgba(246,238,247,0.5)] border border-[#d8b0d8] flex flex-col items-start justify-between p-[24px] rounded-[16px] shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] w-[389px]">
-            <p className="font-mona leading-[1.9] text-[16px] text-[#1e293b] mb-[24px]">
+            <p className="leading-[1.9] text-[16px] text-[#1e293b] mb-[24px]" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 400 }}>
               Naprostá spokojenost. Velmi rychlý a ochotný přístup. Od minulého roku jsem tu začal sjednávat všechny pojistky a vůbec neuvažuji o tom, že bych měl přejít někam jinam.
             </p>
             <div className="flex gap-[24px] items-center w-full">
               <img alt="" className="rounded-full size-[48px]" src="/assets/avatar.png" />
               <div className="flex flex-col gap-[2px] items-start leading-[0] flex-1">
-                <p className="font-inter font-medium leading-[1.6] text-[18px] text-[#020617]">Vojtěch Horálek</p>
-                <p className="font-inter leading-[1.9] text-[16px] text-[#64748b]">Před 9 měsíci</p>
+                <p className="leading-[1.6] text-[18px] text-[#020617]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}>Vojtěch Horálek</p>
+                <p className="leading-[1.9] text-[16px] text-[#64748b]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>Před 9 měsíci</p>
               </div>
             </div>
           </div>
           {/* Testimonial 2 */}
           <div className="bg-[rgba(246,238,247,0.5)] border border-[#d8b0d8] flex flex-col items-start justify-between p-[24px] rounded-[16px] shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] w-[389px]">
-            <p className="font-inter leading-[1.9] text-[16px] text-[#1e293b] mb-[24px]">
+            <p className="leading-[1.9] text-[16px] text-[#1e293b] mb-[24px]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>
               Bezkonkurenční spokojenost všemi směry. Doporučuji! Až budu zase něco potřebovat, vím na koho se mohu obrátit a kdo mi hlavně pomůže. Děkuji :)
             </p>
             <div className="flex gap-[24px] items-center w-full">
               <img alt="" className="rounded-full size-[48px]" src="/assets/avatar.png" />
               <div className="flex flex-col gap-[2px] items-start leading-[0] flex-1">
-                <p className="font-inter font-medium leading-[1.6] text-[18px] text-[#020617]">Gabriela Činovcová</p>
-                <p className="font-inter leading-[1.9] text-[16px] text-[#64748b]">Před 9 měsíci</p>
+                <p className="leading-[1.6] text-[18px] text-[#020617]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}>Gabriela Činovcová</p>
+                <p className="leading-[1.9] text-[16px] text-[#64748b]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>Před 9 měsíci</p>
               </div>
             </div>
           </div>
           {/* Testimonial 3 */}
           <div className="bg-[rgba(246,238,247,0.5)] border border-[#d8b0d8] flex flex-col items-start justify-between p-[24px] rounded-[16px] shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] w-[389px]">
-            <p className="font-mona leading-[1.9] text-[16px] text-[#1e293b] mb-[24px]">
+            <p className="leading-[1.9] text-[16px] text-[#1e293b] mb-[24px]" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 400 }}>
               Rád bych poděkoval týmu Frenkee za jejich vynikající pomoc a profesionalitu. Byli nejen ochotní, ale i velmi vstřícní a rychle reagovali na všechny mé potřeby. Určitě je doporučuji všem, kteří hledají spolehlivou a kvalitní pomoc. Jsou opravdu nejlepší v tom, co dělají. Děkuji vám
             </p>
             <div className="flex gap-[24px] items-center w-full">
               <img alt="" className="rounded-full size-[48px]" src="/assets/avatar.png" />
               <div className="flex flex-col gap-[2px] items-start leading-[0] flex-1">
-                <p className="font-inter font-medium leading-[1.6] text-[18px] text-[#020617]">Dam ko</p>
-                <p className="font-inter leading-[1.9] text-[16px] text-[#64748b]">Před 9 měsíci</p>
+                <p className="leading-[1.6] text-[18px] text-[#020617]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}>Dam ko</p>
+                <p className="leading-[1.9] text-[16px] text-[#64748b]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>Před 9 měsíci</p>
               </div>
             </div>
           </div>
@@ -296,10 +296,10 @@ export function LandingPage() {
       {/* Media Section */}
       <div className="flex flex-col gap-[48px] items-start max-w-[1200px] py-[120px] w-full">
         <div className="flex flex-col gap-[8px] items-start leading-[0] max-w-[600px] w-full">
-          <div className="bg-clip-text flex flex-col font-mona font-extrabold justify-center text-[48px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(251.328deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
+          <div className="bg-clip-text flex flex-col justify-center text-[48px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(251.328deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 800 }}>
             <p className="leading-none whitespace-pre-wrap">Frenkee v médiích</p>
           </div>
-          <p className="font-mona leading-[1.5] text-[#3f2578] text-[18px] w-full">
+          <p className="leading-[1.5] text-[#3f2578] text-[18px] w-full" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 400 }}>
             Podívejte se, co píšou a říkají o Frenkeem média, a nahlédněte pod pokličku projektu s jeho CEO Jiřím Hluchým. Dozvíte se, jak vám Frenkee pomůže pohodlně a online zařídit pojistky, hypotéku nebo chytře investovat.
           </p>
         </div>
@@ -314,7 +314,7 @@ export function LandingPage() {
                 <div className="absolute bg-gradient-to-b from-transparent from-50% inset-0 rounded-[6px] to-black" />
               </div>
               <img alt="Forbes" className="h-[40.5px] w-[150px] relative z-10" src="/assets/forbes-logo.svg" />
-              <p className="font-mona font-bold leading-[1.4] text-[13.5px] text-white relative z-10">
+              <p className="leading-[1.4] text-[13.5px] text-white relative z-10" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 600 }}>
                 Frenkee goes to lepší byznys. Někdejší finanční poradce chce svým startupem změnit obor
               </p>
             </div>
@@ -323,7 +323,7 @@ export function LandingPage() {
                 <img alt="" className="absolute max-w-none object-cover rounded-[6px] size-full" src="/assets/media-2.png" />
                 <div className="absolute bg-gradient-to-b from-transparent from-50% inset-0 rounded-[6px] to-black" />
               </div>
-              <p className="font-mona font-bold leading-[1.4] text-[13.5px] text-white relative z-10">
+              <p className="leading-[1.4] text-[13.5px] text-white relative z-10" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 600 }}>
                 V otázce investic zapomeňte na emoce a soustřeďte se na delší horizont, radí finanční specialista Jiří Hluchý
               </p>
             </div>
@@ -336,7 +336,7 @@ export function LandingPage() {
                 <div className="absolute bg-gradient-to-b from-transparent from-50% inset-0 rounded-[6px] to-black" />
               </div>
               <img alt="Prague Morning" className="h-[33.92px] w-[260.25px] relative z-10" src="/assets/prague-morning-logo.png" />
-              <p className="font-mona font-bold leading-[1.4] text-[13.5px] text-white relative z-10">
+              <p className="leading-[1.4] text-[13.5px] text-white relative z-10" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 600 }}>
                 Foreign Employees Struggle with Czech Bureaucracy, Fintech Frenkee Survey Reveals
               </p>
             </div>
@@ -348,7 +348,7 @@ export function LandingPage() {
               <div className="h-[41.794px] overflow-clip w-[423px] relative z-10">
                 <img alt="HN" className="h-full w-full object-contain" src="/assets/hn-logo.svg" />
               </div>
-              <p className="font-mona font-bold leading-[1.4] text-[13.5px] text-white relative z-10">
+              <p className="leading-[1.4] text-[13.5px] text-white relative z-10" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 600 }}>
                 Umělá inteligence umí lepší a levnější nápady než lidé. Přesto v některých firmách čeká na obměnu manažerů
               </p>
             </div>
@@ -358,10 +358,10 @@ export function LandingPage() {
         {/* Blog Section */}
         <div className="flex flex-col gap-[48px] items-center max-w-[1200px] w-full">
           <div className="flex flex-col gap-[12px] items-start leading-[0] w-full">
-            <div className="bg-clip-text flex flex-col font-mona font-extrabold justify-center text-[48px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(235.947deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
+            <div className="bg-clip-text flex flex-col justify-center text-[48px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(235.947deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 800 }}>
               <p className="leading-none whitespace-pre-wrap">Provedu vás úskalími pojistek, úvěrů a investic</p>
             </div>
-            <p className="font-mona leading-[1.5] text-[#3f2578] text-[18px] w-full">
+            <p className="leading-[1.5] text-[#3f2578] text-[18px] w-full" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 400 }}>
               Podívejte se, co píšou a říkají o Frenkeem média, a nahlédněte pod pokličku projektu s jeho CEO Jiřím Hluchým. Dozvíte se, jak vám Frenkee pomůže pohodlně a online zařídit pojistky, hypotéku nebo chytře investovat.
             </p>
           </div>
@@ -373,10 +373,10 @@ export function LandingPage() {
                 <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src="/assets/blog-1.png" />
               </div>
               <div className="flex flex-col gap-[4px] items-center leading-[0] text-[#3f2578] w-full">
-                <p className="font-mona font-bold leading-[1.6] text-[16px] w-full">
+                <p className="leading-[1.6] text-[16px] w-full" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 600 }}>
                   Cestovní pojištění do zahraničí online: Srovnání 2026
                 </p>
-                <p className="font-mona font-medium leading-[1.6] text-[14px] w-full">
+                <p className="leading-[1.6] text-[14px] w-full" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 400 }}>
                   6/21/19
                 </p>
               </div>
@@ -390,10 +390,10 @@ export function LandingPage() {
                   <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src="/assets/blog-2.png" />
                 </div>
                 <div className="flex flex-[1_0_0] flex-col gap-[4px] items-center leading-[0] min-w-0 text-[#3f2578]">
-                  <p className="font-mona font-bold leading-[1.6] text-[16px] w-full">
+                  <p className="leading-[1.6] text-[16px] w-full" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 600 }}>
                     Co je pojištění odpovědnosti a co všechno nabízí
                   </p>
-                  <p className="font-mona font-medium leading-[1.6] text-[14px] w-full">
+                  <p className="leading-[1.6] text-[14px] w-full" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 400 }}>
                     7/18/17
                   </p>
                 </div>
@@ -404,10 +404,10 @@ export function LandingPage() {
                   <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src="/assets/blog-3.png" />
                 </div>
                 <div className="flex flex-[1_0_0] flex-col gap-[4px] items-center leading-[0] min-w-0 text-[#3f2578]">
-                  <p className="font-mona font-bold leading-[1.6] text-[16px] w-full">
+                  <p className="leading-[1.6] text-[16px] w-full" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 600 }}>
                     Jak danit hypotéku?
                   </p>
-                  <p className="font-mona font-medium leading-[1.6] text-[14px] w-full">
+                  <p className="leading-[1.6] text-[14px] w-full" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 400 }}>
                     1/15/12
                   </p>
                 </div>
@@ -418,10 +418,10 @@ export function LandingPage() {
                   <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src="/assets/blog-4.png" />
                 </div>
                 <div className="flex flex-[1_0_0] flex-col gap-[4px] items-center leading-[0] min-w-0 text-[#3f2578]">
-                  <p className="font-mona font-bold leading-[1.6] text-[16px] w-full">
+                  <p className="leading-[1.6] text-[16px] w-full" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 600 }}>
                     Srovnáni pojištění pro cizince v roce 2026
                   </p>
-                  <p className="font-inter font-medium leading-[1.6] text-[14px] w-full">
+                  <p className="leading-[1.6] text-[14px] w-full" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}>
                     10/28/12
                   </p>
                 </div>
@@ -432,10 +432,10 @@ export function LandingPage() {
                   <img alt="" className="absolute max-w-none object-cover rounded-[12px] size-full" src="/assets/blog-5.png" />
                 </div>
                 <div className="flex flex-[1_0_0] flex-col gap-[4px] items-center leading-[0] min-w-0 text-[#3f2578]">
-                  <p className="font-mona font-bold leading-[1.6] text-[16px] w-full">
+                  <p className="leading-[1.6] text-[16px] w-full" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 600 }}>
                     Jak funguje pojistka na blbost?
                   </p>
-                  <p className="font-mona font-medium leading-[1.6] text-[14px] w-full">
+                  <p className="leading-[1.6] text-[14px] w-full" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 400 }}>
                     5/7/16
                   </p>
                 </div>

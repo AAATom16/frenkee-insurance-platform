@@ -34,9 +34,12 @@ export function Header() {
                 isActive ? 'bg-white px-[4px] py-[4px] rounded-[4px]' : ''
               }`}
             >
-              <p className={`font-mona font-bold text-[17px] leading-[20px] whitespace-nowrap ${
-                isActive ? 'text-[#3f2578]' : 'text-[#64748b]'
-              }`}>
+              <p 
+                className={`text-[17px] leading-[20px] whitespace-nowrap ${
+                  isActive ? 'text-[#3f2578]' : 'text-[#64748b]'
+                }`}
+                style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 700 }}
+              >
                 {item.label}
               </p>
             </Link>
@@ -45,12 +48,12 @@ export function Header() {
       </nav>
       <div className="flex gap-[12px] items-center shrink-0">
         <Link to="/registrace" className="bg-[#3f2578] flex items-center justify-center px-[18px] py-[10px] rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
-          <p className="font-mona font-extrabold leading-[24px] text-[16px] text-white">
+          <p className="leading-[24px] text-[16px] text-white" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 800 }}>
             Registrace
           </p>
         </Link>
         <Link to="/kontakt" className="flex items-center justify-center">
-          <p className="font-mona font-medium text-[17px] leading-[20px] text-[#3f2578] underline decoration-solid">
+          <p className="text-[17px] leading-[20px] text-[#3f2578] underline decoration-solid" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 500 }}>
             Kontakt
           </p>
         </Link>

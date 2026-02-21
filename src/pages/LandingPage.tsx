@@ -250,7 +250,7 @@ export function LandingPage() {
           </div>
           <p className="font-['Mona_Sans_VF:Regular',sans-serif] leading-[1.6] text-[#3f2578] text-[18px] w-full">Přečtěte si reálné recenze z Googlu</p>
         </div>
-        <div className="flex gap-[24px] items-start justify-center w-full">
+        <div className="flex gap-[24px] items-stretch justify-center w-full">
           {/* Testimonial 1 */}
           <div className="bg-[rgba(246,238,247,0.5)] border border-[#d8b0d8] flex flex-col items-start justify-between p-[24px] rounded-[16px] shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] w-[389px]">
             <p className="font-['Mona_Sans_VF:Regular',sans-serif] leading-[1.9] text-[16px] text-[#1e293b] mb-[24px]">

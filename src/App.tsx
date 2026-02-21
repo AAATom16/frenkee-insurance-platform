@@ -13,6 +13,11 @@ import { TravelStep1 } from './pages/TravelStep1';
 import { TravelStep2 } from './pages/TravelStep2';
 import { TravelStep3 } from './pages/TravelStep3';
 import { TravelStep4 } from './pages/TravelStep4';
+import { LifeStep1 } from './pages/LifeStep1';
+import { LifeStep2 } from './pages/LifeStep2';
+import { LifeStep3 } from './pages/LifeStep3';
+import { LifeStep4 } from './pages/LifeStep4';
+import { LifeStep5 } from './pages/LifeStep5';
 import { MajetekStep1 } from './pages/MajetekStep1';
 import { MajetekStep2 } from './pages/MajetekStep2';
 import { MajetekStep3 } from './pages/MajetekStep3';
@@ -36,6 +41,11 @@ function App() {
           <Route path="pojisteni/cestovani/nabidky" element={<TravelStep2 />} />
           <Route path="pojisteni/cestovani/udaje" element={<TravelStep3 />} />
           <Route path="pojisteni/cestovani/platba" element={<TravelStep4 />} />
+          <Route path="pojisteni/zivot" element={<LifeStep1 />} />
+          <Route path="pojisteni/zivot/zdravi" element={<LifeStep2 />} />
+          <Route path="pojisteni/zivot/kryti" element={<LifeStep3 />} />
+          <Route path="pojisteni/zivot/obmyvatel" element={<LifeStep4 />} />
+          <Route path="pojisteni/zivot/shrnuti" element={<LifeStep5 />} />
           <Route path="pojisteni/auto" element={<AutoStep1 />} />
           <Route path="pojisteni/auto/krok-2" element={<AutoStep2 />} />
           <Route path="pojisteni/auto/krok-3" element={<AutoStep3 />} />

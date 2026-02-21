@@ -10,7 +10,7 @@ const NAV_ITEMS = [
   { path: '/pojisteni/cestovani', label: 'Cestování' },
   { path: '/pojisteni/odpovednost', label: 'Odpovědnost' },
   { path: '/pojisteni/zivnost', label: 'Živnost' },
-  { path: '/pro-firmy', label: 'Pro firmy' },
+  { path: '/pojisteni/zivot', label: 'Život' },
 ];
 
 export function Header() {

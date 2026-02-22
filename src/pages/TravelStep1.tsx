@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { LifeProgress } from '../components/LifeProgress';
 import { Button, GradientHeading, Input, Select } from '../components/ui';
 
-const imgTravelPerson = '/assets/travel-person.png';
+const imgTravelMain = '/assets/travel-airplane.png';
+const imgTravelFallback = '/assets/travel-person.png';
 
 const DESTINATIONS = [
   { value: 'de', label: 'Německo' },
@@ -23,13 +24,11 @@ const TRAVEL_REASONS = [
 ];
 
 const TRAVEL_ICONS = [
-  { icon: '/assets/shield-icon.svg', alt: 'Pojištění' },
+  { icon: '/assets/shield-check-icon.svg', alt: 'Pojištění' },
   { icon: '/assets/shield-plus-icon.svg', alt: 'Léčebné výlohy' },
-  { icon: '/assets/car-icon-1.svg', alt: 'Auto' },
+  { icon: '/assets/globe-europe-africa.svg', alt: 'Evropa / mezinárodní' },
   { icon: '/assets/icon-map-pin.svg', alt: 'Destinace' },
-  { icon: '/assets/droplets-icon.svg', alt: 'Připojištění' },
   { icon: '/assets/user-icon.svg', alt: 'Skupina' },
-  { icon: '/assets/shield-check-icon.svg', alt: 'Asistence' },
   { icon: '/assets/house-icon.svg', alt: 'Ubytování' },
 ];
 
@@ -57,9 +56,9 @@ export function TravelStep1() {
       </p>
 
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start justify-center w-full max-w-[1200px] px-4 md:px-12">
-        {/* Left: Ilustrace + ikony */}
-        <div className="flex flex-col gap-4 shrink-0 w-full lg:w-[320px] order-1 lg:order-2">
-          <div className="grid grid-cols-4 gap-2">
+        {/* Vlevo: Ilustrace + ikony (jako LifeStep1) */}
+        <div className="flex flex-col gap-4 shrink-0 w-full lg:w-[320px]">
+          <div className="grid grid-cols-3 gap-2">
             {TRAVEL_ICONS.map(({ icon, alt }) => (
               <div
                 key={alt}
@@ -71,12 +70,22 @@ export function TravelStep1() {
             ))}
           </div>
           <div className="flex justify-center lg:justify-start">
-            <img src={imgTravelPerson} alt="" className="max-h-[280px] w-auto object-contain" />
+            <img
+            src={imgTravelMain}
+            alt=""
+            className="max-h-[280px] w-auto object-contain"
+            onError={(e) => {
+              const el = e.target as HTMLImageElement;
+              if (el.src !== imgTravelFallback) {
+                el.src = imgTravelFallback;
+              }
+            }}
+          />
           </div>
         </div>
 
-        {/* Right: Formulář */}
-        <div className="flex flex-col gap-6 w-full flex-1 min-w-0 order-2 lg:order-1">
+        {/* Vpravo: Formulář */}
+        <div className="flex flex-col gap-6 w-full flex-1 min-w-0 max-w-[600px]">
           <LifeProgress current={1} total={4} />
 
           <div className="flex flex-col gap-2">

@@ -65,6 +65,10 @@ const VAR_TO_FILENAME = {
   imgTravelAirplane: 'travel-airplane.png',
   imgCestovaniPerson: 'travel-person.png',
   imgCestovaniTraveler: 'travel-person.png',
+  // Ikonky pro cestovní flow
+  globeEuropeAfrica1: 'globe-europe-africa.svg',
+  europe1: 'europe.svg',
+  mingIconCarFill: 'car-fill.svg',
 };
 
 function extractUrlsFromCode(content) {

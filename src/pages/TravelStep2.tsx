@@ -1,4 +1,8 @@
 import { useNavigate } from 'react-router-dom';
+import { LifeProgress } from '../components/LifeProgress';
+import { Button, GradientHeading } from '../components/ui';
+
+const imgTravelPerson = '/assets/travel-person.png';
 
 const PACKAGES = [
   { id: 'zakladni', name: 'Základní', price: 300, features: ['Léčebné výlohy', 'Asistenční služby', 'Úrazové pojištění'] },
@@ -10,103 +14,65 @@ export function TravelStep2() {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white flex flex-col gap-[24px] items-center p-[24px] w-full min-h-screen">
-      <div
-        className="bg-clip-text flex flex-col justify-center leading-[0] text-[48px] text-center tracking-[-1px] w-full"
-        style={{
-          backgroundImage: 'linear-gradient(231.904deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)',
-          WebkitTextFillColor: 'transparent',
-          fontFamily: "'Mona Sans', sans-serif",
-          fontWeight: 800,
-        }}
-      >
-        <p className="leading-none whitespace-pre-wrap">Online pojištění cestování</p>
-      </div>
-      <p className="text-[#3f2578] text-[16px] font-bold text-center" style={{ fontFamily: "'Mona Sans', sans-serif" }}>
+    <div className="bg-white flex flex-col gap-6 items-center p-4 md:p-6 w-full min-h-screen">
+      <GradientHeading size="lg" className="w-full">
+        Online sjednání cestovního pojištění
+      </GradientHeading>
+
+      <p className="font-mona font-bold text-[16px] text-[var(--color-primary)] text-center">
         4 kroky k pojištění vaší cesty
       </p>
 
-      <div className="flex flex-col gap-[24px] items-center px-[99px] py-[24px] w-[1000px] max-w-full">
-        {/* Progress - step 2 active */}
-        <div className="flex items-center justify-center gap-[12px] w-full">
-          <div className="flex flex-col items-center gap-[8px]">
-            <div className="bg-[#3f2578] flex items-center justify-center rounded-full size-[40px]">
-              <span className="text-white font-bold text-[16px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>1</span>
-            </div>
-            <span className="text-[#94a3b8] font-bold text-[14px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Vyplnění</span>
-          </div>
-          <div className="bg-[#3f2578] h-[2px] w-[80px]" />
-          <div className="flex flex-col items-center gap-[8px]">
-            <div className="bg-[#3f2578] flex items-center justify-center rounded-full size-[40px]">
-              <span className="text-white font-bold text-[16px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>2</span>
-            </div>
-            <span className="text-[#3f2578] font-bold text-[14px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Nabídky</span>
-          </div>
-          <div className="bg-[#e2e9f0] h-[2px] w-[80px]" />
-          <div className="flex flex-col items-center gap-[8px]">
-            <div className="bg-[#e2e9f0] flex items-center justify-center rounded-full size-[40px]">
-              <span className="text-[#94a3b8] font-bold text-[16px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>3</span>
-            </div>
-            <span className="text-[#94a3b8] font-bold text-[14px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Údaje</span>
-          </div>
-          <div className="bg-[#e2e9f0] h-[2px] w-[80px]" />
-          <div className="flex flex-col items-center gap-[8px]">
-            <div className="bg-[#e2e9f0] flex items-center justify-center rounded-full size-[40px]">
-              <span className="text-[#94a3b8] font-bold text-[16px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>4</span>
-            </div>
-            <span className="text-[#94a3b8] font-bold text-[14px]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Platba</span>
-          </div>
+      <div className="flex flex-col lg:flex-row gap-8 items-start justify-center w-full max-w-[1200px] px-4 md:px-12">
+        <div className="hidden lg:block shrink-0 w-[200px]">
+          <img src={imgTravelPerson} alt="" className="max-h-[200px] w-auto object-contain opacity-90" />
+        </div>
+        <div className="flex flex-col gap-6 flex-1 min-w-0 w-full">
+        <LifeProgress current={2} total={4} />
+
+        <div className="bg-[var(--color-background-alt)] flex gap-6 items-center px-4 py-3 rounded-[var(--radius-lg)] w-full flex-wrap">
+          <span className="text-[14px] text-[var(--color-text-muted)] font-inter">Datum: 1.10. – 10.10.</span>
+          <span className="text-[14px] text-[var(--color-text-muted)] font-inter">Destinace: Německo</span>
+          <span className="text-[14px] text-[var(--color-text-muted)] font-inter">Důvod cesty: Rekreace</span>
         </div>
 
-        {/* Summary bar */}
-        <div className="bg-[#f1f5f9] flex gap-[24px] items-center px-[16px] py-[12px] rounded-[8px] w-full flex-wrap">
-          <span className="text-[14px] text-[#64748b]" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Datum: 1.10. – 10.10.
-          </span>
-          <span className="text-[14px] text-[#64748b]" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Destinace: Německo
-          </span>
-          <span className="text-[14px] text-[#64748b]" style={{ fontFamily: "'Inter', sans-serif" }}>
-            Důvod cesty: Rekreace
-          </span>
-        </div>
-
-        {/* Product cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-[24px] w-full">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
           {PACKAGES.map((pkg) => (
             <div
               key={pkg.id}
-              className="border border-[#e2e9f0] flex flex-col gap-[16px] p-[24px] rounded-[12px] bg-white shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)]"
+              className="border border-[var(--color-border)] flex flex-col gap-4 p-6 rounded-[var(--radius-lg)] bg-white shadow-[var(--shadow-card)]"
             >
-              <div className="flex items-center gap-[8px]">
-                <div className="size-[40px] rounded-[8px] bg-[#3f2578]/10 flex items-center justify-center">
-                  <span className="text-[#3f2578] text-[18px] font-bold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>🛡</span>
+              <div className="flex items-center gap-2">
+                <div className="size-10 rounded-[var(--radius-md)] bg-[var(--color-primary-light)] flex items-center justify-center">
+                  <span className="text-[var(--color-primary)] text-[18px] font-bold font-mona">🛡</span>
                 </div>
                 <div>
-                  <p className="text-[#3f2578] text-[18px] font-bold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>{pkg.name}</p>
-                  <p className="text-[#94a3b8] text-[12px]" style={{ fontFamily: "'Inter', sans-serif" }}>4,5 ★ 200 hodnocení</p>
+                  <p className="text-[var(--color-primary)] text-[18px] font-bold font-mona">{pkg.name}</p>
+                  <p className="text-[var(--color-text-muted)] text-[12px] font-inter">4,5 ★ 200 hodnocení</p>
                 </div>
               </div>
-              <ul className="flex flex-col gap-[8px]">
+              <ul className="flex flex-col gap-2">
                 {pkg.features.map((f) => (
-                  <li key={f} className="flex gap-[8px] items-center text-[14px] text-[#3f2578]" style={{ fontFamily: "'Inter', sans-serif" }}>
+                  <li key={f} className="flex gap-2 items-center text-[14px] text-[var(--color-primary)] font-inter">
                     <span className="text-green-600">✓</span> {f}
                   </li>
                 ))}
               </ul>
-              <div className="mt-auto flex flex-col gap-[12px]">
-                <p className="text-[24px] font-bold text-[#3f2578]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>{pkg.price} Kč</p>
-                <button
+              <div className="mt-auto flex flex-col gap-3">
+                <p className="text-[24px] font-bold text-[var(--color-primary)] font-mona">{pkg.price} Kč</p>
+                <Button
                   type="button"
+                  variant="gradient"
+                  size="md"
+                  className="w-full h-11"
                   onClick={() => navigate('/pojisteni/cestovani/udaje')}
-                  className="flex h-[44px] items-center justify-center rounded-[8px] text-white text-[14px] font-bold w-full"
-                  style={{ backgroundImage: 'linear-gradient(263.127deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%)', fontFamily: "'Mona Sans', sans-serif" }}
                 >
-                  Vybrat
-                </button>
+                  Zvolit
+                </Button>
               </div>
             </div>
           ))}
+        </div>
         </div>
       </div>
     </div>

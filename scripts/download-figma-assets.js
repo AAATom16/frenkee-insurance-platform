@@ -60,6 +60,11 @@ const VAR_TO_FILENAME = {
   imgLucideUser: 'user-icon.svg',
   imgLucideCheck: 'check-simple-icon.svg',
   imgAxaLogoSvg1: 'axa-logo.png',
+  // Cestovní pojištění – flow Step 1, 2
+  imgTravelPerson: 'travel-person.png',
+  imgTravelAirplane: 'travel-airplane.png',
+  imgCestovaniPerson: 'travel-person.png',
+  imgCestovaniTraveler: 'travel-person.png',
 };
 
 function extractUrlsFromCode(content) {

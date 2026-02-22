@@ -57,10 +57,10 @@ export function Header() {
               }`}
             >
               <p 
-                className={`text-[17px] leading-[20px] whitespace-nowrap ${
-                  isActive ? 'text-[#3f2578]' : 'text-[#64748b]'
+                className={`text-[17px] leading-[20px] whitespace-nowrap font-bold ${
+                  isActive ? 'text-[var(--color-primary)]' : 'text-[var(--color-text-muted)]'
                 }`}
-                style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 700 }}
+                style={{ fontFamily: 'var(--font-body)' }}
               >
                 {item.label}
               </p>
@@ -69,13 +69,13 @@ export function Header() {
         })}
       </nav>
       <div className="flex gap-[12px] items-center shrink-0">
-        <Link to="/registrace" className="bg-[#3f2578] flex items-center justify-center px-[18px] py-[10px] rounded-[8px] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
-          <p className="leading-[24px] text-[16px] text-white" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 800 }}>
+        <Link to="/registrace" className="bg-[var(--color-primary)] flex items-center justify-center px-[18px] py-[10px] rounded-[var(--radius-md)] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
+          <p className="leading-[24px] text-[16px] text-white font-extrabold" style={{ fontFamily: 'var(--font-body)' }}>
             Registrace
           </p>
         </Link>
         <Link to="/kontakt" className="flex items-center justify-center">
-          <p className="text-[17px] leading-[20px] text-[#3f2578] underline decoration-solid" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 500 }}>
+          <p className="text-[17px] leading-[20px] text-[var(--color-primary)] underline decoration-solid font-medium" style={{ fontFamily: 'var(--font-body)' }}>
             Kontakt
           </p>
         </Link>
@@ -90,7 +90,7 @@ export function Header() {
             width: `${linePosition.width}px`,
             height: '3px',
             bottom: '12px',
-            backgroundColor: '#3F2578'
+            backgroundColor: 'var(--color-primary)'
           }}
         />
       )}

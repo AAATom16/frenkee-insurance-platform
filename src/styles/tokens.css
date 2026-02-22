@@ -1,12 +1,12 @@
 /* Frenkee Design Tokens - from Figma node 24-504 */
 
 :root {
-  /* Darkpurple-main */
+  /* Darkpurple-main (Figma Darkpuple-main/500 #3f2578) */
   --color-darkpurple-900: #0B0716;
   --color-darkpurple-800: #190F3B;
   --color-darkpurple-700: #29184B;
   --color-darkpurple-600: #3D2680;
-  --color-darkpurple-500: #4B37A6;
+  --color-darkpurple-500: #3f2578;
   --color-darkpurple-400: #5F4FBF;
   --color-darkpurple-300: #9C92C2;
   --color-darkpurple-200: #C0AACD;
@@ -34,13 +34,13 @@
   --color-orange-200: #FFD799;
   --color-orange-100: #FFE7CC;
 
-  /* Color/dark (neutrals) */
+  /* Color/dark (neutrals, aligned with Figma color/dark) */
   --color-dark-900: #121617;
-  --color-dark-400: #56728B;
-  --color-dark-300: #7997A9;
+  --color-dark-400: #64748b;
+  --color-dark-300: #94a3b8;
   --color-dark-25: #AFBFCF;
-  --color-dark-200: #C0DBE1;
-  --color-dark-100: #E8F0F0;
+  --color-dark-200: #e2e9f0;
+  --color-dark-100: #e2e9f0;
   --color-dark-50: #F3F7F7;
   --color-dark-0: #FFFFFF;
 
@@ -55,6 +55,7 @@
   --color-border: var(--color-dark-200);
   --color-background: var(--color-dark-0);
   --color-background-alt: var(--color-dark-50);
+  --color-error: #d60021;
 
   /* Typography - from Figma node 24-676 */
   --font-heading: 'Inter', system-ui, sans-serif;

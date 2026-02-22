@@ -17,14 +17,14 @@ export function RadioGroup({ name, options, value, onChange, label }: RadioGroup
       {label && (
         <label className="body-sm font-semibold text-[var(--color-text)]">{label}</label>
       )}
-      <div className="flex gap-2 flex-wrap">
+      <div className="flex gap-3 flex-wrap">
         {options.map((opt) => (
           <label
             key={opt.value}
-            className={`px-4 py-2 rounded-[var(--radius-md)] body-sm font-medium cursor-pointer transition-colors ${
+            className={`px-4 py-3 rounded-[var(--radius-lg)] border-2 body-sm font-semibold cursor-pointer transition-colors flex items-center gap-2 ${
               value === opt.value
-                ? 'bg-[var(--color-primary)] text-white'
-                : 'bg-[var(--color-dark-50)] text-[var(--color-text)] hover:bg-[var(--color-dark-200)]'
+                ? 'bg-[var(--color-primary)] text-white border-[var(--color-primary)]'
+                : 'bg-white text-[var(--color-text-muted)] border-[var(--color-border)] hover:border-[var(--color-primary)]/50'
             }`}
           >
             <input

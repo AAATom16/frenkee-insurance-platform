@@ -6,15 +6,17 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   error?: string;
   hint?: string;
   infoIcon?: boolean;
+  required?: boolean;
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ label, error, hint, infoIcon, className = '', ...props }, ref) => {
+  ({ label, error, hint, infoIcon, required, className = '', ...props }, ref) => {
     return (
       <div className="flex flex-col gap-1">
         {label && (
           <label className="body-sm font-semibold text-[var(--color-text)] flex items-center gap-2">
             {label}
+            {required && <span className="text-[var(--color-error)]">*</span>}
             {infoIcon && (
               <span className="w-4 h-4 rounded-full bg-[var(--color-dark-200)] text-[var(--color-text-muted)] text-xs flex items-center justify-center cursor-help">i</span>
             )}

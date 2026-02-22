@@ -1,12 +1,13 @@
 import { useNavigate } from 'react-router-dom';
 import { LifeProgress } from '../components/LifeProgress';
+import { Button } from '../components/ui';
 
 export function LifeStep6() {
   const navigate = useNavigate();
 
   return (
     <div className="bg-white flex flex-col gap-[24px] items-center p-[24px] w-full min-h-screen">
-      <h1 className="text-[32px] md:text-[40px] font-bold text-center tracking-tight" style={{ fontFamily: "'Mona Sans', sans-serif", color: '#3f2578' }}>
+      <h1 className="heading-2 text-[var(--color-primary)] text-center tracking-tight">
         Online sjednání životního pojištění
       </h1>
 
@@ -18,29 +19,29 @@ export function LifeStep6() {
             <div className="size-[96px] rounded-full bg-green-100 flex items-center justify-center text-green-600" aria-hidden>
               <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
             </div>
-            <h2 className="text-[28px] font-bold text-[#3f2578]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>
+            <h2 className="heading-4 text-[var(--color-primary)]">
               Gratulujeme!
             </h2>
-            <p className="text-[#3f2578] text-[18px] font-medium" style={{ fontFamily: "'Mona Sans', sans-serif" }}>
+            <p className="body-lg text-[var(--color-primary)] font-medium">
               Sjednání pojištění je téměř hotové.
             </p>
           </div>
 
           <div className="border border-[#e2e9f0] rounded-[12px] p-6 text-left bg-[#f8fafc]">
-            <p className="text-[#3f2578] text-[18px] font-bold mb-2" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Životní pojištění na 10 let</p>
-            <p className="text-[#64748b] text-[16px] mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>658 Kč / měsíc</p>
-            <p className="text-[#64748b] text-[14px] mb-1" style={{ fontFamily: "'Inter', sans-serif" }}>Krytí: Smrt 1 000 000 Kč, Invalidita, Vážné nemoci</p>
-            <p className="text-[#64748b] text-[14px]" style={{ fontFamily: "'Inter', sans-serif" }}>Osobní a kontaktní údaje byly zaznamenány.</p>
+            <p className="body-lg font-bold text-[var(--color-primary)] mb-2">Životní pojištění na 10 let</p>
+            <p className="body text-[var(--color-text-muted)] mb-4">658 Kč / měsíc</p>
+            <p className="body-sm text-[var(--color-text-muted)] mb-1">Krytí: Smrt 1 000 000 Kč, Invalidita, Vážné nemoci</p>
+            <p className="body-sm text-[var(--color-text-muted)]">Osobní a kontaktní údaje byly zaznamenány.</p>
           </div>
 
-          <button
+          <Button
             type="button"
+            size="lg"
+            className="w-full h-[52px] rounded-[var(--radius-lg)] text-lg"
             onClick={() => navigate('/')}
-            className="flex h-[52px] items-center justify-center rounded-[12px] w-full text-white text-[18px] font-bold"
-            style={{ backgroundImage: 'linear-gradient(263.127deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%)', fontFamily: "'Mona Sans', sans-serif" }}
           >
             Závazně sjednat
-          </button>
+          </Button>
         </div>
       </div>
     </div>

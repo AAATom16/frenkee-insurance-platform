@@ -1,0 +1,45 @@
+---
+description: Figma → React handoff (assets, tokens, components)
+globs: ["src/**/*.{ts,tsx,js,jsx}"]
+alwaysApply: true
+---
+
+# Figma → React handoff
+
+## When implementing from Figma
+
+Always start by calling:
+
+1. `get_design_context` (for the target frame/layer or current selection)
+2. `get_variable_defs` (to extract tokens/styles used)
+3. `get_screenshot` (only if layout/spacing is ambiguous)
+
+Prefer existing components in the repo. Search in `src/components` first.
+
+## React conventions
+
+- Use functional components.
+- Keep components small: split into subcomponents if >200 lines.
+- Prefer composition over prop drilling.
+- Accessibility: semantic HTML, aria-label for icon-only buttons, keyboard nav.
+
+## Styling conventions
+
+- If project uses Tailwind: use Tailwind classes and existing utility patterns.
+- If project uses CSS modules/styled-components: follow existing file naming and patterns.
+- Do not invent new design tokens: use tokens from `get_variable_defs` or existing theme files.
+
+## Assets
+
+- If Figma layer has an Export setting, treat it as an asset:
+  - vectors → SVG (preferred)
+  - photos/bitmaps → PNG (2x if needed)
+- Save assets under: `src/assets/` or `public/assets/` (repo's existing assets folder)
+- Use deterministic names (kebab-case) derived from the layer name.
+- Update any asset index exports if the repo has them.
+
+## Code Connect (if available)
+
+- If the design resembles an existing component, use Code Connect mapping:
+  - check `get_code_connect_map`
+  - add mapping when confident (node-id → component path)

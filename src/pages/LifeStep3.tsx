@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LifeProgress } from '../components/LifeProgress';
+import { Button } from '../components/ui';
 
 const KRYTI = [
   { id: 'smrt', label: 'Smrt', defaultAmount: 1000000, placeholder: '1 000 000 Kč' },
@@ -25,7 +26,7 @@ export function LifeStep3() {
 
   return (
     <div className="bg-white flex flex-col gap-[24px] items-center p-[24px] w-full min-h-screen">
-      <h1 className="text-[32px] md:text-[40px] font-bold text-center tracking-tight" style={{ fontFamily: "'Mona Sans', sans-serif", color: '#3f2578' }}>
+      <h1 className="heading-2 text-[var(--color-primary)] text-center tracking-tight">
         Online sjednání životního pojištění
       </h1>
 
@@ -61,7 +62,7 @@ export function LifeStep3() {
             </div>
           ))}
 
-          <button type="button" onClick={() => navigate('/pojisteni/zivot/nabidky')} className="flex h-[52px] items-center justify-center rounded-[12px] w-full mt-2 text-white text-[18px] font-bold" style={{ backgroundImage: 'linear-gradient(263.127deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%)', fontFamily: "'Mona Sans', sans-serif" }}>Pokračovat</button>
+          <Button type="button" size="lg" className="w-full h-[52px] rounded-[var(--radius-lg)] text-lg mt-2" onClick={() => navigate('/pojisteni/zivot/nabidky')}>Pokračovat</Button>
           </div>
         </div>
       </div>

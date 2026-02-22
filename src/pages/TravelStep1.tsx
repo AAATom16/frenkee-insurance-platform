@@ -1,148 +1,310 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LifeProgress } from '../components/LifeProgress';
-import { Button, GradientHeading, Input, Select } from '../components/ui';
+import { GradientHeading } from '../components/ui';
 
-const imgTravelPerson = '/assets/travel-person.png';
+// Assets from Figma
+const imgTravelPerson = '/assets/travel-main-person.png';
+const imgEuropeMap = '/assets/europe-map.png';
+const imgWorldUsa = '/assets/travel-world-usa.png';
+const imgGlobeEuropeAfrica = '/assets/globe-europe-africa.svg';
+const imgCzechMap = '/assets/czech-map.png';
+const imgIconCar = '/assets/icon-car.svg';
+const imgIconAirplane = '/assets/icon-airplane.svg';
+const imgIconTransformation = '/assets/icon-transformation.svg';
+const imgTravelWork = '/assets/travel-work.png';
+const imgTravelRelax = '/assets/travel-relax.png';
+const imgTravelSport = '/assets/travel-sport.png';
+const imgTravelOrganizedSport = '/assets/travel-organized-sport.png';
 
-const DESTINATIONS = [
-  { value: 'de', label: 'Německo' },
-  { value: 'it', label: 'Itálie' },
-  { value: 'fr', label: 'Francie' },
-  { value: 'es', label: 'Španělsko' },
-  { value: 'at', label: 'Rakousko' },
-  { value: 'hr', label: 'Chorvatsko' },
-  { value: 'other', label: 'Jiná' },
-];
-
-const TRAVEL_REASONS = [
-  { value: 'rekreace', label: 'Rekreace' },
-  { value: 'pracovni', label: 'Pracovní' },
-  { value: 'sport', label: 'Sport' },
-  { value: 'jine', label: 'Jiné' },
-];
-
-const TRAVEL_ICONS = [
-  { icon: '/assets/travel-icon-airplane.svg', label: 'Letadlo' },
-  { icon: '/assets/travel-icon-suitcase.svg', label: 'Zavazadla' },
-  { icon: '/assets/shield-plus-icon.svg', label: 'Léčebné výlohy' },
-  { icon: '/assets/car-icon-1.svg', label: 'Auto' },
-  { icon: '/assets/travel-icon-sport.svg', label: 'Sport' },
-  { icon: '/assets/droplets-icon.svg', label: 'Počasí' },
-  { icon: '/assets/globe-europe-africa.svg', label: 'Svět' },
-  { icon: '/assets/user-icon.svg', label: 'Osoba' },
-  { icon: '/assets/shield-check-icon.svg', label: 'Asistence' },
-  { icon: '/assets/house-icon.svg', label: 'Ubytování' },
-];
+const STEPS = ['Cesta', 'Výběr pojištění', 'Osobní údaje', 'Platba'];
 
 export function TravelStep1() {
   const navigate = useNavigate();
-  const [adults, setAdults] = useState(1);
-  const [children, setChildren] = useState(0);
+  const [destination, setDestination] = useState('svet-usa');
+  const [transport, setTransport] = useState('letadlo');
+  const [tripType, setTripType] = useState('relax');
+  const [insuranceType, setInsuranceType] = useState('rok');
   const [dateFrom, setDateFrom] = useState('');
   const [dateTo, setDateTo] = useState('');
-  const [destination, setDestination] = useState('');
-  const [reason, setReason] = useState('rekreace');
+  const [travelerName, setTravelerName] = useState('');
+  const [travelerSurname, setTravelerSurname] = useState('');
+  const [travelerBirthdate, setTravelerBirthdate] = useState('');
 
   const handleContinue = () => {
     navigate('/pojisteni/cestovani/nabidky');
   };
 
+  const dayCount = dateFrom && dateTo 
+    ? Math.max(0, Math.ceil((new Date(dateTo).getTime() - new Date(dateFrom).getTime()) / (1000 * 60 * 60 * 24)))
+    : 0;
+
   return (
-    <div className="bg-white flex flex-col gap-6 items-center p-4 md:p-6 w-full min-h-screen">
+    <div className="bg-white flex flex-col gap-6 items-center p-6 w-full min-h-screen">
       <GradientHeading size="lg" className="w-full">
         Online sjednání cestovního pojištění
       </GradientHeading>
 
-      <p className="font-mona font-bold text-[16px] text-[var(--color-primary)] text-center">
-        4 kroky k pojištění vaší cesty
-      </p>
-
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start justify-center w-full max-w-[1200px] px-4 md:px-12">
-        {/* Vlevo: Ikony + ilustrace cestovatele */}
-        <div className="flex flex-col gap-6 shrink-0 w-full lg:w-[400px]">
-          {/* Mřížka ikon 5×2 s popisky */}
-          <div className="grid grid-cols-5 gap-3">
-            {TRAVEL_ICONS.map(({ icon, label }) => (
-              <div key={label} className="flex flex-col items-center gap-1">
-                <div className="flex items-center justify-center size-12 rounded-[var(--radius-md)] bg-[var(--color-primary-light)]/30">
-                  <img
-                    src={icon}
-                    alt=""
-                    className="size-6 object-contain"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).style.opacity = '0.3';
-                    }}
-                  />
-                </div>
-                <span className="text-[10px] font-inter text-[var(--color-text-muted)] text-center leading-tight">
-                  {label}
-                </span>
+      {/* Step Progress */}
+      <div className="flex items-center gap-4">
+        {STEPS.map((step, i) => (
+          <div key={step} className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <div className={`w-5 h-5 rounded-full flex items-center justify-center ${i === 0 ? 'bg-[#3f2578]' : 'bg-[#edf2f7] border border-[#e2e9f0]'}`}>
+                {i === 0 && <div className="w-2 h-2 bg-white rounded-full" />}
               </div>
-            ))}
+              <span className={`font-mona font-medium text-[16px] ${i === 0 ? 'text-[#020617]' : 'text-[#94a3b8]'}`}>
+                {step}
+              </span>
+            </div>
+            {i < STEPS.length - 1 && (
+              <span className="text-[#94a3b8]">›</span>
+            )}
           </div>
+        ))}
+      </div>
 
-          {/* Ilustrace cestovatele */}
-          <div className="flex justify-center">
-            <img src={imgTravelPerson} alt="" className="max-h-[320px] w-auto object-contain" />
-          </div>
-        </div>
-
-        {/* Vpravo: Formulář */}
-        <div className="flex flex-col gap-6 w-full flex-1 min-w-0 max-w-[600px]">
-          <LifeProgress current={1} total={4} />
-
+      <div className="flex gap-12 items-start justify-center w-full max-w-[1200px]">
+        {/* Levá část: Formulář */}
+        <div className="flex flex-col gap-6 w-full max-w-[592px]">
+          
+          {/* Kam pojedete? */}
           <div className="flex flex-col gap-2">
-            <label className="font-mona font-bold text-[18px] text-[var(--color-primary)]">Kdo cestuje?</label>
-            <div className="flex gap-4">
-              <div className="flex items-center gap-2 border border-[var(--color-border)] rounded-[var(--radius-md)] px-3 py-2">
-                <span className="text-[14px] font-inter text-[var(--color-text-muted)]">Dospělí</span>
-                <input
-                  type="number"
-                  min={0}
-                  max={20}
-                  value={adults}
-                  onChange={(e) => setAdults(Math.max(0, parseInt(e.target.value) || 0))}
-                  className="w-12 h-8 px-1 text-center rounded-[var(--radius-sm)] border border-[var(--color-border)] font-mona font-bold text-[14px] outline-none focus:border-[var(--color-primary)]"
-                />
-              </div>
-              <div className="flex items-center gap-2 border border-[var(--color-border)] rounded-[var(--radius-md)] px-3 py-2">
-                <span className="text-[14px] font-inter text-[var(--color-text-muted)]">Děti</span>
-                <input
-                  type="number"
-                  min={0}
-                  max={20}
-                  value={children}
-                  onChange={(e) => setChildren(Math.max(0, parseInt(e.target.value) || 0))}
-                  className="w-12 h-8 px-1 text-center rounded-[var(--radius-sm)] border border-[var(--color-border)] font-mona font-bold text-[14px] outline-none focus:border-[var(--color-primary)]"
-                />
+            <h3 className="font-mona font-bold text-[18px] text-[#3f2578]">Kam pojedete?</h3>
+            <div className="flex gap-6">
+              {[
+                { id: 'evropa', label: 'Evropa', img: imgEuropeMap, imgStyle: 'w-[100px] h-[100px] object-contain' },
+                { id: 'svet-usa', label: 'Svět vč. USA\na Kanady', img: imgWorldUsa, imgStyle: 'w-[75px] h-[90px] object-contain' },
+                { id: 'svet-bez-usa', label: 'Svět bez. USA\na Kanady', img: imgGlobeEuropeAfrica, imgStyle: 'w-[70px] h-[70px]' },
+                { id: 'cesko', label: 'Česká republika', img: imgCzechMap, imgStyle: 'w-[100px] h-[100px] object-contain' },
+              ].map((d) => (
+                <button
+                  key={d.id}
+                  type="button"
+                  onClick={() => setDestination(d.id)}
+                  className={`flex flex-col items-center gap-1 p-3 w-[130px] h-[180px] rounded-lg border transition-all ${
+                    destination === d.id
+                      ? 'border-[#34c759] bg-white'
+                      : 'border-[#e9e9e9] hover:border-[#3f2578]/50'
+                  }`}
+                >
+                  <div className="w-[100px] h-[100px] flex items-center justify-center">
+                    <img src={d.img} alt="" className={d.imgStyle} />
+                  </div>
+                  <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${destination === d.id ? 'border-[#34c759] bg-[#34c759]' : 'border-[#94a3b8]'}`}>
+                    {destination === d.id && <div className="w-2 h-2 bg-white rounded-full" />}
+                  </div>
+                  <span className="font-mona font-medium text-[16px] text-[#3f2578] text-center whitespace-pre-line leading-tight">
+                    {d.label}
+                  </span>
+                </button>
+              ))}
+            </div>
+            <p className="text-[14px] text-[#94a3b8] font-mona flex items-center gap-2">
+              <span className="text-[#3f2578]">ⓘ</span> Které státy patří do Evropy?
+            </p>
+          </div>
+
+          {/* Jak se tam dostanete? */}
+          <div className="flex flex-col gap-2">
+            <h3 className="font-mona font-bold text-[18px] text-[#3f2578]">Jak se tam dostanete?</h3>
+            <div className="flex gap-6">
+              {[
+                { id: 'auto', label: 'Auto', img: imgIconCar },
+                { id: 'letadlo', label: 'Letadlo', img: imgIconAirplane },
+                { id: 'auto-letadlo', label: 'Auto i Letadlo', img: null, combo: true },
+                { id: 'ostatni', label: 'Vše ostatní', img: imgIconTransformation },
+              ].map((t) => (
+                <button
+                  key={t.id}
+                  type="button"
+                  onClick={() => setTransport(t.id)}
+                  className={`flex flex-col items-center justify-end gap-1 p-3 w-[130px] h-[180px] rounded-lg border transition-all ${
+                    transport === t.id
+                      ? 'border-[#34c759] bg-white'
+                      : 'border-[#e9e9e9] hover:border-[#3f2578]/50'
+                  }`}
+                >
+                  <div className="w-[100px] h-[100px] flex items-center justify-center relative">
+                    {t.combo ? (
+                      <>
+                        <img src={imgIconAirplane} alt="" className="absolute w-[50px] h-[50px] top-0 left-0" />
+                        <span className="text-[#3f2578] text-[32px] font-mona font-bold">+</span>
+                        <img src={imgIconCar} alt="" className="absolute w-[50px] h-[50px] bottom-0 right-0" />
+                      </>
+                    ) : (
+                      <img src={t.img!} alt="" className="w-[100px] h-[100px]" />
+                    )}
+                  </div>
+                  <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${transport === t.id ? 'border-[#34c759] bg-[#34c759]' : 'border-[#94a3b8]'}`}>
+                    {transport === t.id && <div className="w-2 h-2 bg-white rounded-full" />}
+                  </div>
+                  <span className="font-mona font-medium text-[16px] text-[#3f2578] text-center whitespace-pre-line leading-tight">
+                    {t.label}
+                  </span>
+                </button>
+              ))}
+            </div>
+            <p className="text-[14px] text-[#94a3b8] font-mona flex items-center gap-2">
+              <span className="text-[#3f2578]">ⓘ</span> Proč se ptáme?
+            </p>
+          </div>
+
+          <div className="h-px bg-[#e9e9e9] w-full" />
+
+          {/* Jaký je typ vaší cesty? */}
+          <div className="flex flex-col gap-2">
+            <h3 className="font-mona font-bold text-[18px] text-[#3f2578]">Jaký je typ vaší cesty?</h3>
+            <div className="flex gap-6">
+              {[
+                { id: 'pracovni', label: 'Pracovní', img: imgTravelWork },
+                { id: 'relax', label: 'Relax', img: imgTravelRelax },
+                { id: 'adrenalin', label: 'Adrenalin a\nsport', img: imgTravelSport },
+                { id: 'organizovany', label: 'Organizovaný\nsport', img: imgTravelOrganizedSport },
+              ].map((t) => (
+                <button
+                  key={t.id}
+                  type="button"
+                  onClick={() => setTripType(t.id)}
+                  className={`flex flex-col items-center justify-end gap-1 p-3 w-[130px] h-[180px] rounded-lg border transition-all overflow-hidden ${
+                    tripType === t.id
+                      ? 'border-[#34c759] bg-white'
+                      : 'border-[#e9e9e9] hover:border-[#3f2578]/50'
+                  }`}
+                >
+                  <div className="w-[100px] h-[100px] flex items-center justify-center overflow-hidden">
+                    <img src={t.img} alt="" className="max-w-full max-h-full object-contain" />
+                  </div>
+                  <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${tripType === t.id ? 'border-[#34c759] bg-[#34c759]' : 'border-[#94a3b8]'}`}>
+                    {tripType === t.id && <div className="w-2 h-2 bg-white rounded-full" />}
+                  </div>
+                  <span className="font-mona font-medium text-[16px] text-[#3f2578] text-center whitespace-pre-line leading-tight">
+                    {t.label}
+                  </span>
+                </button>
+              ))}
+            </div>
+            <p className="text-[14px] text-[#94a3b8] font-mona flex items-center gap-2">
+              <span className="text-[#3f2578]">ⓘ</span> Proč se ptáme?
+            </p>
+          </div>
+
+          <div className="h-px bg-[#e9e9e9] w-full" />
+
+          {/* Chci pojistit */}
+          <div className="flex flex-col gap-2">
+            <h3 className="font-mona font-bold text-[18px] text-[#3f2578]">Chci pojistit</h3>
+            <div className="flex justify-between">
+              {[
+                { id: 'jedna', label: 'Jednu cestu' },
+                { id: 'opakovane', label: 'Opakované cesty' },
+                { id: 'rok', label: 'Celý rok' },
+              ].map((t) => (
+                <label key={t.id} className="flex items-center gap-2 cursor-pointer p-1">
+                  <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${insuranceType === t.id ? 'border-[#34c759] bg-[#34c759]' : 'border-[#94a3b8]'}`}>
+                    {insuranceType === t.id && <div className="w-2 h-2 bg-white rounded-full" />}
+                  </div>
+                  <input
+                    type="radio"
+                    name="insuranceType"
+                    value={t.id}
+                    checked={insuranceType === t.id}
+                    onChange={(e) => setInsuranceType(e.target.value)}
+                    className="sr-only"
+                  />
+                  <span className="font-mona font-medium text-[16px] text-[#334155]">{t.label}</span>
+                </label>
+              ))}
+            </div>
+          </div>
+
+          <div className="h-px bg-[#e9e9e9] w-full" />
+
+          {/* Datum */}
+          <div className="flex gap-6 items-end">
+            <div className="flex flex-col gap-3 w-[192px]">
+              <label className="font-mona font-medium text-[18px] text-[#3f2578]">Od</label>
+              <input
+                type="date"
+                value={dateFrom}
+                onChange={(e) => setDateFrom(e.target.value)}
+                className="h-10 px-3 rounded-lg border border-[#e5e5e5] shadow-sm font-mona text-[14px] text-[#94a3b8] outline-none focus:border-[#3f2578]"
+              />
+            </div>
+            <div className="flex flex-col gap-3 w-[192px]">
+              <label className="font-mona font-medium text-[18px] text-[#3f2578]">Do</label>
+              <input
+                type="date"
+                value={dateTo}
+                onChange={(e) => setDateTo(e.target.value)}
+                className="h-10 px-3 rounded-lg border border-[#e5e5e5] shadow-sm font-mona text-[14px] text-[#94a3b8] outline-none focus:border-[#3f2578]"
+              />
+            </div>
+            <div className="flex flex-col gap-3 items-center">
+              <label className="font-mona font-medium text-[18px] text-[#3f2578]">Počet dní:</label>
+              <div className="h-10 w-[42px] px-3 flex items-center justify-center rounded-lg border border-[#e5e5e5] shadow-sm font-mona text-[18px] text-[#94a3b8]">
+                {dayCount || '—'}
               </div>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <Input label="Datum od *" type="date" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)} />
-            <Input label="Datum do *" type="date" value={dateTo} onChange={(e) => setDateTo(e.target.value)} />
+          <div className="h-px bg-[#e9e9e9] w-full" />
+
+          {/* Pojištění osoby */}
+          <div className="flex flex-col gap-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-1">
+                <span className="font-mona font-medium text-[18px] text-[#3f2578]">Pojištění osoby</span>
+                <span className="text-[#d60021] text-[14px]">*</span>
+              </div>
+              <button
+                type="button"
+                className="h-10 px-3 rounded-[10px] bg-[#edf2f7] border border-[#e2e9f0] font-mona font-medium text-[14px] text-[#3f2578]"
+              >
+                Přidat cestujícího
+              </button>
+            </div>
+            <div className="flex gap-2">
+              <input
+                type="text"
+                placeholder="Jméno"
+                value={travelerName}
+                onChange={(e) => setTravelerName(e.target.value)}
+                className="flex-1 h-10 px-3 rounded-lg border border-[#e2e9f0] shadow-sm font-mona text-[14px] text-[#94a3b8] placeholder:text-[#94a3b8] outline-none focus:border-[#3f2578]"
+              />
+              <input
+                type="text"
+                placeholder="Příjmení"
+                value={travelerSurname}
+                onChange={(e) => setTravelerSurname(e.target.value)}
+                className="flex-1 h-10 px-3 rounded-lg border border-[#e2e9f0] shadow-sm font-mona text-[14px] text-[#94a3b8] placeholder:text-[#94a3b8] outline-none focus:border-[#3f2578]"
+              />
+              <input
+                type="date"
+                placeholder="Datum narození"
+                value={travelerBirthdate}
+                onChange={(e) => setTravelerBirthdate(e.target.value)}
+                className="flex-1 h-10 px-3 rounded-lg border border-[#e5e5e5] shadow-sm font-mona text-[14px] text-[#94a3b8] outline-none focus:border-[#3f2578]"
+              />
+            </div>
+            <p className="text-[14px] text-[#94a3b8] font-mona flex items-center gap-2">
+              <span className="text-[#3f2578]">ⓘ</span> Proč se ptáme?
+            </p>
           </div>
 
-          <Select
-            label="Destinace *"
-            options={DESTINATIONS}
-            value={destination}
-            onChange={setDestination}
-            placeholder="Vyberte destinaci"
-          />
+          {/* CTA Button */}
+          <button
+            type="button"
+            onClick={handleContinue}
+            className="h-12 px-5 rounded-xl font-inter font-medium text-[16px] text-white shadow-[0px_4px_9.2px_0px_#a752a9]"
+            style={{ backgroundImage: 'linear-gradient(261deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%)' }}
+          >
+            Zobrazit nabídky
+          </button>
+        </div>
 
-          <Select
-            label="Důvod cesty"
-            options={TRAVEL_REASONS}
-            value={reason}
-            onChange={setReason}
-          />
-
-          <Button type="button" variant="gradient" size="lg" className="w-full h-[52px]" onClick={handleContinue}>
-            Přejít k výběru
-          </Button>
+        {/* Pravá část: Ilustrace cestovatele */}
+        <div className="hidden lg:block shrink-0 w-[330px] relative">
+          <img src={imgTravelPerson} alt="" className="w-full h-auto object-contain" />
         </div>
       </div>
     </div>

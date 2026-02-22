@@ -1,74 +1,162 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LifeProgress } from '../components/LifeProgress';
-import { Button, GradientHeading, Input } from '../components/ui';
+import { GradientHeading } from '../components/ui';
+
+const STEPS = ['Cesta', 'Výběr pojištění', 'Osobní údaje', 'Platba'];
 
 export function TravelStep4() {
   const navigate = useNavigate();
   const [agreed, setAgreed] = useState(false);
+  const [cardNumber, setCardNumber] = useState('');
+  const [expiry, setExpiry] = useState('');
+  const [cvc, setCvc] = useState('');
 
   return (
-    <div className="bg-white flex flex-col gap-6 items-center p-4 md:p-6 w-full min-h-screen">
+    <div className="bg-white flex flex-col gap-6 items-center p-6 w-full min-h-screen">
       <GradientHeading size="lg" className="w-full">
         Online sjednání cestovního pojištění
       </GradientHeading>
 
-      <p className="font-mona font-bold text-[16px] text-[var(--color-primary)] text-center">
-        4 kroky k pojištění vaší cesty
-      </p>
-
-      <div className="flex flex-col gap-6 items-center w-full max-w-[600px] px-4 md:px-12">
-        <LifeProgress current={4} total={4} />
-
-        <div className="bg-[var(--color-background-alt)] flex gap-6 items-center px-4 py-3 rounded-[var(--radius-lg)] w-full flex-wrap">
-          <span className="text-[14px] text-[var(--color-text-muted)] font-inter">Datum: 1.10. – 10.10.</span>
-          <span className="text-[14px] text-[var(--color-text-muted)] font-inter">Destinace: Německo</span>
-        </div>
-
-        <div className="flex flex-col gap-6 w-full">
-          <div className="border border-[var(--color-border)] flex flex-col gap-4 p-6 rounded-[var(--radius-lg)]">
-            <h3 className="text-[var(--color-primary)] text-[20px] font-bold font-mona">Shrnutí objednávky</h3>
-            <div className="flex justify-between text-[14px] font-inter">
-              <span className="text-[var(--color-text-muted)]">Pojištění</span>
-              <span className="text-[var(--color-primary)] font-semibold">Cestovní pojištění Standard</span>
+      {/* Step Progress */}
+      <div className="flex items-center gap-4">
+        {STEPS.map((step, i) => (
+          <div key={step} className="flex items-center gap-4">
+            <div className="flex items-center gap-2">
+              <div className={`w-5 h-5 rounded-full flex items-center justify-center ${
+                i < 3 ? 'bg-[#34c759]' : 'bg-[#3f2578]'
+              }`}>
+                {i < 3 ? (
+                  <span className="text-white text-[10px]">✓</span>
+                ) : (
+                  <div className="w-2 h-2 bg-white rounded-full" />
+                )}
+              </div>
+              <span className="font-mona font-medium text-[16px] text-[#020617]">
+                {step}
+              </span>
             </div>
-            <div className="flex justify-between text-[14px] font-inter">
-              <span className="text-[var(--color-text-muted)]">Asistenční služby</span>
-              <span className="text-[var(--color-primary)] font-semibold">—</span>
+            {i < STEPS.length - 1 && (
+              <span className="text-[#94a3b8]">›</span>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <div className="flex flex-col gap-6 w-full max-w-[497px]">
+        {/* Summary */}
+        <div className="flex flex-col gap-3">
+          <div className="flex justify-between items-center">
+            <h3 className="font-mona font-bold text-[18px] text-[#3f2578]">Shrnutí</h3>
+            <span className="font-mona font-bold text-[18px] text-[#3f2578]">Axa Premium</span>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <div className="flex items-center gap-2">
+              <span className="text-[#3f2578]">📍</span>
+              <span className="font-mona font-medium text-[16px] text-[#3f2578]">Albánie</span>
             </div>
-            <div className="border-t border-[var(--color-border)] pt-3 flex justify-between text-[18px] font-bold text-[var(--color-primary)] font-mona">
-              <span>Celková cena</span>
-              <span>780 Kč</span>
+            <div className="flex items-center gap-2">
+              <span className="text-[#3f2578]">👤</span>
+              <span className="font-mona font-medium text-[16px] text-[#3f2578]">1 Osoba</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-[#3f2578]">📅</span>
+              <span className="font-mona font-medium text-[16px] text-[#3f2578]">Datum - datum (x dny)</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-[#3f2578]">🏄</span>
+              <span className="font-mona font-medium text-[16px] text-[#3f2578]">Zimní sporty včetně lyžování a lyžařské výbavy</span>
             </div>
           </div>
-
-          <div className="border border-[var(--color-border)] flex flex-col gap-3 p-6 rounded-[var(--radius-lg)]">
-            <h3 className="text-[var(--color-primary)] text-[18px] font-bold font-mona">Platební údaje</h3>
-            <Input type="text" placeholder="Číslo karty" />
-            <div className="flex gap-3">
-              <Input type="text" placeholder="Platnost" className="flex-1" />
-              <Input type="text" placeholder="CVC" className="w-[80px]" />
-            </div>
-          </div>
-
-          <label className="flex gap-3 items-start cursor-pointer">
-            <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} className="mt-1" />
-            <span className="text-[14px] text-[var(--color-text-muted)] font-inter">
-              Souhlasím s obchodními podmínkami
-            </span>
-          </label>
-
-          <Button
-            type="button"
-            variant="gradient"
-            size="lg"
-            className="w-full h-12"
-            disabled={!agreed}
-            onClick={() => navigate('/')}
-          >
-            Zaplatit
-          </Button>
         </div>
+
+        {/* Shrnutí objednávky */}
+        <div className="flex flex-col gap-4 p-6 rounded-xl border border-[#e2e9f0] bg-white shadow-sm">
+          <h3 className="font-mona font-bold text-[18px] text-[#3f2578]">Shrnutí objednávky</h3>
+          
+          <div className="flex justify-between">
+            <span className="font-mona text-[16px] text-[#3f2578]">Pojištění</span>
+            <span className="font-mona font-bold text-[16px] text-[#3f2578]">AXA Comfort premium</span>
+          </div>
+          
+          <div className="flex justify-between">
+            <span className="font-mona text-[16px] text-[#3f2578]">Storno zájezdu</span>
+            <span className="font-mona font-bold text-[16px] text-[#3f2578]">310 Kč</span>
+          </div>
+          
+          <div className="flex justify-between">
+            <span className="font-mona text-[16px] text-[#3f2578]">Adrenalinové sporty</span>
+            <span className="font-mona font-bold text-[16px] text-[#3f2578]">62 Kč</span>
+          </div>
+          
+          <div className="flex justify-between">
+            <span className="font-mona text-[16px] text-[#3f2578]">Drink povolen</span>
+            <span className="font-mona font-bold text-[16px] text-[#3f2578]">10 Kč</span>
+          </div>
+          
+          <div className="h-px bg-[#e2e9f0] w-full" />
+          
+          <div className="flex justify-between">
+            <span className="font-mona font-bold text-[20px] text-[#3f2578]">Celková cena</span>
+            <span className="font-mona font-bold text-[20px] text-[#3f2578]">507 Kč</span>
+          </div>
+        </div>
+
+        {/* Platební údaje */}
+        <div className="flex flex-col gap-3 p-6 rounded-xl border border-[#e2e9f0] bg-white shadow-sm">
+          <h3 className="font-mona font-bold text-[18px] text-[#3f2578]">Platební údaje</h3>
+          
+          <input
+            type="text"
+            placeholder="Číslo karty"
+            value={cardNumber}
+            onChange={(e) => setCardNumber(e.target.value)}
+            className="h-10 px-3 rounded-lg border border-[#e2e9f0] shadow-sm font-mona text-[14px] text-[#94a3b8] placeholder:text-[#94a3b8] outline-none focus:border-[#3f2578]"
+          />
+          
+          <div className="flex gap-3">
+            <input
+              type="text"
+              placeholder="MM/RR"
+              value={expiry}
+              onChange={(e) => setExpiry(e.target.value)}
+              className="flex-1 h-10 px-3 rounded-lg border border-[#e2e9f0] shadow-sm font-mona text-[14px] text-[#94a3b8] placeholder:text-[#94a3b8] outline-none focus:border-[#3f2578]"
+            />
+            <input
+              type="text"
+              placeholder="CVC"
+              value={cvc}
+              onChange={(e) => setCvc(e.target.value)}
+              className="w-[100px] h-10 px-3 rounded-lg border border-[#e2e9f0] shadow-sm font-mona text-[14px] text-[#94a3b8] placeholder:text-[#94a3b8] outline-none focus:border-[#3f2578]"
+            />
+          </div>
+        </div>
+
+        {/* Souhlas */}
+        <label className="flex gap-3 items-start cursor-pointer p-1">
+          <div className={`w-5 h-5 rounded border-2 flex items-center justify-center ${agreed ? 'border-[#34c759] bg-[#34c759]' : 'border-[#94a3b8]'}`}>
+            {agreed && <span className="text-white text-[12px]">✓</span>}
+          </div>
+          <input
+            type="checkbox"
+            checked={agreed}
+            onChange={(e) => setAgreed(e.target.checked)}
+            className="sr-only"
+          />
+          <span className="font-mona text-[14px] text-[#334155]">
+            Souhlasím s <span className="underline text-[#3f2578]">obchodními podmínkami</span> a <span className="underline text-[#3f2578]">ochranou osobních údajů</span>
+          </span>
+        </label>
+
+        {/* CTA Button */}
+        <button
+          type="button"
+          onClick={() => navigate('/')}
+          disabled={!agreed}
+          className={`h-12 px-5 rounded-xl font-mona font-medium text-[16px] text-white transition-opacity ${!agreed ? 'opacity-50 cursor-not-allowed' : ''}`}
+          style={{ backgroundImage: 'linear-gradient(263deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%)' }}
+        >
+          Zaplatit 507 Kč
+        </button>
       </div>
     </div>
   );

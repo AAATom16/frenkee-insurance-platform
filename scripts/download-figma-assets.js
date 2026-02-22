@@ -5,7 +5,12 @@
  * Předtím zavolej v Cursoru get_design_context pro výběr – výstup se uloží do agent-tools.
  *
  * Použití:
- *   node scripts/download-figma-assets.js [cesta-k-výstupu-txt]
+ *   node scripts/download-figma-assets.js [cesta-k-výstupu-txt] [--all] [--verbose]
+ *   --all = zpracuj všechny .txt v agent-tools
+ *   --verbose = u chyb vypiš varName a URL + body odpovědi
+ *
+ * Když padne ≥3 assetů, skript automaticky načte latest .txt a zkusí retry
+ * (předtím spusť get_design_context pro čerstvé URL)
  *
  * Nebo předaj URL přímo:
  *   FIGMA_ASSET_URLS='{"life-char-1":"http://localhost:3845/assets/xxx.png"}' node scripts/download-figma-assets.js
@@ -74,9 +79,11 @@ function filenameFromVar(varName, url) {
   return (base || 'asset') + ext;
 }
 
-const FETCH_TIMEOUT_MS = 20000; // delší timeout pro velké exporty z Figmy
-const RETRY_ATTEMPTS = 3;
-const RETRY_DELAY_MS = 1500;
+const FETCH_TIMEOUT_MS = 60000; // velké PNG renderuje Figma dlouho
+const RETRY_ATTEMPTS = 5;
+const RETRY_BACKOFF_BASE_MS = 500; // 0.5s, 1s, 2s, 4s, 8s
+const DELAY_BETWEEN_REQUESTS_MS = 1200; // throttle – nezahlcovat on-demand render
+const RETRY_FAILED_THRESHOLD = 3; // když padne víc, načti latest .txt a zkus znovu
 
 function fetchUrl(url) {
   return new Promise((resolve, reject) => {
@@ -86,16 +93,28 @@ function fetchUrl(url) {
         fetchUrl(res.headers.location).then(resolve).catch(reject);
         return;
       }
-      if (res.statusCode !== 200) {
-        reject(new Error(`HTTP ${res.statusCode}`));
-        return;
-      }
       const chunks = [];
       res.on('data', (c) => chunks.push(c));
-      res.on('end', () => resolve(Buffer.concat(chunks)));
+      res.on('end', () => {
+        const buf = Buffer.concat(chunks);
+        if (res.statusCode !== 200) {
+          const preview = buf.toString('utf8', 0, 200).replace(/\s+/g, ' ').trim();
+          reject(new Error(`HTTP ${res.statusCode} (${preview || 'no body'})`));
+          return;
+        }
+        resolve(buf);
+      });
       res.on('error', reject);
     }).on('error', reject);
   });
+}
+
+async function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+function jitter(maxMs) {
+  return Math.floor(Math.random() * maxMs);
 }
 
 async function fetchWithRetry(url) {
@@ -106,7 +125,9 @@ async function fetchWithRetry(url) {
     } catch (e) {
       lastErr = e;
       if (i < RETRY_ATTEMPTS - 1) {
-        await new Promise((r) => setTimeout(r, RETRY_DELAY_MS));
+        const base = RETRY_BACKOFF_BASE_MS * Math.pow(2, i);
+        const delay = base + jitter(200);
+        await sleep(delay);
       }
     }
   }
@@ -160,31 +181,93 @@ async function main() {
 
   if (!fs.existsSync(ASSETS_DIR)) fs.mkdirSync(ASSETS_DIR, { recursive: true });
 
-  console.log(`Stahuji ${Object.keys(urls).length} assetů do ${ASSETS_DIR}...`);
+  const verbose = process.argv.includes('--verbose');
+  const downloaded = new Set(); // první úspěch pro daný filename vyhrává, dupes nepřepisují
+  const failedFilenames = new Set();
+  const inputPath = process.argv[2] || DEFAULT_INPUT;
   let ok = 0;
   let fail = 0;
+  let skipped = 0;
 
+  async function tryDownload(varName, url) {
+    const filename = filenameFromVar(varName, url);
+    if (downloaded.has(filename)) return { status: 'skip' };
+    if (!url.includes('localhost') && !url.includes('127.0.0.1')) return { status: 'skip' };
+    try {
+      const buf = await fetchWithRetry(url);
+      fs.writeFileSync(path.join(ASSETS_DIR, filename), buf);
+      downloaded.add(filename);
+      return { status: 'ok', filename };
+    } catch (e) {
+      failedFilenames.add(filename);
+      return { status: 'fail', filename, varName, url, err: e };
+    }
+  }
+
+  console.log(`Stahuji ${Object.keys(urls).length} assetů do ${ASSETS_DIR}...`);
   for (const [varName, url] of Object.entries(urls)) {
     if (!url.includes('localhost') && !url.includes('127.0.0.1')) {
       console.warn(`  Přeskočeno (ne localhost): ${varName}`);
       continue;
     }
     const filename = filenameFromVar(varName, url);
-    const filepath = path.join(ASSETS_DIR, filename);
-    try {
-      const buf = await fetchWithRetry(url);
-      fs.writeFileSync(filepath, buf);
-      console.log(`  ✓ ${filename}`);
+    if (downloaded.has(filename)) {
+      skipped++;
+      continue;
+    }
+    const r = await tryDownload(varName, url);
+    if (r.status === 'skip') continue;
+    if (r.status === 'ok') {
+      console.log(`  ✓ ${r.filename}`);
       ok++;
-    } catch (e) {
-      console.error(`  ✗ ${filename}: ${e.message}`);
+    } else {
+      if (verbose) {
+        console.error(`  ✗ ${r.filename}: ${r.err.message}`);
+        console.error(`    var: ${r.varName}`);
+        console.error(`    url: ${r.url}`);
+      } else {
+        console.error(`  ✗ ${r.filename}: ${r.err.message}`);
+      }
       fail++;
+    }
+    await sleep(DELAY_BETWEEN_REQUESTS_MS);
+  }
+
+  // Re-run failed: načti latest .txt (čerstvé URL po get_design_context) a zkus znovu
+  if (fail >= RETRY_FAILED_THRESHOLD && failedFilenames.size > 0) {
+    const stat = fs.existsSync(inputPath) ? fs.statSync(inputPath) : null;
+    if (stat?.isDirectory()) {
+      const files = fs.readdirSync(inputPath).filter((f) => f.endsWith('.txt'));
+      const latest = files.sort().reverse()[0];
+      if (latest) {
+        const freshUrls = extractUrlsFromCode(fs.readFileSync(path.join(inputPath, latest), 'utf8'));
+        const toRetry = [...failedFilenames];
+        let retryOk = 0;
+        console.log(`\nRetry: načten latest .txt, znovu zkouším ${toRetry.length} selhavších...`);
+        for (const [varName, url] of Object.entries(freshUrls)) {
+          const filename = filenameFromVar(varName, url);
+          if (!failedFilenames.has(filename) || downloaded.has(filename)) continue;
+          const r = await tryDownload(varName, url);
+          if (r.status === 'ok') {
+            console.log(`  ✓ ${r.filename} (retry)`);
+            ok++;
+            retryOk++;
+            failedFilenames.delete(filename);
+          }
+          await sleep(DELAY_BETWEEN_REQUESTS_MS);
+        }
+        fail -= retryOk;
+      }
     }
   }
 
-  console.log(`\nHotovo: ${ok} OK, ${fail} chyb.`);
-  if (fail > 0 && ok === 0) {
-    console.log('\nZkontroluj, že Figma desktop s pluginem běží a máš vybraný frame.');
+  console.log(`\nHotovo: ${ok} OK, ${fail} chyb${skipped ? `, ${skipped} přeskočeno (duplicity)` : ''}.`);
+  if (fail > 0) {
+    console.log('\nTip: Spusť get_design_context ve Figmě znovu, pak skript. Body u chyb = "Error getting image" → node nerenderovatelný.');
+    if (verbose) console.log('Použij --verbose pro URL a varName.');
+    if (ok === 0) {
+      console.log('Zkontroluj, že Figma desktop s pluginem běží a máš vybraný frame.');
+    }
   }
 }
 

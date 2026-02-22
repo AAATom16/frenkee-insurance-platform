@@ -79,7 +79,7 @@ export function LifeStep4() {
           <Button type="button" variant="gradient" size="lg" className="w-full h-[52px] rounded-[var(--radius-lg)] text-lg mt-2" onClick={() => navigate('/pojisteni/zivot/kontakt')}>Pokračovat</Button>
           </div>
           <div className="w-full md:w-[240px] shrink-0 flex justify-center md:justify-end">
-            <img src="/assets/life-char-4.svg" alt="" className="max-h-[260px] w-auto object-contain" />
+            <img src="/assets/life-char-4.png" alt="" className="max-h-[260px] w-auto object-contain" />
           </div>
         </div>
       </div>

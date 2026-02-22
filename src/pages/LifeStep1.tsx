@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LifeProgress } from '../components/LifeProgress';
 
-const imgLifeCharacter = "/assets/life-char-1.svg";
+const imgLifeCharacter = "/assets/life-char-1.png";
 const imgDropdownArrow = "/assets/dropdown-arrow.svg";
 
 type EmploymentType = 'zamestnanec' | 'osvc' | 'bez';

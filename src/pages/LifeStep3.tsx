@@ -35,7 +35,7 @@ export function LifeStep3() {
 
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 w-full items-start">
           <div className="w-full md:w-[280px] shrink-0 flex justify-center md:justify-start order-2 md:order-1">
-            <img src="/assets/life-char-3.svg" alt="" className="max-h-[280px] w-auto object-contain" />
+            <img src="/assets/life-char-3.png" alt="" className="max-h-[280px] w-auto object-contain" />
           </div>
           <div className="flex flex-col gap-[16px] w-full flex-1 min-w-0 order-1 md:order-2">
           <p className="font-mona font-bold text-[#3f2578] text-[18px]">Vyberte krytí a částky</p>

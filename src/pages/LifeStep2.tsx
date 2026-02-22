@@ -135,7 +135,7 @@ export function LifeStep2() {
             </Button>
           </div>
           <div className="w-full md:w-[280px] shrink-0 flex justify-center md:justify-end order-2 md:order-2">
-            <img src="/assets/life-char-2.svg" alt="" className="max-h-[280px] w-auto object-contain" />
+            <img src="/assets/life-char-2.png" alt="" className="max-h-[280px] w-auto object-contain" />
           </div>
         </div>
       </div>

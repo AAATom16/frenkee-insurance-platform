@@ -78,28 +78,28 @@ export function LifeStep2() {
               options={POVOLANI}
               placeholder="Vyberte..."
               value={povolani}
-              onChange={(e) => setPovolani(e.target.value)}
+              onChange={setPovolani}
             />
             <Select
               label="Sporty"
               options={SPORT}
               placeholder="Vyberte..."
               value={sport}
-              onChange={(e) => setSport(e.target.value)}
+              onChange={setSport}
             />
             <Select
               label="Koníčky"
               options={KONICKY}
               placeholder="Vyberte..."
               value={konicky}
-              onChange={(e) => setKonicky(e.target.value)}
+              onChange={setKonicky}
             />
             <Select
               label="Cestování"
               options={CESTOVANI}
               placeholder="Vyberte..."
               value={cestovani}
-              onChange={(e) => setCestovani(e.target.value)}
+              onChange={setCestovani}
             />
 
             <RadioGroup
@@ -121,7 +121,7 @@ export function LifeStep2() {
               ]}
               placeholder="Vyberte..."
               value={onemocneni}
-              onChange={(e) => setOnemocneni(e.target.value)}
+              onChange={setOnemocneni}
             />
 
             <Button

@@ -78,7 +78,7 @@ export function DetailBytuPage() {
             <Toggle checked={nemovitost} onChange={setNemovitost} />
           </div>
 
-          <Select label="Dispozice bytu *" options={DISPOZICE_OPTIONS} value={dispozice} onChange={(e) => setDispozice(e.target.value)} />
+          <Select label="Dispozice bytu *" options={DISPOZICE_OPTIONS} value={dispozice} onChange={setDispozice} />
           <div className="grid grid-cols-[1fr_80px] gap-2">
             <Input label="Podlahová plocha *" type="number" value={plocha} onChange={(e) => setPlocha(e.target.value)} />
             <div className="flex items-end pb-2"><span className="body-sm text-[var(--color-text-muted)]">m²</span></div>

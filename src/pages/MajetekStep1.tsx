@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const imgHouseholdIcon = "/assets/household-icon.png";
+const imgHouseholdIcon = "/assets/house-3d.png";
 const imgLineDivider = "/assets/line-divider.svg";
 
 function MingIconInformationLine({ className }: { className?: string }) {

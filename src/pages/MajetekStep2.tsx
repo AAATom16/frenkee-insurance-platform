@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const imgApartmentIcon = "/assets/apartment-icon.png";
-const imgHouseIcon = "/assets/house-icon.png";
+const imgHouseIcon = "/assets/house-3d.png";
 const imgCottageIcon = "/assets/cottage-icon.png";
 
 export function MajetekStep2() {

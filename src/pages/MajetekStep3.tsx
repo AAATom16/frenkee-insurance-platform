@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Select } from '../components/ui';
 
 export function MajetekStep3() {
   const navigate = useNavigate();
@@ -39,27 +40,20 @@ export function MajetekStep3() {
 
         <div className="flex gap-[12px] items-start relative w-full">
           <div className="flex flex-[1_0_0] flex-col gap-[8px] items-start min-h-px min-w-px relative">
-            <div className="flex gap-[4px] items-center leading-[0] not-italic relative w-full whitespace-nowrap">
-              <div className="flex flex-col font-mona font-bold justify-center relative text-[#3f2578] text-[18px]">
-                <p className="leading-[1.6]">Dispozice bytu</p>
-              </div>
-              <div className="flex flex-col font-inter font-normal justify-center relative text-[0px] text-[#d60021]">
-                <p className="font-inter font-bold leading-[1.6] text-[14px]">*</p>
-              </div>
-            </div>
-            <select
+            <Select
+              label="Dispozice bytu *"
+              options={[
+                { value: '2+kk', label: '2+kk' },
+                { value: '2+1', label: '2+1' },
+                { value: '3+kk', label: '3+kk' },
+                { value: '3+1', label: '3+1' },
+                { value: '4+kk', label: '4+kk' },
+                { value: '4+1', label: '4+1' },
+              ]}
+              placeholder="Vyberte dispozici"
               value={layout}
-              onChange={(e) => setLayout(e.target.value)}
-              className="bg-white border border-[#e2e9f0] border-solid flex gap-[8px] h-[40px] items-center overflow-clip px-[12px] relative rounded-[8px] shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] w-full font-mona font-bold text-[14px] text-[#94a3b8] outline-none"
-            >
-              <option value="">Vyberte dispozici</option>
-              <option value="2+kk">2+kk</option>
-              <option value="2+1">2+1</option>
-              <option value="3+kk">3+kk</option>
-              <option value="3+1">3+1</option>
-              <option value="4+kk">4+kk</option>
-              <option value="4+1">4+1</option>
-            </select>
+              onChange={setLayout}
+            />
           </div>
 
           <div className="flex flex-[1_0_0] flex-col gap-[8px] items-start min-h-px min-w-px relative">

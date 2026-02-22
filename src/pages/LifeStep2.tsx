@@ -1,25 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-const STEP_LABELS = ['Úvod', 'Zdraví', 'Krytí', 'Nabídky', 'Kontakt', 'Shrnutí', 'Kontrola', 'Hotovo'];
-
-function Progress({ current, total = 8 }: { current: number; total?: number }) {
-  return (
-    <div className="flex items-center justify-center gap-[8px] w-full flex-wrap">
-      {Array.from({ length: total }, (_, i) => i + 1).map((step) => (
-        <div key={step} className="flex items-center gap-[8px]">
-          <div className="flex flex-col items-center gap-[4px]">
-            <div className={`flex items-center justify-center rounded-full size-[36px] ${step <= current ? 'bg-[#3f2578]' : 'bg-[#e2e9f0]'}`}>
-              <span className={`font-bold text-[14px] ${step <= current ? 'text-white' : 'text-[#94a3b8]'}`} style={{ fontFamily: "'Mona Sans', sans-serif" }}>{step}</span>
-            </div>
-            <span className={`font-bold text-[12px] whitespace-nowrap max-w-[52px] text-center ${step <= current ? 'text-[#3f2578]' : 'text-[#94a3b8]'}`} style={{ fontFamily: "'Mona Sans', sans-serif" }}>{STEP_LABELS[step - 1]}</span>
-          </div>
-          {step < total && <div className={`h-[2px] w-[40px] ${step < current ? 'bg-[#3f2578]' : 'bg-[#e2e9f0]'}`} />}
-        </div>
-      ))}
-    </div>
-  );
-}
+import { LifeProgress } from '../components/LifeProgress';
 
 const POVOLANI = ['Úředník', 'Manuální', 'Řidič', 'Zdravotník', 'Pedagog', 'Podnikatel', 'Jiné'];
 const SPORT = ['Žádný', 'Rekreačně', 'Běh', 'Cyklismus', 'Fotbal', 'Lyžování', 'Jiné'];
@@ -43,9 +24,8 @@ export function LifeStep2() {
         Online sjednání životního pojištění
       </h1>
 
-      <div className="flex flex-col gap-[24px] items-center px-4 md:px-[99px] py-[24px] w-full max-w-[1000px]">
-        <p className="text-[#94a3b8] text-[14px] font-semibold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Krok 2 z 8</p>
-        <Progress current={2} total={8} />
+      <div className="flex flex-col gap-[24px] items-center px-4 md:px-[80px] py-[32px] w-full max-w-[1000px]">
+        <LifeProgress current={2} total={8} />
 
         <div className="flex flex-col md:flex-row gap-8 md:gap-12 w-full items-start">
           <div className="flex flex-col gap-[20px] w-full flex-1 min-w-0">

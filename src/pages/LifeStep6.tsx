@@ -1,24 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-
-const STEP_LABELS = ['Úvod', 'Zdraví', 'Krytí', 'Nabídky', 'Kontakt', 'Shrnutí', 'Kontrola', 'Hotovo'];
-
-function Progress() {
-  return (
-    <div className="flex items-center justify-center gap-[8px] w-full flex-wrap">
-      {[1, 2, 3, 4, 5, 6, 7, 8].map((step) => (
-        <div key={step} className="flex items-center gap-[8px]">
-          <div className="flex flex-col items-center gap-[4px]">
-            <div className="flex items-center justify-center rounded-full size-[36px] bg-[#3f2578]">
-              <span className="font-bold text-[14px] text-white" style={{ fontFamily: "'Mona Sans', sans-serif" }}>{step}</span>
-            </div>
-            <span className="font-bold text-[12px] whitespace-nowrap max-w-[52px] text-center text-[#3f2578]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>{STEP_LABELS[step - 1]}</span>
-          </div>
-          {step < 8 && <div className="h-[2px] w-[40px] bg-[#3f2578]" />}
-        </div>
-      ))}
-    </div>
-  );
-}
+import { LifeProgress } from '../components/LifeProgress';
 
 export function LifeStep6() {
   const navigate = useNavigate();
@@ -29,9 +10,8 @@ export function LifeStep6() {
         Online sjednání životního pojištění
       </h1>
 
-      <div className="flex flex-col gap-[24px] items-center px-4 md:px-[99px] py-[24px] w-full max-w-[640px]">
-        <p className="text-[#94a3b8] text-[14px] font-semibold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Krok 6 z 8</p>
-        <Progress />
+      <div className="flex flex-col gap-[24px] items-center px-4 md:px-[80px] py-[32px] w-full max-w-[640px]">
+        <LifeProgress current={6} total={8} />
 
         <div className="flex flex-col gap-[24px] w-full text-center">
           <div className="flex flex-col items-center gap-4 p-6 rounded-[12px] bg-green-50 border border-green-200/60 w-full">

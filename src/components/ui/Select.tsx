@@ -12,16 +12,19 @@ interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   placeholder?: string;
 }
 
+const selectBase =
+  'font-mona font-bold text-[14px] leading-[1.6] h-10 px-3 rounded-[var(--radius-md)] bg-white border border-[#e2e9f0] outline-none transition-colors text-[#94a3b8] focus:border-[var(--color-primary)] appearance-none bg-[url("/assets/dropdown-arrow.svg")] bg-[length:20px] bg-[right_12px_center] bg-no-repeat pr-10';
+
 export const Select = forwardRef<HTMLSelectElement, SelectProps>(
   ({ label, options, placeholder, className = '', ...props }, ref) => {
     return (
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-2">
         {label && (
-          <label className="body-sm font-semibold text-[var(--color-text)]">{label}</label>
+          <label className="font-mona font-bold text-[18px] text-[var(--color-primary)]">{label}</label>
         )}
         <select
           ref={ref}
-          className={`body px-4 py-3 border border-[var(--color-border)] rounded-[var(--radius-md)] bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent appearance-none bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2356728B' d='M6 8L1 3h10z'/%3E%3C/svg%3E")] bg-[length:12px] bg-[right_12px_center] bg-no-repeat pr-10 ${className}`}
+          className={`${selectBase} shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] ${className}`}
           {...props}
         >
           {placeholder && (

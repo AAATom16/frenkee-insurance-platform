@@ -9,12 +9,16 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   required?: boolean;
 }
 
+const inputBase =
+  'font-mona font-bold text-[14px] leading-[1.6] h-10 px-3 rounded-[var(--radius-md)] bg-white border border-[#e2e9f0] outline-none transition-colors placeholder:text-[#94a3b8] focus:border-[var(--color-primary)]';
+const inputShadow = 'shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)]';
+
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, error, hint, infoIcon, required, className = '', ...props }, ref) => {
     return (
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-2">
         {label && (
-          <label className="body-sm font-semibold text-[var(--color-text)] flex items-center gap-2">
+          <label className="font-mona font-bold text-[18px] text-[var(--color-primary)] flex items-center gap-1">
             {label}
             {required && <span className="text-[var(--color-error)]">*</span>}
             {infoIcon && (
@@ -24,7 +28,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         )}
         <input
           ref={ref}
-          className={`body px-4 py-3 border border-[var(--color-border)] rounded-[var(--radius-md)] bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent ${error ? 'border-red-500' : ''} ${className}`}
+          className={`${inputBase} ${inputShadow} ${error ? 'border-red-500' : ''} ${className}`}
           {...props}
         />
         {hint && <span className="caption text-[var(--color-text-muted)]">{hint}</span>}

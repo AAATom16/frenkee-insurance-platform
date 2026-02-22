@@ -6,3 +6,7 @@ export { Checkbox } from './Checkbox';
 export { ProgressIndicator } from './ProgressIndicator';
 export { RadioGroup } from './RadioGroup';
 export { StepStepper } from './StepStepper';
+export { GradientHeading } from './GradientHeading';
+export { SegmentedControl } from './SegmentedControl';
+export { PrimaryButton } from './PrimaryButton';
+export { StepProgressBars } from './StepProgressBars';

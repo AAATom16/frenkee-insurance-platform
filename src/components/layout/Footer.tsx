@@ -23,7 +23,7 @@ export function Footer() {
 
   return (
     <footer className="bg-white flex flex-col items-start w-full">
-      <div className="flex gap-[64px] items-start px-[120px] py-[56px] w-full">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-16 px-4 md:px-8 lg:px-[120px] py-12 md:py-[56px] w-full">
         <div className="flex flex-[1_0_0] flex-col gap-[20px] items-start min-w-0">
           <Link to="/">
             <p className="bg-clip-text font-mona font-bold leading-none text-[36px]" style={{ backgroundImage: "linear-gradient(260.245deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
@@ -87,8 +87,8 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col items-center px-[120px] w-full">
-        <div className="flex items-center justify-between px-[48px] py-[36px] rounded-[16px] w-full" style={{ backgroundImage: "linear-gradient(-84.8207deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 99.198%)" }}>
+      <div className="flex flex-col items-center px-4 md:px-8 lg:px-[120px] w-full">
+        <div className="flex flex-col lg:flex-row gap-6 items-center justify-between px-6 md:px-[48px] py-8 md:py-[36px] rounded-[16px] w-full" style={{ backgroundImage: "linear-gradient(-84.8207deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 99.198%)" }}>
           <div className="flex flex-[1_0_0] flex-col gap-[8px] items-start min-w-0">
             <p className="font-mona font-bold leading-[1.3] text-[22px] text-white">
               Nenechte si ujít novinky a tipy
@@ -97,13 +97,13 @@ export function Footer() {
               Přihlaste se k odběru a dostávejte praktické rady o pojištění přímo do schránky.
             </p>
           </div>
-          <div className="flex gap-[12px] items-center">
+          <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center w-full lg:w-auto">
             <input
               type="email"
               placeholder="váš@email.cz"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="bg-transparent border-[1.5px] border-solid border-white h-[48px] px-[16px] rounded-[10px] w-[260px] font-mona leading-[1.6] text-[#d4c8ed] text-[14px] placeholder:text-[#d4c8ed]"
+              className="bg-transparent border-[1.5px] border-solid border-white h-[48px] px-4 rounded-[10px] w-full min-w-0 lg:w-[260px] font-mona leading-[1.6] text-[#d4c8ed] text-[14px] placeholder:text-[#d4c8ed]"
             />
             <button className="bg-white h-[48px] px-[28px] rounded-[10px] shadow-[0px_2px_6px_0px_rgba(0,0,0,0.08)] font-mona font-bold leading-[1.6] text-[#3f2578] text-[14px]">
               Odebírat
@@ -111,10 +111,10 @@ export function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex items-start px-[120px] w-full">
+      <div className="flex items-start px-4 md:px-8 lg:px-[120px] w-full">
         <div className="bg-[#e2e9f0] flex-[1_0_0] h-px" />
       </div>
-      <div className="flex gap-[16px] items-center px-[120px] py-[20px] w-full">
+      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center px-4 md:px-8 lg:px-[120px] py-6 md:py-[20px] w-full">
         <div className="flex items-center max-w-[207px] px-[9.33px] w-[207px]">
           <img alt="EU Flag" className="h-[25.073px] w-[157.437px]" src={imgEuFlag} />
         </div>
@@ -122,7 +122,7 @@ export function Footer() {
           Na tento projekt byla poskytnuta finanční podpora od Evropské Unie.
         </p>
       </div>
-      <div className="border-[#e2e9f0] border-solid border-t flex items-center justify-center pb-[24px] pt-[16px] px-[120px] w-full">
+      <div className="border-[#e2e9f0] border-solid border-t flex items-center justify-center pb-6 md:pb-[24px] pt-4 md:pt-[16px] px-4 md:px-8 lg:px-[120px] w-full">
         <p className="font-mona leading-[1.9] text-[#64748b] text-[14px] text-center">
           © 2026 Frenkee.cz All rights reserved
         </p>

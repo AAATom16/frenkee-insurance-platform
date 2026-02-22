@@ -37,7 +37,7 @@ export function AutoStep1() {
         <p className="leading-[1.6]">5 kroků k povinnému ručení</p>
       </div>
 
-      <div className="flex flex-col gap-[24px] items-center overflow-clip px-[99px] py-[24px] relative w-[1000px] max-w-full">
+      <div className="flex flex-col gap-6 items-center overflow-clip px-4 md:px-12 lg:px-[99px] py-6 relative w-full max-w-[1000px]">
         {/* Progress indicator */}
         <div className="flex items-center justify-center gap-[12px] relative w-full">
           <div className="flex flex-col items-center gap-[8px]">

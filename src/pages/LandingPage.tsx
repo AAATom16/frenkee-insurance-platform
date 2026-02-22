@@ -16,19 +16,19 @@ export function LandingPage() {
   return (
     <div className="bg-white flex flex-col gap-[24px] items-center w-full">
       {/* Hero Section */}
-      <div className="bg-white flex items-center justify-center pb-[80px] pt-[120px] px-[24px] relative w-full">
-        <div className="absolute left-[598px] opacity-50 size-[1000px] top-[-230px] pointer-events-none">
+      <div className="bg-white flex items-center justify-center pb-12 md:pb-[80px] pt-16 md:pt-[120px] px-4 md:px-6 relative w-full overflow-hidden">
+        <div className="absolute left-1/2 -translate-x-1/2 opacity-50 w-[1000px] max-w-[200vw] h-[1000px] top-[-230px] pointer-events-none hidden md:block">
           <img alt="" className="absolute inset-0 max-w-none object-contain size-full" src={imgHeroGradient} />
         </div>
-        <div className="absolute h-[721px] left-[3px] top-[697px] w-[685px] pointer-events-none">
-          <img alt="" className="block max-w-none size-full" src={imgEllipseBg} />
+        <div className="absolute h-[400px] md:h-[721px] left-0 bottom-0 w-full max-w-[685px] pointer-events-none opacity-80 md:opacity-100">
+          <img alt="" className="block max-w-none size-full object-cover object-bottom" src={imgEllipseBg} />
         </div>
         
-        <div className="flex gap-[48px] items-start w-[1200px] h-[948px] relative z-10">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center w-full max-w-[1200px] min-h-0 relative z-10">
           {/* Left: Heading */}
-          <div className="flex flex-col gap-[0px] items-start w-[391px] py-[40px]">
+          <div className="flex flex-col gap-2 items-center lg:items-start w-full max-w-[391px] py-6 lg:py-10 order-2 lg:order-1">
             <div className="flex flex-col gap-[8px] items-start leading-[0] w-full">
-              <div className="bg-clip-text flex flex-col justify-center text-[72px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(265.802deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 800 }}>
+              <div className="bg-clip-text flex flex-col justify-center text-[48px] md:text-[60px] lg:text-[72px] tracking-[-1px] w-full text-center lg:text-left" style={{ backgroundImage: "linear-gradient(265.802deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 800 }}>
                 <p className="leading-none whitespace-pre-wrap">Finance jednoduše</p>
               </div>
               <div className="flex flex-col justify-center text-[#3f2578] text-[20px] w-full" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 700 }}>
@@ -38,11 +38,11 @@ export function LandingPage() {
           </div>
 
           {/* Right: Bento Grid */}
-          <div className="flex flex-col gap-[24px] items-end w-[761px]">
+          <div className="flex flex-col gap-6 items-center w-full max-w-[761px] order-1 lg:order-2">
             {/* Top Row */}
-            <div className="flex gap-[24px] h-[300px] items-start w-full">
+            <div className="flex flex-col md:flex-row gap-6 h-auto md:h-[300px] items-stretch w-full">
               {/* Auto Insurance - Large */}
-              <div className="bg-[#f8fafc] flex flex-col gap-[24px] h-[300px] items-start p-[24px] rounded-[8px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-[455px]">
+              <div className="bg-[#f8fafc] flex flex-col gap-6 h-auto min-h-[280px] md:h-[300px] items-start p-6 rounded-[8px] shadow-[var(--shadow-card)] w-full md:w-[455px] flex-1">
                 <div className="flex flex-col gap-[8px] items-start justify-center w-full">
                   <div className="bg-clip-text flex flex-col justify-center leading-[0] text-[36px]" style={{ backgroundImage: "linear-gradient(258.806deg, rgb(167, 82, 169) 47.239%, rgb(63, 37, 120) 98.853%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 700 }}>
                     <p className="leading-[1.1] whitespace-pre-wrap">Pojištění aut</p>
@@ -71,7 +71,7 @@ export function LandingPage() {
               </div>
 
               {/* Travel Insurance */}
-              <div className="bg-[#f8fafc] flex flex-col gap-[8px] h-[300px] items-start justify-end p-[24px] rounded-[8px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-[282px]">
+              <div className="bg-[#f8fafc] flex flex-col gap-4 h-auto min-h-[260px] md:h-[300px] items-start justify-end p-6 rounded-[8px] shadow-[var(--shadow-card)] w-full md:w-[282px]">
                 <div className="flex items-center justify-center -scale-y-100 rotate-180 shrink-0">
                   <div className="h-[241.75px] w-[256px] relative">
                     <img alt="" className="absolute h-[158.84%] left-0 max-w-none top-[-15.31%] w-full" src={imgTravelAirplane} />
@@ -180,15 +180,15 @@ export function LandingPage() {
             </div>
           </div>
 
-          {/* Hero Person - Absolute positioned */}
-          <div className="absolute left-[-110px] top-[344px] pointer-events-none">
-            <img alt="" className="h-[583px] w-[388.667px] object-cover" src={imgHeroPerson} />
+          {/* Hero Person - Absolute positioned, hidden on mobile */}
+          <div className="absolute left-[-110px] top-[344px] pointer-events-none hidden lg:block">
+            <img alt="" className="h-[383px] lg:h-[583px] w-auto object-cover" src={imgHeroPerson} />
           </div>
         </div>
       </div>
 
       {/* Why Choose Us Section */}
-      <div className="flex gap-[48px] items-start justify-center max-w-[1200px] pb-[200px] pt-[10px] w-[1200px]">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-start justify-center max-w-[1200px] pb-16 md:pb-[120px] lg:pb-[200px] pt-6 px-4 md:px-8 w-full">
         <div className="flex flex-col gap-[0px] items-start flex-1 pb-[48px]">
           <div className="flex flex-col gap-[8px] items-start leading-[0] w-full">
             <div className="bg-clip-text flex flex-col justify-center text-[48px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(252.026deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 800 }}>
@@ -243,16 +243,16 @@ export function LandingPage() {
       </div>
 
       {/* Testimonials Section */}
-      <div className="flex flex-col gap-[48px] items-center max-w-[1200px] w-full">
+      <div className="flex flex-col gap-8 md:gap-12 items-center max-w-[1200px] w-full px-4 md:px-8">
         <div className="flex flex-col gap-[8px] items-start leading-[0] text-center w-[600px]">
           <div className="bg-clip-text flex flex-col justify-center text-[48px] tracking-[-1px] w-full" style={{ backgroundImage: "linear-gradient(251.328deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent", fontFamily: "'Mona Sans', sans-serif", fontWeight: 800 }}>
             <p className="leading-none whitespace-pre-wrap">Co říkají naši klienti</p>
           </div>
           <p className="leading-[1.6] text-[#3f2578] text-[18px] w-full" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 400 }}>Přečtěte si reálné recenze z Googlu</p>
         </div>
-        <div className="flex gap-[24px] items-stretch justify-center w-full">
+        <div className="flex flex-col md:flex-row gap-6 items-stretch justify-center w-full">
           {/* Testimonial 1 */}
-          <div className="bg-[rgba(246,238,247,0.5)] border border-[#d8b0d8] flex flex-col items-start justify-between p-[24px] rounded-[16px] shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] w-[389px]">
+          <div className="bg-[rgba(246,238,247,0.5)] border border-[#d8b0d8] flex flex-col items-start justify-between p-6 rounded-[16px] shadow-[var(--shadow-input)] w-full max-w-[389px]">
             <p className="leading-[1.9] text-[16px] text-[#1e293b] mb-[24px]" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 400 }}>
               Naprostá spokojenost. Velmi rychlý a ochotný přístup. Od minulého roku jsem tu začal sjednávat všechny pojistky a vůbec neuvažuji o tom, že bych měl přejít někam jinam.
             </p>
@@ -265,7 +265,7 @@ export function LandingPage() {
             </div>
           </div>
           {/* Testimonial 2 */}
-          <div className="bg-[rgba(246,238,247,0.5)] border border-[#d8b0d8] flex flex-col items-start justify-between p-[24px] rounded-[16px] shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] w-[389px]">
+          <div className="bg-[rgba(246,238,247,0.5)] border border-[#d8b0d8] flex flex-col items-start justify-between p-6 rounded-[16px] shadow-[var(--shadow-input)] w-full max-w-[389px]">
             <p className="leading-[1.9] text-[16px] text-[#1e293b] mb-[24px]" style={{ fontFamily: "'Inter', sans-serif", fontWeight: 400 }}>
               Bezkonkurenční spokojenost všemi směry. Doporučuji! Až budu zase něco potřebovat, vím na koho se mohu obrátit a kdo mi hlavně pomůže. Děkuji :)
             </p>
@@ -278,7 +278,7 @@ export function LandingPage() {
             </div>
           </div>
           {/* Testimonial 3 */}
-          <div className="bg-[rgba(246,238,247,0.5)] border border-[#d8b0d8] flex flex-col items-start justify-between p-[24px] rounded-[16px] shadow-[0px_0.301px_0.51px_0px_rgba(0,0,0,0.06),0px_1.144px_2.72px_0px_rgba(0,0,0,0.02)] w-[389px]">
+          <div className="bg-[rgba(246,238,247,0.5)] border border-[#d8b0d8] flex flex-col items-start justify-between p-6 rounded-[16px] shadow-[var(--shadow-input)] w-full max-w-[389px]">
             <p className="leading-[1.9] text-[16px] text-[#1e293b] mb-[24px]" style={{ fontFamily: "'Mona Sans', sans-serif", fontWeight: 400 }}>
               Rád bych poděkoval týmu Frenkee za jejich vynikající pomoc a profesionalitu. Byli nejen ochotní, ale i velmi vstřícní a rychle reagovali na všechny mé potřeby. Určitě je doporučuji všem, kteří hledají spolehlivou a kvalitní pomoc. Jsou opravdu nejlepší v tom, co dělají. Děkuji vám
             </p>

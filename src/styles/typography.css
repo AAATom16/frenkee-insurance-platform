@@ -1,7 +1,10 @@
 /* Frenkee Typography - from Figma node 24-676 */
 
-.heading-1 { font-size: var(--text-h1); font-weight: 700; line-height: var(--line-height-tight); font-family: var(--font-heading); color: var(--color-text); }
-.heading-2 { font-size: var(--text-h2); font-weight: 700; line-height: var(--line-height-tight); font-family: var(--font-heading); color: var(--color-text); }
+.font-mona { font-family: var(--font-mona); }
+.font-inter { font-family: var(--font-body); }
+
+.heading-1 { font-size: var(--text-h1); font-weight: 800; line-height: var(--line-height-tight); font-family: var(--font-heading); color: var(--color-text); }
+.heading-2 { font-size: var(--text-h2); font-weight: 800; line-height: var(--line-height-tight); font-family: var(--font-heading); color: var(--color-text); }
 .heading-3 { font-size: var(--text-h3); font-weight: 600; line-height: var(--line-height-tight); font-family: var(--font-heading); color: var(--color-text); }
 .heading-4 { font-size: var(--text-h4); font-weight: 600; line-height: var(--line-height-normal); font-family: var(--font-heading); color: var(--color-text); }
 .heading-5 { font-size: var(--text-h5); font-weight: 600; line-height: var(--line-height-normal); font-family: var(--font-heading); color: var(--color-text); }
@@ -14,3 +17,10 @@
 .body-sm { font-size: var(--text-body-sm); font-weight: 400; line-height: var(--line-height-relaxed); font-family: var(--font-body); color: var(--color-text); }
 .caption { font-size: var(--text-caption); font-weight: 400; line-height: var(--line-height-normal); font-family: var(--font-body); color: var(--color-text-muted); }
 .button-text { font-size: var(--text-button); font-weight: 600; line-height: var(--line-height-normal); font-family: var(--font-body); }
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

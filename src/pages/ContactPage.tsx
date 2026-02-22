@@ -1,26 +1,24 @@
+import { GradientHeading } from '../components/ui';
+
 const imgLucidePhone = "/assets/icon-phone-alt.svg";
 const imgLucideMail = "/assets/icon-mail-alt.svg";
 const imgLucideMapPin = "/assets/icon-map-pin.svg";
 
 export function ContactPage() {
   return (
-    <div className="bg-white flex flex-col gap-[24px] items-center p-[24px] w-full">
-      <div className="flex flex-col gap-[8px] items-start text-center w-[600px] max-w-full">
-        <div className="bg-clip-text flex flex-col font-inter font-extrabold justify-center w-full text-[48px] tracking-[-1px]" style={{ backgroundImage: "linear-gradient(251.328deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%)", WebkitTextFillColor: "transparent" }}>
-          <p className="leading-none">Kontaktujte nás</p>
-        </div>
+    <div className="bg-white flex flex-col gap-6 items-center p-4 md:p-6 w-full">
+      <div className="flex flex-col gap-2 items-center text-center w-full max-w-[600px]">
+        <GradientHeading size="lg">Kontaktujte nás</GradientHeading>
         <div className="flex flex-col font-inter justify-center w-full text-[#3f2578] text-[18px]">
           <p className="leading-[1.6]">Máte dotaz? Rádi vám pomůžeme. Vyberte si způsob, který vám vyhovuje.</p>
         </div>
       </div>
       
-      <div className="flex gap-[32px] items-start py-[8px] w-[1080px] max-w-full">
-        <div className="flex flex-col gap-[16px] items-start w-[340px]">
-          <div className="bg-[#f8fafc] border border-[#e2e9f0] flex flex-col gap-[16px] items-start p-[32px] rounded-[8px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.04)] w-full">
-            <div className="bg-[#f0ebf8] flex items-center justify-center rounded-[12px] size-[48px]">
-              <div className="size-[24px]">
-                <img alt="Phone" className="w-full h-full" src={imgLucidePhone} />
-              </div>
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch py-4 w-full max-w-[1080px]">
+        <div className="flex flex-col sm:flex-row lg:flex-col gap-6 items-stretch flex-1 lg:max-w-[340px]">
+          <div className="bg-[#f8fafc] border border-[#e2e9f0] flex flex-col gap-4 items-center p-6 md:p-8 rounded-[8px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.04)] w-full min-w-[280px]">
+            <div className="bg-[#f0ebf8] flex items-center justify-center rounded-[12px] size-[48px] shrink-0">
+              <img alt="Phone" className="size-[24px]" src={imgLucidePhone} />
             </div>
             <p className="font-inter font-bold leading-[1.4] text-[#3f2578] text-[18px] text-center">
               Telefon
@@ -33,7 +31,7 @@ export function ContactPage() {
             </p>
           </div>
           
-          <div className="bg-[#f8fafc] border border-[#e2e9f0] flex flex-col gap-[16px] items-start p-[32px] rounded-[8px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.04)] w-full">
+          <div className="bg-[#f8fafc] border border-[#e2e9f0] flex flex-col gap-4 items-center p-6 md:p-8 rounded-[8px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.04)] w-full min-w-[280px]">
             <div className="bg-[#f0ebf8] flex items-center justify-center rounded-[12px] size-[48px]">
               <div className="size-[24px]">
                 <img alt="Mail" className="w-full h-full" src={imgLucideMail} />
@@ -50,7 +48,7 @@ export function ContactPage() {
             </p>
           </div>
           
-          <div className="bg-[#f8fafc] border border-[#e2e9f0] flex flex-col gap-[16px] items-start p-[32px] rounded-[8px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.04)] w-full">
+          <div className="bg-[#f8fafc] border border-[#e2e9f0] flex flex-col gap-4 items-center p-6 md:p-8 rounded-[8px] shadow-[0px_1px_3px_0px_rgba(0,0,0,0.04)] w-full min-w-[280px]">
             <div className="bg-[#f0ebf8] flex items-center justify-center rounded-[12px] size-[48px]">
               <div className="size-[24px]">
                 <img alt="Map Pin" className="w-full h-full" src={imgLucideMapPin} />

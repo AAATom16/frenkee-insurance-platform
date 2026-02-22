@@ -64,6 +64,7 @@ function App() {
           <Route path="pojisteni/majetek/detail" element={<DetailBytuPage />} />
           <Route path="pojisteni/majetek/domacnost" element={<DomacnostPage />} />
           <Route path="pojisteni/majetek/osobni-udaje" element={<OsobniUdajePage />} />
+          <Route path="pojisteni/cizinci" element={<LandingPage />} />
           <Route path="pojisteni/mazlicci" element={<LandingPage />} />
           <Route path="pojisteni/odpovednost" element={<LandingPage />} />
           <Route path="pojisteni/zivnost" element={<LandingPage />} />

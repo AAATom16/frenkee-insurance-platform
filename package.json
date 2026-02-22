@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "serve dist -l ${PORT:-3000} -s",
-    "start": "serve dist -l ${PORT:-3000} -s"
+    "start": "serve dist -l ${PORT:-3000} -s",
+    "figma:assets": "node scripts/download-figma-assets.js"
   },
   "dependencies": {
     "react": "^19.2.0",

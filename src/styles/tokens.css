@@ -38,7 +38,7 @@
   --color-dark-900: #121617;
   --color-dark-400: #64748b;
   --color-dark-300: #94a3b8;
-  --color-dark-25: #AFBFCF;
+  --color-dark-25: #f8fafc;
   --color-dark-200: #e2e9f0;
   --color-dark-100: #e2e9f0;
   --color-dark-50: #F3F7F7;
@@ -57,8 +57,9 @@
   --color-background-alt: var(--color-dark-50);
   --color-error: #d60021;
 
-  /* Typography - from Figma node 24-676 */
-  --font-heading: 'Inter', system-ui, sans-serif;
+  /* Typography - from Figma (Mona Sans for display, Inter for body) */
+  --font-mona: 'Mona Sans', system-ui, sans-serif;
+  --font-heading: 'Mona Sans', system-ui, sans-serif;
   --font-body: 'Inter', system-ui, sans-serif;
 
   --text-h1: 64px;
@@ -90,6 +91,14 @@
   --space-10: 40px;
   --space-12: 48px;
   --space-16: 64px;
+
+  /* Gradients - from Figma Frenkee gradient */
+  --gradient-primary: linear-gradient(231.904deg, rgb(167, 82, 169) 26.752%, rgb(63, 37, 120) 100%);
+  --gradient-primary-alt: linear-gradient(263.233deg, rgb(167, 82, 169) 0%, rgb(63, 37, 120) 100%);
+
+  /* Shadows - from Figma */
+  --shadow-input: 0px 0.301px 0.51px 0px rgba(0,0,0,0.06), 0px 1.144px 2.72px 0px rgba(0,0,0,0.02);
+  --shadow-card: 0px 4px 8px 0px rgba(0,0,0,0.15), 0px 1px 3px 0px rgba(0,0,0,0.3);
 
   /* Border radius */
   --radius-sm: 4px;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LifeProgress } from '../components/LifeProgress';
-import { Button } from '../components/ui';
+import { Button, GradientHeading } from '../components/ui';
 
 const KRYTI = [
   { id: 'smrt', label: 'Smrt', defaultAmount: 1000000, placeholder: '1 000 000 Kč' },
@@ -25,10 +25,10 @@ export function LifeStep3() {
   const setAmount = (id: string, value: string) => setAmounts((a) => ({ ...a, [id]: value }));
 
   return (
-    <div className="bg-white flex flex-col gap-[24px] items-center p-[24px] w-full min-h-screen">
-      <h1 className="heading-2 text-[var(--color-primary)] text-center tracking-tight">
+    <div className="bg-white flex flex-col gap-6 items-center p-4 md:p-6 w-full min-h-screen">
+      <GradientHeading size="lg" className="w-full">
         Online sjednání životního pojištění
-      </h1>
+      </GradientHeading>
 
       <div className="flex flex-col gap-[24px] items-center px-4 md:px-[80px] py-[32px] w-full max-w-[1000px]">
         <LifeProgress current={3} total={8} />
@@ -38,12 +38,12 @@ export function LifeStep3() {
             <img src="/assets/life-char-3.svg" alt="" className="max-h-[280px] w-auto object-contain" />
           </div>
           <div className="flex flex-col gap-[16px] w-full flex-1 min-w-0 order-1 md:order-2">
-          <p className="text-[#3f2578] text-[18px] font-bold" style={{ fontFamily: "'Mona Sans', sans-serif" }}>Vyberte krytí a částky</p>
+          <p className="font-mona font-bold text-[#3f2578] text-[18px]">Vyberte krytí a částky</p>
           {KRYTI.map((k) => (
             <div key={k.id} className="flex flex-wrap items-center gap-3 p-4 rounded-[12px] border border-[#e2e9f0] bg-[#f8fafc]">
               <label className="flex items-center gap-2 cursor-pointer flex-1 min-w-[140px]">
                 <input type="checkbox" checked={!!checked[k.id]} onChange={() => toggle(k.id)} className="size-[18px] accent-[#3f2578]" />
-                <span className="font-semibold text-[#3f2578]" style={{ fontFamily: "'Mona Sans', sans-serif" }}>{k.label}</span>
+                <span className="font-mona font-semibold text-[#3f2578]">{k.label}</span>
               </label>
               {k.defaultAmount > 0 && (
                 <div className="flex items-center gap-2">
@@ -53,8 +53,7 @@ export function LifeStep3() {
                     onChange={(e) => setAmount(k.id, e.target.value.replace(/\D/g, ''))}
                     placeholder={k.placeholder}
                     disabled={!checked[k.id]}
-                    className="border border-[#e2e9f0] h-[40px] px-3 rounded-[8px] text-[14px] w-[160px] outline-none disabled:opacity-50 disabled:bg-gray-100"
-                    style={{ fontFamily: "'Inter', sans-serif" }}
+                    className="font-inter border border-[#e2e9f0] h-[40px] px-3 rounded-[8px] text-[14px] w-[160px] outline-none disabled:opacity-50 disabled:bg-gray-100"
                   />
                   <span className="text-[#64748b] text-[14px]">Kč</span>
                 </div>
@@ -62,7 +61,7 @@ export function LifeStep3() {
             </div>
           ))}
 
-          <Button type="button" size="lg" className="w-full h-[52px] rounded-[var(--radius-lg)] text-lg mt-2" onClick={() => navigate('/pojisteni/zivot/nabidky')}>Pokračovat</Button>
+          <Button type="button" variant="gradient" size="lg" className="w-full h-[52px] rounded-[var(--radius-lg)] text-lg mt-2" onClick={() => navigate('/pojisteni/zivot/nabidky')}>Pokračovat</Button>
           </div>
         </div>
       </div>

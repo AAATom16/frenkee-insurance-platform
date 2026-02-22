@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LifeProgress } from '../components/LifeProgress';
-import { Button } from '../components/ui';
+import { Button, GradientHeading } from '../components/ui';
 
 const FREKVENCE_OPTIONS = ['Měsíčně', 'Čtvrtletně', 'Pololetně', 'Ročně'] as const;
 
@@ -17,10 +17,10 @@ export function LifeStep4() {
   const [frekvence, setFrekvence] = useState<(typeof FREKVENCE_OPTIONS)[number]>('Měsíčně');
 
   return (
-    <div className="bg-white flex flex-col gap-[24px] items-center p-[24px] w-full min-h-screen">
-      <h1 className="heading-2 text-[var(--color-primary)] text-center tracking-tight">
+    <div className="bg-white flex flex-col gap-6 items-center p-4 md:p-6 w-full min-h-screen">
+      <GradientHeading size="lg" className="w-full">
         Online sjednání životního pojištění
-      </h1>
+      </GradientHeading>
 
       <div className="flex flex-col gap-[24px] items-center px-4 md:px-[80px] py-[32px] w-full max-w-[1000px]">
         <LifeProgress current={4} total={8} />
@@ -76,7 +76,7 @@ export function LifeStep4() {
             ))}
           </div>
 
-          <Button type="button" size="lg" className="w-full h-[52px] rounded-[var(--radius-lg)] text-lg mt-2" onClick={() => navigate('/pojisteni/zivot/kontakt')}>Pokračovat</Button>
+          <Button type="button" variant="gradient" size="lg" className="w-full h-[52px] rounded-[var(--radius-lg)] text-lg mt-2" onClick={() => navigate('/pojisteni/zivot/kontakt')}>Pokračovat</Button>
           </div>
           <div className="w-full md:w-[240px] shrink-0 flex justify-center md:justify-end">
             <img src="/assets/life-char-4.svg" alt="" className="max-h-[260px] w-auto object-contain" />

@@ -1,15 +1,15 @@
 import { useNavigate } from 'react-router-dom';
 import { LifeProgress } from '../components/LifeProgress';
-import { Button } from '../components/ui';
+import { Button, GradientHeading } from '../components/ui';
 
 export function LifeStep6() {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-white flex flex-col gap-[24px] items-center p-[24px] w-full min-h-screen">
-      <h1 className="heading-2 text-[var(--color-primary)] text-center tracking-tight">
+    <div className="bg-white flex flex-col gap-6 items-center p-4 md:p-6 w-full min-h-screen">
+      <GradientHeading size="lg" className="w-full">
         Online sjednání životního pojištění
-      </h1>
+      </GradientHeading>
 
       <div className="flex flex-col gap-[24px] items-center px-4 md:px-[80px] py-[32px] w-full max-w-[640px]">
         <LifeProgress current={6} total={8} />
@@ -36,6 +36,7 @@ export function LifeStep6() {
 
           <Button
             type="button"
+            variant="gradient"
             size="lg"
             className="w-full h-[52px] rounded-[var(--radius-lg)] text-lg"
             onClick={() => navigate('/')}

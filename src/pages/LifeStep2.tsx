@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LifeProgress } from '../components/LifeProgress';
-import { Button, Input, RadioGroup, Select } from '../components/ui';
+import { Button, GradientHeading, Input, RadioGroup, Select } from '../components/ui';
 
 const POVOLANI = [
   { value: 'Úředník', label: 'Úředník' },
@@ -46,10 +46,10 @@ export function LifeStep2() {
   const [onemocneni, setOnemocneni] = useState('');
 
   return (
-    <div className="bg-[var(--color-background)] flex flex-col gap-6 items-center p-6 w-full min-h-screen">
-      <h1 className="heading-2 text-[var(--color-primary)] text-center tracking-tight">
+    <div className="bg-white flex flex-col gap-6 items-center p-4 md:p-6 w-full min-h-screen">
+      <GradientHeading size="lg" className="w-full">
         Online sjednání životního pojištění
-      </h1>
+      </GradientHeading>
 
       <div className="flex flex-col gap-6 items-center px-4 md:px-20 py-8 w-full max-w-[1000px]">
         <LifeProgress current={2} total={8} />
@@ -126,6 +126,7 @@ export function LifeStep2() {
 
             <Button
               type="button"
+              variant="gradient"
               size="lg"
               className="w-full h-[52px] rounded-[var(--radius-lg)] text-lg"
               onClick={() => navigate('/pojisteni/zivot/kryti')}

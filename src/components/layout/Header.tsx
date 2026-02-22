@@ -38,13 +38,13 @@ export function Header() {
   }, [location.pathname]);
 
   return (
-    <header className="bg-white flex items-center justify-between px-[24px] py-[12px] relative rounded-[9px] shadow-[0px_4px_8px_0px_rgba(0,0,0,0.15),0px_1px_3px_0px_rgba(0,0,0,0.3)] w-[1200px] h-[80px]">
+    <header className="bg-white flex items-center justify-between px-4 md:px-6 py-3 relative rounded-[9px] shadow-[var(--shadow-card)] w-full max-w-[1200px] min-h-[80px]">
       <div className="flex items-center shrink-0">
         <Link to="/">
           <img alt="Frenkee" className="h-[29.62px] w-[139.864px]" src={imgFrenkeeLogo} />
         </Link>
       </div>
-      <nav ref={navRef} className="flex gap-[12px] items-center shrink-0">
+      <nav ref={navRef} className="flex gap-2 md:gap-3 items-center shrink-0 overflow-x-auto">
         {NAV_ITEMS.map((item) => {
           const isActive = location.pathname.startsWith(item.path);
           return (
@@ -57,10 +57,9 @@ export function Header() {
               }`}
             >
               <p 
-                className={`text-[17px] leading-[20px] whitespace-nowrap font-bold ${
+                className={`text-[15px] md:text-[17px] leading-[20px] whitespace-nowrap font-bold font-mona ${
                   isActive ? 'text-[var(--color-primary)]' : 'text-[var(--color-text-muted)]'
                 }`}
-                style={{ fontFamily: 'var(--font-body)' }}
               >
                 {item.label}
               </p>
@@ -69,13 +68,13 @@ export function Header() {
         })}
       </nav>
       <div className="flex gap-[12px] items-center shrink-0">
-        <Link to="/registrace" className="bg-[var(--color-primary)] flex items-center justify-center px-[18px] py-[10px] rounded-[var(--radius-md)] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
-          <p className="leading-[24px] text-[16px] text-white font-extrabold" style={{ fontFamily: 'var(--font-body)' }}>
+        <Link to="/registrace" className="bg-[var(--color-primary)] flex items-center justify-center px-4 md:px-[18px] py-2 md:py-[10px] rounded-[var(--radius-md)] shadow-[0px_1px_2px_0px_rgba(10,13,18,0.05)]">
+          <p className="leading-[24px] text-[14px] md:text-[16px] text-white font-extrabold font-mona">
             Registrace
           </p>
         </Link>
         <Link to="/kontakt" className="flex items-center justify-center">
-          <p className="text-[17px] leading-[20px] text-[var(--color-primary)] underline decoration-solid font-medium" style={{ fontFamily: 'var(--font-body)' }}>
+          <p className="text-[15px] md:text-[17px] leading-[20px] text-[var(--color-primary)] underline decoration-solid font-medium font-mona">
             Kontakt
           </p>
         </Link>
